@@ -10,7 +10,7 @@ module.exports = {
   name: 'server',
   target: 'node',
   entry: {
-    server: [require.resolve('@babel/polyfill'), path.resolve(paths.srcServer, 'index.js')]
+    server: [path.resolve(paths.srcServer, 'index.js')]
   },
   externals: [
     nodeExternals({
