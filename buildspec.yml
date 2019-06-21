@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - npm install -g firebase-tools
+  pre_build:
+    commands:
+      - npm install
+      - cd functions && npm install && cd ..
+  build:
+    commands:
+      - npm run build:$ENV
+  post_build:
+    commands:
+      - firebase use $ENV
+      - firebase deploy --token $FIREBASE_TOKEN --only functions

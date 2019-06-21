@@ -1,0 +1,33 @@
+{
+  "compact": true,
+  "presets": [
+    ["@babel/preset-env", {
+      "modules": false,
+      "targets": {
+        "browsers": ["last 2 versions", "ie >= 10"]
+      }
+    }],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["babel-plugin-styled-components", {
+      "fileName": false,
+      "ssr": true
+    }],
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-export-namespace-from",
+    "@babel/plugin-proposal-export-default-from",
+    "@babel/plugin-transform-runtime"
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "@babel/plugin-transform-modules-commonjs",
+        "@babel/plugin-syntax-dynamic-import"
+      ]
+    }
+  }
+}

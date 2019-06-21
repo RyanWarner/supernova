@@ -1,0 +1,18 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["standard", "standard-react"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "legacyDecorators": true
+    }
+  },
+  "rules": {
+    "react/prop-types": "off",
+    "react/no-did-update-set-state": "off"
+  },
+  "globals": {
+    "__BROWSER__": true,
+    "__SERVER__": true
+  },
+  "env": { "jest": true }
+}
