@@ -1,6 +1,6 @@
 {
   "projects": {
     "production": "",
-    "staging": ""
+    "staging": "yawnch-react-firebase-ssr"
   }
 }

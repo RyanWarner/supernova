@@ -2,6 +2,9 @@
   "name": "react-ssr-firebase",
   "version": "1.0.0",
   "author": "Ryan Warner (https://github.com/RyanWarner)",
+  "engines": {
+    "node": "8"
+  },
   "dependencies": {
     "@babel/runtime": "^7.3.1",
     "@tippy.js/react": "^1.1.1",
