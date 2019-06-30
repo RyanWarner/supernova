@@ -19,11 +19,6 @@
     "lint:fix": "eslint src/** --fix",
     "serve:firebase": "firebase serve --host 0.0.0.0 --port 3000 --only functions"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "eslint src --fix"
-    }
-  },
   "moduleRoots": [
     "src/client",
     "src/server",
@@ -104,11 +99,9 @@
     "eslint-plugin-security": "1.4.0",
     "eslint-plugin-standard": "4.0.0",
     "file-loader": "4.0.0",
-    "husky": "2.4.1",
     "image-webpack-loader": "5.0.0",
     "install-deps-postmerge": "1.0.3",
     "jest": "24.8.0",
-    "lint-staged": "8.2.1",
     "mini-css-extract-plugin": "0.7.0",
     "nodemon": "1.19.1",
     "plop": "2.4.0",
