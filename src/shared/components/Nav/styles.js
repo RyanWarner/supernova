@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { Link } from 'react-router-dom'
 
 import { Colors, Shadows, Breakpoints } from 'app/styles'
 import { YawnchLogo } from 'app/ui-kit/Icons'
@@ -40,9 +41,13 @@ export const NavItems = styled.div`
 `
 
 const navItemShared = css`
-  margin-left: 20px;
+  margin-left: 26px;
 `
 
 export const NavA = styled.a`
+  ${navItemShared};
+`
+
+export const NavLink = styled(Link)`
   ${navItemShared};
 `
