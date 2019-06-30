@@ -1,4 +1,18 @@
+const paths =  require('./config/paths')
+const fs = require('fs')
+
 module.exports = function (plop) {
+  plop.setActionType('addToIndex', (answers) => {
+    return new Promise((resolve, reject) => {
+      const exportString = `export ${answers.componentName} from './${answers.componentName}/${answers.componentName}'\n`
+
+      fs.appendFile(`${paths.srcShared}/components/index.js`, exportString, err => {
+        if (err) throw reject('Failed to export component from components/index')
+        resolve('Added export to components/index')
+      })
+    })
+  })
+
   plop.setGenerator('React Component', {
     description: 'Create a React component',
     prompts: [
@@ -32,6 +46,8 @@ module.exports = function (plop) {
           type: 'add',
           path: './src/shared/components/{{properCase componentName}}/styles.js',
           templateFile: './config/plop/component/styles.js.plop'
+        }, {
+          type: 'addToIndex'
         })
       }
 
