@@ -1,4 +1,4 @@
-import Root from '../components/Root/Root'
+import { Root } from 'app/components'
 import Home from '../pages/Home'
 import NotFound from '../components/NotFound/NotFound'
 
@@ -7,9 +7,17 @@ export default [{
   routes: [{
     path: '/',
     exact: true,
-    component: Home
+    component: Home,
+    meta: {
+      title: 'Yawnch - React, Firebase, SSR',
+      description: 'An opinionated starting point for web applications.'
+    }
   }, {
     path: '*',
-    component: NotFound
+    component: NotFound,
+    meta: {
+      title: 'Yawnch - Not found',
+      description: 'An opinionated starting point for web applications.'
+    }
   }]
 }]

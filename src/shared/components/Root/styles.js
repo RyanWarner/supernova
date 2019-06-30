@@ -1,5 +1,5 @@
 import styled from 'styled-components'
 
-export const Wrap = styled.div`
-  height: 100%;
+export const RootComponent = styled.div`
+  min-height: 100%;
 `

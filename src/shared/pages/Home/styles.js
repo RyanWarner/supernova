@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 import { Colors, Animations } from 'app/styles'
-import { YawnchLogo } from 'app/ui-kit/Icons'
 
 export const HomePage = styled.div`
   animation: ${Animations.FadeIn} 1250ms forwards;
@@ -15,5 +14,3 @@ export const HomePage = styled.div`
   background: ${Colors.black};
   color: ${Colors.white};
 `
-
-export const StyledYawnchLogo = styled(YawnchLogo)``

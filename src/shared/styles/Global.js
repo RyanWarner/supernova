@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html, body {
-    height: 100%;
+    min-height: 100vh;
     ${Type.body};
     font-family: ${Type.fontFace};
     margin: 0;
@@ -21,6 +21,7 @@ export const GlobalStyle = createGlobalStyle`
     max-width: 100vw;
     overflow-x: hidden;
     background-color: ${Colors.black};
+    color: ${Colors.white};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -30,15 +31,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #app {
-    height: 100%;
-  }
-
-  a {
-    color: ${Colors.black};
-    text-decoration: none;
-
-    &:hover {
-
-    }
+    min-height: 100%;
   }
 `
