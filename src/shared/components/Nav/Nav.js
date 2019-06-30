@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Tippy from '@tippy.js/react'
-import 'tippy.js/dist/tippy.css'
 
 import * as S from './styles'
 import { openModal } from '../../store/app/actions'

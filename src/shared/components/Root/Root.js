@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { renderRoutes } from 'react-router-config'
-import Helmet from 'react-helmet'
 
 import * as S from './styles'
 import { Global, Fonts } from 'app/styles'
+import { AppHelmet } from 'app/components'
 import ModalController from '../modals/ModalController'
-import { favicon, ogImage } from 'app/assets/images'
 import { Auth } from 'app/api/firebase/models'
 
 export default class Root extends Component {
@@ -13,27 +12,8 @@ export default class Root extends Component {
     if (process.env.FIREBASE_API_KEY) Auth.registerAuthListener()
   }
   render () {
-    // TODO: Update Title & Description
-    const description = 'Boilerplate for React + Firebase SSR SPA'
-    const title = 'React Firebase SSR'
     return <S.Wrap>
-      <Helmet
-        title={title}
-        meta={[
-          { name: 'description', content: description },
-          { property: 'og:description', content: description },
-          { property: 'og:title', content: title },
-          { property: 'og:image', content: ogImage },
-          { property: 'og:image:secure_url', content: ogImage },
-          { property: 'og:type', content: 'website' }
-        ]}
-        link={[
-          { 'rel': 'icon',
-            'type': 'image/png',
-            'href': favicon
-          }
-        ]}
-      />
+      <AppHelmet />
       <Global.GlobalStyle />
       <Fonts.GlobalStyle />
       <ModalController />
