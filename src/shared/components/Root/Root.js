@@ -7,7 +7,7 @@ import { Global, Fonts } from 'app/styles'
 import ModalController from '../modals/ModalController'
 import ogImage from '../../assets/images/ogImage.png'
 import favicon from '../../assets/images/favicon.png'
-import { Auth } from 'app/firebase-services'
+import { Auth } from 'app/api/firebase/models'
 
 export default class Root extends Component {
   componentDidMount = () => {

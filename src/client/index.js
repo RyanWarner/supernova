@@ -8,9 +8,9 @@ import { renderRoutes } from 'react-router-config'
 import merge from 'deepmerge'
 
 import routes from '../shared/routes/routes'
-import { initializeFirebase } from '../shared/firebase/initializeFirebase'
+import { initializeFirebase } from 'app/api/firebase/initializeFirebase'
+import FirebaseService from 'app/api/firebase/models/FirebaseService'
 import Analytics from '../shared/Analytics'
-import FirebaseService from '../shared/firebase/services/FirebaseService'
 import { loadState, saveState } from './cookieService'
 
 Analytics.initialize()

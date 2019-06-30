@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 
 import * as S from './styles'
 import { openModal } from '../../../store/app/actions'
-import { Auth } from 'app/firebase-services'
+import { Auth } from 'app/api/firebase/models'
 
 const mapStateToProps = (state) => {
   const { currentUser } = state.firebase
