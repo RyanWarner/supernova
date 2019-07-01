@@ -4,10 +4,10 @@ import adminRoutes from './adminRoutes'
 
 export default [{
     component: Root,
+    path: '/',
     routes: [
       ...adminRoutes, {
       path: '/',
-      exact: true,
       component: AppRoot,
       meta: {
         title: 'Yawnch - React, Firebase, SSR',
