@@ -23,7 +23,10 @@ export default class AdminNav extends Component {
   renderNavItem = (item) => {
     const selectedPath = this.props.activeRoute.path
     const selected = selectedPath === item.path || (selectedPath === '/admin' && item.path === '/admin/utilities')
-    return <S.AdminNavItem to={item.path} selected={selected}>{item.display}</S.AdminNavItem>
+
+    return <S.AdminNavItem to={item.path} selected={selected} key={item.path}>
+      {item.display}
+    </S.AdminNavItem>
   }
   render () {
     return <S.AdminNavComponent>

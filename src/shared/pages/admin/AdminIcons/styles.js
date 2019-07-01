@@ -16,7 +16,7 @@ export const ActivityCard = styled.div`
 
 export const IconCard = styled.div`
   margin-bottom: 50px;
-  border-bottom: 1px solid ${Colors.borderGray};
+  border-bottom: 1px solid ${Colors.adminNavBorder};
   width: 100%;
 `
 

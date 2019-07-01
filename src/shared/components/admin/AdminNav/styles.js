@@ -7,7 +7,7 @@ import { YawnchLogo } from 'app/ui-kit/Icons'
 export const AdminNavComponent = styled.div`
   height: 100vh;
   width: 240px;
-  background-color: ${Colors.borderGray};
+  background-color: ${Colors.darkGray};
   position: fixed;
   left: 0;
   top: 0;
@@ -56,7 +56,7 @@ export const AdminNavItem = styled(Link)`
   transition: all 300ms ease;
 
   ${props => props.selected && css`
-    background-color: ${Colors.white};
+    background-color: ${Colors.black};
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   `}
 `
