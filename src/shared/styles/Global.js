@@ -24,6 +24,7 @@ export const GlobalStyle = createGlobalStyle`
     color: ${Colors.white};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    display: flex;
   }
 
   ::selection {
