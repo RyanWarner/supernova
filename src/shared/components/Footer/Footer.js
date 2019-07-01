@@ -12,8 +12,8 @@ const footerNavItems = {
     path: '/privacy'
   },
   termsOfUse: {
-    display: 'Terms of Use',
-    path: '/terms-of-use'
+    display: 'Terms',
+    path: '/terms'
   }
 }
 
