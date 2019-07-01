@@ -14,3 +14,7 @@ export const PrivacyPage = styled.div`
   background: ${Colors.black};
   color: ${Colors.white};
 `
+
+export const MaxWidth = styled.div`
+  max-width: 800px;
+`
