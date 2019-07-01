@@ -76,6 +76,6 @@ export const LogoLink = styled(Link)`
 `
 
 export const StyledLogoLockup = styled(YawnchLogo)`
-  width: 80px;
   height: 29px;
+  width: 20px;
 `

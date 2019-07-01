@@ -1,7 +1,5 @@
 export Check from './Check'
 export ChevronDown from './ChevronDown'
-export Light from './Light'
-export Tools from './Tools'
 export YawnchLogo from './YawnchLogo'
 
 export Instagram from './Instagram'

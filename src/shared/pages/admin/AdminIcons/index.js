@@ -8,7 +8,7 @@ import * as Icons from 'app/ui-kit/Icons'
 @withRouter
 export default class AdminIcons extends Component {
   renderIconCard = (icon, index) => {
-    return <S.IconCard>
+    return <S.IconCard key={index}>
       { icon() }
       <S.IconName>{ Object.keys(Icons)[index] }</S.IconName>
     </S.IconCard>

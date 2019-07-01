@@ -7,7 +7,7 @@ import { Colors } from 'app/styles'
 @withRouter
 export default class AdminColors extends Component {
   renderColor = (color, index) => {
-    return <S.ColorCard>
+    return <S.ColorCard key={index}>
       <S.ColorTile color={color} />
       <S.ColorDetails>
         <S.ColorName>{Object.keys(Colors)[index]}</S.ColorName>
