@@ -11,7 +11,7 @@ const twitterUsername = process.env.TWITTER_USERNAME
 export default class AppHelmet extends Component {
   getActiveRoute = ({ pathname, route }) => {
     const activeRoute = route.routes.find(route => matchPath(pathname, route))
-    if (activeRoute.routes) return this.getActiveRoute({ pathname, route: activeRoute})
+    if (activeRoute.routes) return this.getActiveRoute({ pathname, route: activeRoute })
     return activeRoute
   }
   render () {

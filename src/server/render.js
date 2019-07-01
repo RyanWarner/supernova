@@ -11,7 +11,7 @@ import FirebaseService from 'app/api/firebase/models/FirebaseService'
 
 const getActiveRoute = ({ pathname, route }) => {
   const activeRoute = route.routes.find(route => matchPath(pathname, route))
-  if (activeRoute.routes) return getActiveRoute({ pathname, route: activeRoute})
+  if (activeRoute.routes) return getActiveRoute({ pathname, route: activeRoute })
   return activeRoute
 }
 

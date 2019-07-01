@@ -3,10 +3,10 @@ import { Home, Faq, Privacy, Terms, NotFound } from 'app/pages'
 import adminRoutes from './adminRoutes'
 
 export default [{
-    component: Root,
-    path: '/',
-    routes: [
-      ...adminRoutes, {
+  component: Root,
+  path: '/',
+  routes: [
+    ...adminRoutes, {
       path: '/',
       component: AppRoot,
       meta: {
@@ -54,4 +54,4 @@ export default [{
         }
       }]
     }]
-  }]
+}]
