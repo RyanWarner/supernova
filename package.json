@@ -10,7 +10,7 @@
     "deploy:production": "npm run build:production && firebase use production && firebase deploy --only hosting,functions",
     "deploy:staging": "npm run build:staging && firebase use staging && firebase deploy --only hosting,functions",
     "build:production": "cross-env NODE_ENV=production DEPLOY_ENV=production node scripts/build.js",
-    "build:staging": "cross-env NODE_ENV=production node scripts/build.js",
+    "build:staging": "cross-env NODE_ENV=production DEPLOY_ENV=staging node scripts/build.js",
     "build:with-stats": "cross-env NODE_ENV=production webpack --config config/webpack.config.js/client.prod.js --json > build/client/static/bundle-stats.json",
     "plop": "plop",
     "start": "cross-env NODE_ENV=development node scripts/start.js",

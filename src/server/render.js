@@ -9,10 +9,17 @@ import { renderRoutes } from 'react-router-config'
 import routes from 'app/routes/routes'
 import FirebaseService from 'app/api/firebase/models/FirebaseService'
 
+const getActiveRoute = ({ pathname, route }) => {
+  const activeRoute = route.routes.find(route => matchPath(pathname, route))
+  if (activeRoute.routes) return getActiveRoute({ pathname, route: activeRoute })
+  return activeRoute
+}
+
 const serverRenderer = () => (req, res) => {
   FirebaseService.store = req.store
 
-  const activeRoute = routes[0].routes.find((route) => matchPath(req.url, route))
+  const activeRoute = getActiveRoute({ pathname: req.url, route: routes[0] })
+  if (!activeRoute) console.warn('No active aroute found: ', activeRoute)
 
   const dataRequirements = activeRoute.component.serverFetch
     ? activeRoute.component.serverFetch()

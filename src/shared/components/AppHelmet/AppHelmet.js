@@ -9,9 +9,21 @@ const twitterUsername = process.env.TWITTER_USERNAME
 
 @withRouter
 export default class AppHelmet extends Component {
+  getActiveRoute = ({ pathname, route }) => {
+    const activeRoute = route.routes.find(route => matchPath(pathname, route))
+    if (activeRoute.routes) return this.getActiveRoute({ pathname, route: activeRoute })
+    return activeRoute
+  }
   render () {
     const { location, route } = this.props
-    const activeRoute = route.routes.find(route => matchPath(location.pathname, route))
+    const { pathname } = location
+    const activeRoute = this.getActiveRoute({ pathname, route })
+
+    if (!activeRoute) {
+      console.warn('No active route found: ', activeRoute)
+      return null
+    }
+
     const basePath = cdn ? cdn.slice(0, -1) : '' // remove trailing slash
     const ogUrl = `${basePath}${location.pathname}`
     const ogImageUrl = `${basePath}/${ogImage}`

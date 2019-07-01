@@ -43,7 +43,7 @@ export const NavItems = styled.div``
 
 const footerNavItemShared = css`
   margin-right: 24px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: ${Type.fontWeights.medium};
   color: ${Colors.white};
 
@@ -66,8 +66,8 @@ export const StyledFooterA = styled.a`
 
 export const Copyright = styled.div`
   margin-left: auto;
-  color: ${Colors.black};
-  font-size: 16px;
+  color: ${Colors.white};
+  font-size: 14px;
 
   @media(max-width: ${Breakpoints.main}) {
     margin-left: 0;
