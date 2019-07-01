@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import AriaModal from 'react-aria-modal'
 
-import { getIn } from '../../../Utilities'
+import { getIn } from 'app/utilities'
 import * as S from './styles'
 import Modals from './ModalList'
 

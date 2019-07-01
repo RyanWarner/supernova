@@ -5,9 +5,9 @@ import { Provider } from 'react-redux'
 import Html from './components/HTML'
 import { ServerStyleSheet } from 'styled-components'
 import { renderRoutes } from 'react-router-config'
-import FirebaseService from '../shared/firebase/services/FirebaseService'
 
-import routes from '../shared/routes/routes'
+import routes from 'app/routes/routes'
+import FirebaseService from 'app/api/firebase/models/FirebaseService'
 
 const serverRenderer = () => (req, res) => {
   FirebaseService.store = req.store

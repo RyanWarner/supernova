@@ -1,4 +1,4 @@
-import { EMAIL_REGEX } from 'app/utilities'
+import { regex } from 'app/utilities'
 
 export default {
   email: {
@@ -7,7 +7,7 @@ export default {
     inputType: 'email',
     required: true,
     validate: (value) => {
-      if (!EMAIL_REGEX.test(value)) return 'Invalid email'
+      if (!regex.EMAIL.test(value)) return 'Invalid email'
       return null
     }
   },

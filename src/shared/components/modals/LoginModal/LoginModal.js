@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 
 import * as S from './styles'
 import FIELDS from './fields'
-import withForm from '../../withForm'
-import { Auth } from 'app/firebase-services'
-import { closeAllModals } from '../../../store/app/actions'
+import withForm from 'app/components/withForm'
+import { Auth } from 'app/api/firebase/models'
+import { closeAllModals } from 'app/store/app/actions'
 
 @withForm(FIELDS)
 @connect(null, { closeAllModals })

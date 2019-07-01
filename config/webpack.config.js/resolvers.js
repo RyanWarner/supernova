@@ -4,11 +4,10 @@ module.exports = {
   extensions: ['.js', '.mjs', '.json', '.jsx', '.css'],
   modules: paths.resolveModules,
   alias: {
-    'app/styles': `${paths.srcShared}/styles/index`,
     'app/ui-kit': `${paths.srcShared}/components/AppUIKit`,
+    'app': `${paths.srcShared}`,
     'app/components': `${paths.srcShared}/components`,
-    'app/utilities': `${paths.srcShared}/Utilities`,
-    'app/firebase-services': `${paths.srcShared}/firebase/services`,
+    'app/styles': `${paths.srcShared}/styles/index`,
     'app/store': `${paths.srcShared}/store`
   }
 }

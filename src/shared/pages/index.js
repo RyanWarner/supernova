@@ -1,0 +1,5 @@
+export Home from './Home/Home'
+export Terms from './Terms/Terms'
+export Privacy from './Privacy/Privacy'
+export NotFound from './NotFound/NotFound'
+export Faq from './Faq/Faq'

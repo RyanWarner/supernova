@@ -1,0 +1,9 @@
+import React, { Component } from 'react'
+
+import * as S from './styles'
+
+export default class {{pascalCase pageName}} extends Component {
+  render () {
+    return <S.{{pascalCase pageName}}Page>🚀 {{pageName}}</S.{{pascalCase pageName}}Page>
+  }
+}

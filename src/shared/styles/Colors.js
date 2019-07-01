@@ -1,3 +1,5 @@
+export const brand = '#E5A840'
+
 export const black = '#1F2021'
 export const white = '#FFFFFF'
 export const transparent = 'transparent'
