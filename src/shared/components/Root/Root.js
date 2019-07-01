@@ -3,7 +3,7 @@ import { renderRoutes } from 'react-router-config'
 
 import * as S from './styles'
 import { Global, Fonts, Type } from 'app/styles'
-import { AppHelmet, Nav, Footer } from 'app/components'
+import { AppHelmet } from 'app/components'
 import ModalController from '../modals/ModalController'
 import { Auth } from 'app/api/firebase/models'
 
@@ -19,9 +19,7 @@ export default class Root extends Component {
       <Fonts.GlobalStyle />
       <Type.GlobalStyle />
       <ModalController />
-      <Nav />
       { renderRoutes(route.routes) }
-      <Footer />
     </S.RootComponent>
   }
 }

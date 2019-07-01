@@ -9,6 +9,8 @@ import { renderRoutes } from 'react-router-config'
 import routes from 'app/routes/routes'
 import FirebaseService from 'app/api/firebase/models/FirebaseService'
 
+console.log('routes', routes)
+
 const serverRenderer = () => (req, res) => {
   FirebaseService.store = req.store
 

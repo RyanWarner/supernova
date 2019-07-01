@@ -8,6 +8,7 @@ import merge from 'deepmerge'
 import { configureStore } from 'app/store'
 import createHistory from 'app/store/history'
 import routes from 'app/routes/routes'
+// import { ScrollToTop } from 'app/components'
 import { initializeFirebase } from 'app/api/firebase/initializeFirebase'
 import FirebaseService from 'app/api/firebase/models/FirebaseService'
 import Analytics from 'app/Analytics'
@@ -15,6 +16,8 @@ import { loadState, saveState } from './cookieService'
 
 Analytics.initialize()
 initializeFirebase()
+
+console.log('routes', routes)
 
 const browserHistory = createHistory()
 
@@ -47,7 +50,9 @@ FirebaseService.store = store
 hydrate(
   <Provider store={store}>
     <Router history={browserHistory}>
-      { renderRoutes(routes) }
+      {/* <ScrollToTop> */}
+        { renderRoutes(routes) }
+      {/* </ScrollToTop> */}
     </Router>
   </Provider>,
   document.getElementById('app')

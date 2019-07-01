@@ -6,6 +6,9 @@ import AdminColors from 'app/pages/admin/AdminColors'
 export default [{
   path: '/admin',
   component: AdminRoot,
+  meta: {
+    title: 'Puffin Admin'
+  },
   routes: [{
     path: '/admin',
     exact: true,

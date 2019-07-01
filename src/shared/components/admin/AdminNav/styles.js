@@ -15,7 +15,7 @@ export const AdminNavComponent = styled.div`
 
 export const AdminNavTitle = styled.div`
   font-size: 12px;
-  font-weight: ${Type.fontWeights.demiBold};
+  font-weight: ${Type.fontWeights.bold};
   color: ${Colors.fontLight};
 `
 
@@ -31,7 +31,7 @@ export const Environment = styled.div`
 export const EnvironmentTag = styled.div`
   border-radius: 3px;
   font-size: 12px;
-  font-weight: ${Type.fontWeights.demiBold};
+  font-weight: ${Type.fontWeights.bold};
   padding: 1px 11px;
   background-color: ${Colors.brand};
   color: ${Colors.white};

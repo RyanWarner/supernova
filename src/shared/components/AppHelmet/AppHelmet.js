@@ -12,6 +12,12 @@ export default class AppHelmet extends Component {
   render () {
     const { location, route } = this.props
     const activeRoute = route.routes.find(route => matchPath(location.pathname, route))
+
+    if (!activeRoute) {
+      console.warn('No active route found: ', activeRoute)
+      return null
+    }
+    console.log('activeRoute', activeRoute)
     const basePath = cdn ? cdn.slice(0, -1) : '' // remove trailing slash
     const ogUrl = `${basePath}${location.pathname}`
     const ogImageUrl = `${basePath}/${ogImage}`
