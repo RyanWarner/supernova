@@ -7,10 +7,10 @@ const githubLink = 'https://github.com/yawnch/react-firebase-ssr-starter'
 export default class Nav extends Component {
   render () {
     return <S.NavComponent>
-      <S.LogoLockUp>
+      <S.LogoLink to='/'>
         <S.StyledYawnchLogo />
         <S.LogoText>Yawnch</S.LogoText>
-      </S.LogoLockUp>
+      </S.LogoLink>
       <S.NavItems>
         <S.NavA href={githubLink} target='_blank'>Github</S.NavA>
         <S.NavA href={githubLink} target='_blank'>Discord</S.NavA>
