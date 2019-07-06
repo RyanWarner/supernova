@@ -34,7 +34,7 @@ export default class AppHelmet extends Component {
         { name: 'description', content: activeRoute.meta.description },
         { property: 'og:description', content: activeRoute.meta.description },
         { property: 'og:title', content: activeRoute.meta.title },
-        { property: 'og:image', content: cdn + ogImage },
+        { property: 'og:image', content: ogImageUrl },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
         { property: 'og:image:secure_url', content: ogImageUrl },
