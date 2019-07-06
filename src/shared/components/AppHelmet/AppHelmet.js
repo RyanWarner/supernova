@@ -5,7 +5,7 @@ import { withRouter, matchPath } from 'react-router-dom'
 import { favicon, ogImage } from 'app/assets/images'
 
 const cdn = process.env.CDN || ''
-const twitterUsername = process.env.TWITTER_USERNAME
+const twitterSite = process.env.TWITTER_HANDLE
 
 @withRouter
 export default class AppHelmet extends Component {
@@ -40,7 +40,7 @@ export default class AppHelmet extends Component {
         { property: 'og:image:secure_url', content: ogImageUrl },
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: ogUrl },
-        { name: 'twitter:site', content: twitterUsername },
+        { name: 'twitter:site', content: twitterSite },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:image', content: ogImageUrl }
       ]}
