@@ -25,7 +25,7 @@ export const NavComponent = styled.div`
   }
 `
 
-export const LogoLockUp = styled.div`
+export const LogoLockUp = styled(Link)`
   display: flex;
   align-items: center;
 `
