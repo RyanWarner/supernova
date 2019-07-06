@@ -28,7 +28,7 @@ export const header1 = css`
   font-size: 24px;
   line-height: 152%;
   font-weight: ${fontWeights.bold};
-  margin: 0;
+  margin: 0 0 30px 0;
 
   @media(max-width: ${Breakpoints.main}) {
     font-size: 18px;
