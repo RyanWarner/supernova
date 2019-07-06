@@ -81,7 +81,8 @@ const eslintLoader = {
     { loader: 'babel-loader' },
     { loader: 'eslint-loader',
       options: {
-        emitWarning: true
+        emitWarning: true,
+        formatter: require('eslint/lib/cli-engine/formatters/stylish')
         // fix: true
       }
     }
