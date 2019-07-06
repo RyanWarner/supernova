@@ -1,19 +1,23 @@
 import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom'
 
-import { Colors, Shadows, Breakpoints } from 'app/styles'
+import { Colors, Shadows, Breakpoints, Sizes } from 'app/styles'
 import { YawnchLogo } from 'app/ui-kit/Icons'
 
 export const NavComponent = styled.div`
-  height: 100px;
+  height: ${Sizes.navHeight};
   background-color: ${Colors.black};
   box-shadow: ${Shadows.main};
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 80px;
+  padding: 0 ${Sizes.xAppPadding};
   box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
 
   @media(max-width: ${Breakpoints.main}) {
     padding: 0 20px;
