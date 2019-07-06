@@ -38,13 +38,13 @@ export const header2 = css`
   font-size: 20px;
   line-height: 152%;
   font-weight: ${fontWeights.bold};
-  margin: 0;
+  margin: 0 0 20px 0;
 `
 export const header3 = css`
-  font-size: 18px;
+  font-size: 16px;
   line-height: 152%;
   font-weight: ${fontWeights.bold};
-  margin: 0;
+  margin: 0 0 20px 0;
 `
 
 export const GlobalStyle = createGlobalStyle`
