@@ -9,20 +9,20 @@ export const Button = styled.div`
   align-items: center;
   box-sizing: border-box;
   transition: background 275ms ease;
-  height: 46px;
+  height: 42px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${Colors.black};
-  background: ${Colors.white};
+  color: ${Colors.mediumGray};
+  background: ${Colors.brand};
+  border-radius: 4px;
 
   &:hover {
-    background: ${Colors.black};
-    color: ${Colors.white};
+    background: ${Colors.brandHover};
   }
 
   &:active {
-    color: ${Colors.pink};
+    background: ${Colors.brand};
   }
 
   ${props => props.disabled && css`
