@@ -8,7 +8,7 @@ export default function StoryContainer (storyFn) {
     <Global.GlobalStyle />
     <Fonts.GlobalStyle />
     <Type.GlobalStyle />
-    <Storybook.GlobalStyle />
+    <S.GlobalStyle />
     { storyFn() }
   </S.StoryContainerComponent>
 }
