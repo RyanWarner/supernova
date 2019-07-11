@@ -14,6 +14,7 @@ export default class AppHelmet extends Component {
     if (activeRoute.routes) return this.getActiveRoute({ pathname, route: activeRoute })
     return activeRoute
   }
+
   render () {
     const { location, route } = this.props
     const { pathname } = location
