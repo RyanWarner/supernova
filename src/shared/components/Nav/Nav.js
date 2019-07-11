@@ -13,7 +13,7 @@ export default class Nav extends Component {
       </S.LogoLink>
       <S.NavItems>
         <S.NavA href={githubLink} target='_blank'>Github</S.NavA>
-        <S.NavA href={githubLink} target='_blank'>Discord</S.NavA>
+        <S.NavA href={githubLink} target='_blank'>Slack</S.NavA>
         <S.NavLink to='/admin'>Admin</S.NavLink>
       </S.NavItems>
     </S.NavComponent>

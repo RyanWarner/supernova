@@ -3,15 +3,6 @@ import { createGlobalStyle } from 'styled-components'
 import { Colors, Type, Shadows } from 'app/styles'
 
 export const GlobalStyle = createGlobalStyle`
-  .tippy-tooltip.light-theme {
-    background-color: ${Colors.white};
-    color: ${Colors.black};
-    padding: 0;
-    text-align: left;
-    box-shadow: ${Shadows.main};
-    overflow: hidden;
-  }
-
   html, body {
     min-height: 100vh;
     ${Type.body};
