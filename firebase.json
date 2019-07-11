@@ -17,6 +17,12 @@
         "key": "Access-Control-Allow-Origin",
         "value": "*"
       }]
+    }, {
+      "source": "**",
+      "headers": [{
+        "key": "Cache-Control",
+        "value": "max-age=2592000"
+      }]
     }]
   }
 }
