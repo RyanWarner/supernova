@@ -15,6 +15,7 @@ export default class AdminColors extends Component {
       </S.ColorDetails>
     </S.ColorCard>
   }
+
   render () {
     return <S.AdminColorsPage>
       <S.Title>Colors</S.Title>

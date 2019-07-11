@@ -28,6 +28,7 @@ export default class AdminNav extends Component {
       {item.display}
     </S.AdminNavItem>
   }
+
   render () {
     return <S.AdminNavComponent>
       <S.LogoLink to='/admin'>

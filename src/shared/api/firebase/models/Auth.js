@@ -20,16 +20,13 @@ export default class Auth extends FirebaseService {
   }
 
   static signUp = async ({ email, password, username }) => {
-    try {
-      const data = await firebase.auth().createUserWithEmailAndPassword(email, password)
-      await Users.create({
-        uid: data.user.uid,
-        username
-      })
-    } catch (error) {
-      throw error
-    }
+    const data = await firebase.auth().createUserWithEmailAndPassword(email, password)
+    await Users.create({
+      uid: data.user.uid,
+      username
+    })
   }
+
   static email = () => {
     return firebase.auth().currentUser ? firebase.auth().currentUser.email : null
   }
