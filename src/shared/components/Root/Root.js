@@ -11,6 +11,7 @@ export default class Root extends Component {
   componentDidMount = () => {
     if (process.env.FIREBASE_API_KEY) Auth.registerAuthListener()
   }
+
   render () {
     const { route } = this.props
     return <S.RootComponent>

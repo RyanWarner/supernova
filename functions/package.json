@@ -6,23 +6,23 @@
     "node": "8"
   },
   "dependencies": {
-    "@babel/runtime": "^7.3.1",
+    "@babel/runtime": "7.5.4",
     "@tippy.js/react": "2.2.2",
     "body-parser": "1.19.0",
-    "chalk": "^2.4.1",
+    "chalk": "2.4.1",
     "connected-react-router": "6.3.1",
     "cookie-parser": "1.4.4",
-    "cors": "^2.8.5",
-    "cross-env": "^5.2.0",
+    "cors": "2.8.5",
+    "cross-env": "5.2.0",
     "dotenv": "8.0.0",
     "express": "4.17.1",
     "express-manifest-helpers": "0.6.0",
-    "firebase": "^5.8.0",
+    "firebase": "5.8.0",
     "firebase-admin": "8.2.0",
     "firebase-functions": "3.0.2",
     "history": "4.9.0",
-    "js-cookie": "^2.2.0",
-    "lodash": "^4.17.11",
+    "js-cookie": "2.2.0",
+    "lodash": "4.17.14",
     "prop-types": "15.7.2",
     "react": "16.8.6",
     "react-aria-modal": "4.0.0",
@@ -33,12 +33,12 @@
     "react-router-config": "5.0.1",
     "react-router-dom": "5.0.1  ",
     "react-select": "3.0.4",
-    "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0",
-    "regenerator-runtime": "^0.13.2",
+    "redux": "4.0.4",
+    "redux-thunk": "2.3.0",
+    "regenerator-runtime": "0.13.2",
     "styled-components": "4.3.2"
   },
   "devDependencies": {
-    "firebase-functions-test": "^0.1.6"
+    "firebase-functions-test": "0.1.6"
   }
 }

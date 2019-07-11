@@ -45,9 +45,9 @@ export default class AppHelmet extends Component {
         { name: 'twitter:image', content: ogImageUrl }
       ]}
       link={[
-        { 'rel': 'icon',
-          'type': 'image/png',
-          'href': favicon
+        { rel: 'icon',
+          type: 'image/png',
+          href: favicon
         }
       ]}
     />
