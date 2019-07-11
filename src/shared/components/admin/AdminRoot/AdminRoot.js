@@ -3,10 +3,8 @@ import { renderRoutes } from 'react-router-config'
 import { withRouter, matchPath } from 'react-router-dom'
 
 import * as S from './styles'
-import { Global, Fonts, Type } from 'app/styles'
-import ModalController from '../../modals/ModalController'
 
-import { AppHelmet, AdminNav } from 'app/components'
+import { AdminNav } from 'app/components'
 
 @withRouter
 export default class AdminRoot extends Component {
@@ -25,11 +23,6 @@ export default class AdminRoot extends Component {
     const { location, route } = this.props
 
     return <S.AdminRootComponent>
-      <AppHelmet route={route} />
-      <Global.GlobalStyle />
-      <Type.GlobalStyle />
-      <Fonts.GlobalStyle />
-      <ModalController />
       <S.AdminApp>
         <AdminNav activeRoute={this.getActiveRoute()} />
         {renderRoutes(route.routes, null, { location })}
