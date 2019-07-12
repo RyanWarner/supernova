@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { Sizes } from 'app/styles'
 
-export const RootComponent = styled.div`
+export const AppRootComponent = styled.div`
   min-height: 100%;
   display: flex;
   flex-direction: column;
