@@ -2,12 +2,12 @@ import ReactGA from 'react-ga'
 
 const gaTrackingId = process.env.GOOGLE_ANALYTICS_TRACKING_ID
 
-export default class Analytics {
+export default class GoogleAnalytics {
   static initialize = () => {
     ReactGA.initialize(gaTrackingId, { debug: false })
   }
 
-  static pageview = ({ pathname }) => {
+  static pageView = ({ pathname }) => {
     ReactGA.set({ page: pathname })
     ReactGA.pageview(pathname)
   }

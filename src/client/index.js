@@ -11,7 +11,7 @@ import routes from 'app/routes/routes'
 import { ScrollToTop } from 'app/components'
 import { initializeFirebase } from 'app/api/firebase/initializeFirebase'
 import FirebaseService from 'app/api/firebase/models/FirebaseService'
-import Analytics from 'app/Analytics'
+import Analytics from 'app/analytics'
 import { loadState, saveState } from './cookieService'
 
 Analytics.initialize()
@@ -19,11 +19,11 @@ initializeFirebase()
 
 const browserHistory = createHistory()
 
-Analytics.pageview({ pathname: browserHistory.location.pathname })
+Analytics.pageView({ pathname: browserHistory.location.pathname })
 
 const unlisten = browserHistory.listen((location, action) => { // eslint-disable-line no-unused-vars
   const { pathname } = location
-  Analytics.pageview({ pathname })
+  Analytics.pageView({ pathname })
 })
 
 const persistedState = loadState()
