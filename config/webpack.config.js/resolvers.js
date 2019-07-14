@@ -5,9 +5,6 @@ module.exports = {
   modules: paths.resolveModules,
   alias: {
     'app/ui-kit': `${paths.srcShared}/components/AppUIKit`,
-    'app': `${paths.srcShared}`,
-    'app/components': `${paths.srcShared}/components`,
-    'app/styles': `${paths.srcShared}/styles/index`,
-    'app/store': `${paths.srcShared}/store`
+    'app': `${paths.srcShared}`
   }
 }
