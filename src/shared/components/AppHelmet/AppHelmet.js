@@ -5,7 +5,7 @@ import { withRouter, matchPath } from 'react-router-dom'
 import { favicon, ogImage } from 'app/assets/images'
 
 const cdn = process.env.CDN || ''
-const twitterSite = process.env.TWITTER_HANDLE
+const twitterSite = '@Yawnch'
 
 @withRouter
 export default class AppHelmet extends Component {
