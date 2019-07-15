@@ -1,4 +1,7 @@
 {
+  "database": {
+    "rules": "./src/shared/api/firebase/securityRules/bolt/rules.json"
+  },
   "functions": {
   },
   "hosting": {

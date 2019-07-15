@@ -1,0 +1,21 @@
+isCurrentUser(uid) { auth != null && auth.uid == uid }
+isAdmin() { root['users'][auth.uid]['isAdmin'] != null }
+
+// Users
+path /users {
+  index() { [ 'email' ] }
+}
+
+path /users/{uid} is User {
+  write() { isCurrentUser(uid) }
+  read() { isCurrentUser(uid) }
+}
+
+type User {
+  uid: String,
+  name: String | Null,
+  email: String,
+
+  updatedAt: Number,
+  createdAt: Number
+}
