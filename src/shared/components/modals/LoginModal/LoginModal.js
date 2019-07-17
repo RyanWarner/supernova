@@ -32,7 +32,7 @@ export default class LoginModal extends Component {
 
   render () {
     const { loading } = this.state
-    return <S.Wrap>
+    return <S.LoginModalComponent>
       <S.Title>Login</S.Title>
       <S.TextFields>
         { Object.values(FIELDS).map(field => this.props.renderTextField(field)) }
@@ -40,6 +40,6 @@ export default class LoginModal extends Component {
           Login
         </S.SignUpButton>
       </S.TextFields>
-    </S.Wrap>
+    </S.LoginModalComponent>
   }
 }
