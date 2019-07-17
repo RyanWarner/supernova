@@ -1,12 +1,12 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
-export const Wrap = styled.div``
-export const OverlayWrap = styled.div`
+import { Colors } from 'app/styles'
 
-`
+export const OverlayWrap = styled.div``
+
 export const GlobalModalStyle = createGlobalStyle`
   .Aria-dialog {
-    background-color: #fff;
+    background-color: ${Colors.white};
     border-radius: 4px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.35);
     transition: opacity 300ms ease, transform 300ms ease;
