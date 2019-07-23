@@ -5,8 +5,8 @@ import { closeAllModals } from '../../../store/app/actions'
 import ModalController from './ModalController'
 
 const mapStateToProps = (state) => {
-  const { activeModal, dialogProps } = state.app
-  return { activeModal, dialogProps }
+  const { activeModal, modalProps } = state.app
+  return { activeModal, modalProps }
 }
 const dispatchProps = { closeAllModals }
 

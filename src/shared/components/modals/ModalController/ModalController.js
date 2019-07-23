@@ -33,11 +33,11 @@ export default class ModalController extends Component {
   }
 
   render () {
-    const { activeModal, dialogProps } = this.props
+    const { activeModal, modalProps } = this.props
     const { modalHasEntered } = this.state
     const modalName = getIn(activeModal, ['name'])
 
-    let modalClass = 'Aria-dialog'
+    let modalClass = 'Aria-modal'
     let underlayClass = 'Aria-underlay'
     if (modalHasEntered) {
       modalClass += ' has-entered'
@@ -50,23 +50,23 @@ export default class ModalController extends Component {
       closeTimeoutMS: 250,
       underlayClass,
       titleText: 'my modal',
-      focusDialog: true, // TODO: fix auto focus for create post
+      focusDialog: true, // TODO: fix auto focus
       onEnter: this.onModalEnter
     }
 
     const Modal = Modals[modalName]
     if (activeModal != null && Modal == null) {
-      console.warn('No dialog found for the name', activeModal)
+      console.warn('No modal found for the name: ', activeModal)
       return null
     }
 
     return <S.OverlayWrap>
       <S.GlobalModalStyle />
-      <AriaModal {...modalOptions} {...dialogProps}>
+      <AriaModal {...modalOptions} {...modalProps}>
         { activeModal && <div onClick={this.onModalExit}>X</div> }
         { activeModal &&
           <div className={modalClass}>
-            <Modal closeModal={this.onModalExit} {...dialogProps} setCloseFunc={this.setCloseFunc} />
+            <Modal closeModal={this.onModalExit} {...modalProps} setCloseFunc={this.setCloseFunc} />
           </div>
         }
       </AriaModal>
