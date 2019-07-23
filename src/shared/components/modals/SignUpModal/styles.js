@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Button } from 'app/ui-kit'
 import { Colors, Type } from 'app/styles'
 
-export const Wrap = styled.div`
+export const SignUpModalComponent = styled.div`
   padding: 40px;
   width: 360px;
   box-sizing: border-box;
