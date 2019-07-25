@@ -26,8 +26,13 @@ const unlisten = browserHistory.listen((location, action) => { // eslint-disable
   Analytics.pageView({ pathname })
 })
 
+const defaultMergeOptions = {
+  // Replace arrays instead of concatenating
+	arrayMerge: (destinationArray, sourceArray) => sourceArray
+}
+
 const persistedState = loadState()
-const initialState = merge(window.__PRELOADED_STATE__, persistedState)
+const initialState = merge(window.__PRELOADED_STATE__, persistedState, defaultMergeOptions)
 
 const store = configureStore({
   initialState,
