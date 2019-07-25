@@ -41,12 +41,9 @@ export default class Auth extends FirebaseService {
     return user.updateEmail(email)
   }
 
-  static signOut = () => {
-    firebase.auth().signOut().then(() => {
-      FirebaseService.dispatch({ type: 'LOGOUT' })
-    }, (error) => {
-      console.log('Signout error: ', error)
-    })
+  static signOut = async () => {
+    await firebase.auth().signOut()
+    FirebaseService.dispatch({ type: 'LOGOUT' })
   }
 
   static signIn = ({ email, password }) => {
