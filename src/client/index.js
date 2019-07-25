@@ -28,7 +28,7 @@ const unlisten = browserHistory.listen((location, action) => { // eslint-disable
 
 const defaultMergeOptions = {
   // Replace arrays instead of concatenating
-	arrayMerge: (destinationArray, sourceArray) => sourceArray
+  arrayMerge: (destinationArray, sourceArray) => sourceArray
 }
 
 const persistedState = loadState()
