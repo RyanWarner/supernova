@@ -1,8 +1,13 @@
+import React from 'react'
 import styled, { css } from 'styled-components'
 
 import { Colors } from 'app/styles'
 
-export const Button = styled.div`
+const ButtonCleanProps = ({ loading, ...props }) => (
+  <div {...props} />
+)
+
+export const Button = styled(ButtonCleanProps)`
   cursor: pointer;
   display: flex;
   justify-content: center;
