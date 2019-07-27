@@ -27,7 +27,7 @@ export default class AppHelmet extends Component {
 
     const basePath = cdn ? cdn.slice(0, -1) : '' // remove trailing slash
     const ogUrl = `${basePath}${location.pathname}`
-    const ogImageUrl = `${basePath}/${ogImage}`
+    const ogImageUrl = `${basePath}${ogImage}`
 
     return <Helmet
       title={activeRoute.meta.title}
