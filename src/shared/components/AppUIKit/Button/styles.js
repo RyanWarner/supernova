@@ -1,13 +1,15 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import { Colors } from 'app/styles'
+import { Colors, Type } from 'app/styles'
 
 const ButtonCleanProps = ({ loading, ...props }) => (
-  <div {...props} />
+  <button {...props} />
 )
 
 export const Button = styled(ButtonCleanProps)`
+  font-family: ${Type.fontFamily};
+  font-size: 14px;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -18,17 +20,26 @@ export const Button = styled(ButtonCleanProps)`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${Colors.offWhite};
+  color: ${Colors.white};
   border-radius: 4px;
   background: ${Colors.darkPurple};
+  appearance: none;
+  border: 0;
 
   &:hover {
     background: ${Colors.darkPurpleHover};
   }
 
   &:active {
-    color: ${Colors.offWhite};
+    color: ${Colors.white};
     background: ${Colors.darkPurple};
+  }
+
+  &:focus {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    outline: none;
+    border: 0;
+    background: ${Colors.darkPurpleHover};
   }
 
   ${props => props.disabled && css`

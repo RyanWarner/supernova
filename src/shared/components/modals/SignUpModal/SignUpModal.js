@@ -49,6 +49,17 @@ export default class SignUpModal extends Component {
         <TextField
           field='name'
           validate={validate}
+          label='Email'
+          placeholder='you@gmail.com'
+          error={this.props.formState.errors.name}
+        />
+
+        <TextField
+          field='password'
+          type='password'
+          validate={validate}
+          label='Password'
+          placeholder='At least 8 characters'
           error={this.props.formState.errors.name}
         />
         {/* <ComponentWithFormApi /> */}

@@ -6,6 +6,7 @@ import { Colors, Type, Inputs } from 'app/styles'
 export const InputWrap = styled.div`
   flex-grow: 1;
   height: 100%;
+  width: 100%;
 `
 
 export const TextInput = styled(BasicText)`
