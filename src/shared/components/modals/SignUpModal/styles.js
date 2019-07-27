@@ -1,13 +1,12 @@
 import styled from 'styled-components'
 
 import { Button } from 'app/ui-kit'
-import { Colors, Type } from 'app/styles'
+import { Type } from 'app/styles'
 
 export const SignUpModalComponent = styled.div`
   padding: 40px;
   width: 360px;
   box-sizing: border-box;
-  background-color: ${Colors.darkGray};
   border-radius: 4px;
 `
 export const Title = styled.div`

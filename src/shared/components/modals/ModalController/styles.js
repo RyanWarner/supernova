@@ -6,9 +6,9 @@ export const OverlayWrap = styled.div``
 
 export const GlobalModalStyle = createGlobalStyle`
   .Aria-modal {
-    background-color: ${Colors.white};
+    background-color: ${Colors.black};
     border-radius: 4px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.35), 0px 2px 20px rgba(0, 0, 0, 0.35);
     transition: opacity 300ms ease, transform 300ms ease;
     transform: translate(0, -50px);
     opacity: 0.3;

@@ -45,7 +45,7 @@ export const NavItems = styled.div`
 `
 
 const navItemShared = css`
-  margin-left: 26px;
+  margin-left: 35px;
 `
 
 export const NavA = styled.a`
