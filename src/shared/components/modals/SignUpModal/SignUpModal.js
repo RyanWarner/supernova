@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
 import * as S from './styles'
 import FIELDS from './fields'
 import withForm from '../../withForm'
 import { Auth } from 'app/api/firebase/models'
-import { closeAllModals } from '../../../store/app/actions'
 
 @withForm(FIELDS)
-@connect(null, { closeAllModals })
 export default class SignUpModal extends Component {
   state = { loading: false }
 
@@ -25,7 +22,7 @@ export default class SignUpModal extends Component {
         password: password.value,
         username: username.value
       })
-      this.props.closeAllModals()
+      this.props.closeModal()
     } catch (error) {
       console.log('err', error)
     }

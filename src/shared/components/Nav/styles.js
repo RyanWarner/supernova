@@ -55,3 +55,7 @@ export const NavA = styled.a`
 export const NavLink = styled(Link)`
   ${navItemShared};
 `
+
+export const NavButton = styled.div`
+  ${navItemShared};
+`

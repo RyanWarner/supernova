@@ -55,4 +55,5 @@ export const Label = styled.div`
   position: relative;
   height: 20px;
   color: ${Colors.lightGray};
+  margin-bottom: 6px;
 `

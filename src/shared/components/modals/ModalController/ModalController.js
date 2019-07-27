@@ -3,6 +3,7 @@ import AriaModal from 'react-aria-modal'
 
 import { getIn } from 'app/utilities'
 import * as S from './styles'
+import { X } from 'app/ui-kit/Icons'
 import Modals from './ModalList'
 
 export default class ModalController extends Component {
@@ -63,9 +64,9 @@ export default class ModalController extends Component {
     return <S.OverlayWrap>
       <S.GlobalModalStyle />
       <AriaModal {...modalOptions} {...modalProps}>
-        { activeModal && <div onClick={this.onModalExit}>X</div> }
         { activeModal &&
           <div className={modalClass}>
+            <S.CloseX onClick={this.onModalExit}><X /></S.CloseX>
             <Modal closeModal={this.onModalExit} {...modalProps} setCloseFunc={this.setCloseFunc} />
           </div>
         }

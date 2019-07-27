@@ -7,7 +7,7 @@ export const SignUpModalComponent = styled.div`
   padding: 40px;
   width: 360px;
   box-sizing: border-box;
-  background-color: ${Colors.offWhite};
+  background-color: ${Colors.darkGray};
   border-radius: 4px;
 `
 export const Title = styled.div`

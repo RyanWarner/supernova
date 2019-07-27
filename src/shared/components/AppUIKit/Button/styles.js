@@ -18,8 +18,9 @@ export const Button = styled(ButtonCleanProps)`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${Colors.black};
-  background: ${Colors.white};
+  color: ${Colors.offWhite};
+  border-radius: 4px;
+  background: ${Colors.darkPurple};
 
   &:hover {
     background: ${Colors.black};
