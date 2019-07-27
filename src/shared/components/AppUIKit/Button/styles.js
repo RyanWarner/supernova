@@ -23,12 +23,12 @@ export const Button = styled(ButtonCleanProps)`
   background: ${Colors.darkPurple};
 
   &:hover {
-    background: ${Colors.black};
-    color: ${Colors.white};
+    background: ${Colors.darkPurpleHover};
   }
 
   &:active {
-    color: ${Colors.pink};
+    color: ${Colors.offWhite};
+    background: ${Colors.darkPurple};
   }
 
   ${props => props.disabled && css`
