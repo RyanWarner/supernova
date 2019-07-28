@@ -15,8 +15,8 @@ export const body = css`
 `
 
 export const smallBody = css`
-  font-size: 14px;
-  line-height: 28px;
+  font-size: 12px;
+  line-height: 150%;
 `
 
 export const largeInput = css`

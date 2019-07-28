@@ -1,3 +1,16 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const Wrap = styled.div``
+export const LoadingComponent = styled.div`
+  height: 28px;
+  width: 0;
+  transition: all 250ms ease;
+  opacity: 0;
+  margin-right: 0;
+  margin-top: -1px;
+
+  ${props => props.visible && css`
+    opacity: 1;
+    width: 28px;
+    margin-right: 8px;
+  `}
+`

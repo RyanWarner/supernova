@@ -1,13 +1,15 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import { Colors } from 'app/styles'
+import { Colors, Type } from 'app/styles'
 
-const ButtonCleanProps = ({ loading, ...props }) => (
-  <div {...props} />
+const ButtonCleanProps = ({ loading, disabled, ...props }) => (
+  <button {...props} />
 )
 
 export const Button = styled(ButtonCleanProps)`
+  font-family: ${Type.fontFamily};
+  font-size: 14px;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -18,22 +20,37 @@ export const Button = styled(ButtonCleanProps)`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${Colors.offWhite};
+  color: ${Colors.white};
   border-radius: 4px;
   background: ${Colors.darkPurple};
+  appearance: none;
+  border: 0;
 
   &:hover {
-    background: ${Colors.black};
-    color: ${Colors.white};
+    background: ${Colors.darkPurpleHover};
   }
 
   &:active {
-    color: ${Colors.pink};
+    color: ${Colors.white};
+    background: ${Colors.darkPurple};
   }
 
-  ${props => props.disabled && css`
-    opacity: .1;
+  &:focus {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    outline: none;
+    border: 0;
+    background: ${Colors.darkPurpleHover};
+  }
+
+  ${props => (props.disabled || props.loading) && css`
+    background: ${Colors.disabled};
     pointer-events: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: ${Colors.disabled};
+    }
   `}
 `
 

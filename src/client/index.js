@@ -10,7 +10,7 @@ import createHistory from 'app/store/history'
 import routes from 'app/routes/routes'
 import { ScrollToTop } from 'app/components'
 import { initializeFirebase } from 'app/api/firebase/initializeFirebase'
-import FirebaseService from 'app/api/firebase/models/FirebaseService'
+import Redux from 'app/api/redux'
 import Analytics from 'app/analytics'
 import { loadState, saveState } from './cookieService'
 
@@ -48,7 +48,7 @@ store.subscribe(() => {
   saveState(state)
 })
 
-FirebaseService.store = store
+Redux.store = store
 
 hydrate(
   <Provider store={store}>

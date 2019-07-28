@@ -7,7 +7,7 @@ import withForm from 'app/components/withForm'
 import { Auth } from 'app/api/firebase/models'
 import { closeAllModals } from 'app/store/app/actions'
 
-@withForm(FIELDS)
+@withForm
 @connect(null, { closeAllModals })
 export default class LoginModal extends Component {
   state = { loading: false }

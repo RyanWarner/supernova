@@ -1,59 +1,31 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
+import { BasicText } from 'informed'
 
-import { Colors, Type, Shadows } from 'app/styles'
+import { Colors, Type, Inputs } from 'app/styles'
 
 export const InputWrap = styled.div`
   flex-grow: 1;
   height: 100%;
-`
-
-const sharedInputStyles = css`
-  padding: 0 12px;
-  border-radius: 4px;
-  border: none;
-  box-sizing: border-box;
   width: 100%;
-  font-family: ${Type.fontFace};
-  height: 40px;
-
-  &:focus {
-    outline: none;
-    border: 1px solid ${Colors.pink};
-  }
-
-  ::placeholder {
-    color: ${Colors.lightGray};
-  }
+  margin-bottom: 20px;
 `
 
-export const TextInput = styled.input`
-  ${Type.body};
-  ${sharedInputStyles};
-  box-shadow: ${Shadows.main};
-  -webkit-appearance: none;
-
-  ${props => props.error && css`
-    border: 1px solid ${Colors.red};
-
-    &:focus {
-      border: 1px solid ${Colors.red};
-    }
-  `}
+export const TextInput = styled(BasicText)`
+  ${Inputs.text};
 `
 
 export const Error = styled.div`
   ${Type.smallBody}
-  color: ${Colors.red};
+  color: ${Colors.errorRed};
   position: relative;
   height: 20px;
-  margin: 4px 0 0 4px;
+  margin: 3px 0 0 2px;
 `
 
 export const Label = styled.div`
-  ${Type.smallBody}
-  left: 2px;
+  ${Type.body}
   position: relative;
   height: 20px;
   color: ${Colors.lightGray};
-  margin-bottom: 6px;
+  margin: 0 0 6px 2px;
 `
