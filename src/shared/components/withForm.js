@@ -7,7 +7,6 @@ export default function withForm (WrappedComponent) {
     state = {}
 
     setOnSubmit = (onSubmit) => {
-      console.log('setOnSubmit', onSubmit)
       this.setState({ onSubmit })
     }
 

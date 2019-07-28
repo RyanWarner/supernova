@@ -7,7 +7,7 @@ import { ServerStyleSheet } from 'styled-components'
 import { renderRoutes } from 'react-router-config'
 
 import routes from 'app/routes/routes'
-import FirebaseService from 'app/api/firebase/models/FirebaseService'
+import Redux from 'app/api/redux'
 
 const getActiveRoute = ({ pathname, route }) => {
   const activeRoute = route.routes.find(route => matchPath(pathname, route))
@@ -16,7 +16,7 @@ const getActiveRoute = ({ pathname, route }) => {
 }
 
 const serverRenderer = () => (req, res) => {
-  FirebaseService.store = req.store
+  Redux.store = req.store
 
   const activeRoute = getActiveRoute({ pathname: req.url, route: routes[0] })
   if (!activeRoute) console.warn('No active aroute found: ', activeRoute)
