@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import { withFormState } from 'informed'
 
 import * as S from './styles'
@@ -9,6 +10,7 @@ import { Auth } from 'app/api/firebase/models'
 
 @withForm
 @withFormState
+@withRouter
 export default class SignUpModal extends Component {
   state = { loading: false }
 
@@ -26,6 +28,7 @@ export default class SignUpModal extends Component {
 
     try {
       await Auth.signUp({ email, password })
+      this.props.history.push('/dashboard')
       closeModal()
     } catch (error) {
       console.log('err', error)

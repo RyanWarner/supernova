@@ -1,4 +1,4 @@
-export const brand = '#4D8CA3'
+export const brand = '#E4C6C6'
 
 export const black = '#18171C'
 export const lightBackground = '#2E2C36'
