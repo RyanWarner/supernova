@@ -18,7 +18,7 @@ export default class SignUpModal extends Component {
   }
 
   submitSignUp = async (event) => {
-    const { formState } = this.props
+    const { formState, closeModal } = this.props
     const { loading } = this.state
 
     if (loading) return
@@ -27,7 +27,8 @@ export default class SignUpModal extends Component {
 
     try {
       await Auth.signUp({ email, password })
-      this.props.closeModal()
+      // await Auth.registerAuthListener()
+      closeModal()
     } catch (error) {
       console.log('err', error)
     }

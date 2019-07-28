@@ -5,7 +5,7 @@ export const lightBackground = '#2E2C36'
 export const lightBackgroundActive = '#43404F'
 export const white = '#F8F8F8'
 export const transparent = 'transparent'
-export const darkPurple = 'rgb(67, 50, 72)'
+export const darkPurple = '#654B6C'
 export const darkPurpleHover = '#62416C'
 
 export const black012 = 'rgba(0, 0, 0, 0.12)'

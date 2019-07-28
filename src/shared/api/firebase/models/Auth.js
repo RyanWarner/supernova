@@ -7,9 +7,18 @@ import FirebaseService from './FirebaseService'
 initializeFirebase()
 
 export default class Auth extends FirebaseService {
+  static set unsubscribe (unsubscribe) {
+    this.unsubscribe = unsubscribe
+  }
+
+  static get unsubscribe () {
+    return this.unsubscribe
+  }
+
   static registerAuthListener = () => {
-    firebase.auth().onAuthStateChanged(firebaseUser => {
+    Auth.unsubscribe = firebase.auth().onAuthStateChanged(firebaseUser => {
       if (firebaseUser) {
+        console.log('fb user ', firebaseUser.uid)
         Users.bindCurrentUser()
       // Analytics.setUserId({ userId: firebaseUser.uid })
       } else {
@@ -19,12 +28,15 @@ export default class Auth extends FirebaseService {
     })
   }
 
-  static signUp = async ({ email, password, username }) => {
+  static signUp = async ({ email, password }) => {
+    console.log('this.unsubscribe()', this.unsubscribe())
+    await Auth.unsubscribe()
     const data = await firebase.auth().createUserWithEmailAndPassword(email, password)
     await Users.create({
       uid: data.user.uid,
       email
     })
+    Auth.registerAuthListener()
   }
 
   static email = () => {

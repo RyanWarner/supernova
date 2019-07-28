@@ -2,7 +2,8 @@
   "database": {
     "rules": "./src/shared/api/firebase/securityRules/bolt/rules.json"
   },
-  "functions": {
+  "firestore": {
+    "rules": "./src/shared/api/firebase/securityRules/firestore.rules"
   },
   "hosting": {
     "public": "public",

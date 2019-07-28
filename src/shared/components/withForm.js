@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import { Form } from 'informed'
-import { TextField } from 'app/ui-kit'
 
 export default function withForm (WrappedComponent) {
   return class HOC extends Component {
@@ -14,7 +13,7 @@ export default function withForm (WrappedComponent) {
 
     render () {
       return <Form onSubmit={this.state.onSubmit}>
-        <WrappedComponent setOnSubmit={this.setOnSubmit} />
+        <WrappedComponent setOnSubmit={this.setOnSubmit} {...this.props} />
       </Form>
     }
   }
