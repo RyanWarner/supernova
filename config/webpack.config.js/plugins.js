@@ -10,13 +10,6 @@ const shared = []
 
 const client = [
   new CaseSensitivePathsPlugin(),
-  new webpack.EnvironmentPlugin([
-    'NODE_ENV',
-    'FIREBASE_API_KEY',
-    'FIREBASE_AUTH_DOMAIN',
-    'FIREBASE_DATABASE_URL',
-    'FIREBASE_PROJECT_ID'
-  ]),
   new Dotenv({
     path: `${paths.dotenv}.${deployEnv}`
   }),

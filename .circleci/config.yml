@@ -24,13 +24,13 @@ jobs:
           name: Build
           command: |
               if [ $CIRCLE_BRANCH = 'master' ]; then
-                npm run build:production
+                printenv >> ~/repo/config/.env.production && npm run build:production
               fi
               if [ $CIRCLE_BRANCH = 'staging' ]; then
-                npm run build:staging
+                printenv >> ~/repo/config/.env.staging && npm run build:staging
               fi
               if [ $CIRCLE_BRANCH = 'develop' ]; then
-                npm run build:development
+                printenv >> ~/repo/config/.env.development && npm run build:development
               fi
 
       - save_cache:
