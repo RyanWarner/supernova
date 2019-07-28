@@ -15,3 +15,4 @@ export const adminNavBorder = 'rgba(255, 255, 255, 0.18)'
 
 // Contextual colors
 export const errorRed = '#BE4949'
+export const disabled = '#524D54'

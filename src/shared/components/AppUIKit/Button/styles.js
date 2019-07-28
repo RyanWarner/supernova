@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 
 import { Colors, Type } from 'app/styles'
 
-const ButtonCleanProps = ({ loading, ...props }) => (
+const ButtonCleanProps = ({ loading, disabled, ...props }) => (
   <button {...props} />
 )
 
@@ -42,9 +42,15 @@ export const Button = styled(ButtonCleanProps)`
     background: ${Colors.darkPurpleHover};
   }
 
-  ${props => props.disabled && css`
-    opacity: .1;
+  ${props => (props.disabled || props.loading) && css`
+    background: ${Colors.disabled};
     pointer-events: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: ${Colors.disabled};
+    }
   `}
 `
 
