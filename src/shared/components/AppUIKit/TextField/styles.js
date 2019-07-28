@@ -7,18 +7,11 @@ export const InputWrap = styled.div`
   flex-grow: 1;
   height: 100%;
   width: 100%;
+  margin-bottom: 20px;
 `
 
 export const TextInput = styled(BasicText)`
   ${Inputs.text};
-
-  ${props => props.error && css`
-    border: 1px solid ${Colors.errorRed};
-
-    &:focus {
-      border: 1px solid ${Colors.errorRed};
-    }
-  `}
 `
 
 export const Error = styled.div`
@@ -26,14 +19,13 @@ export const Error = styled.div`
   color: ${Colors.errorRed};
   position: relative;
   height: 20px;
-  margin: 4px 0 0 4px;
+  margin: 3px 0 0 2px;
 `
 
 export const Label = styled.div`
-  ${Type.smallBody}
-  left: 2px;
+  ${Type.body}
   position: relative;
   height: 20px;
   color: ${Colors.lightGray};
-  margin-bottom: 6px;
+  margin: 0 0 6px 2px;
 `

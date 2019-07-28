@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
+import { withFormState } from 'informed'
 
 import * as S from './styles'
+import { TextField } from 'app/ui-kit'
 import { formFields } from 'app/data'
 import withForm from '../../withForm'
 import { Auth } from 'app/api/firebase/models'
-import { withFormApi, withFormState } from 'informed'
-import { TextField } from 'app/ui-kit'
 
 @withForm
-@withFormApi
 @withFormState
 export default class SignUpModal extends Component {
   state = { loading: false }
@@ -27,7 +26,6 @@ export default class SignUpModal extends Component {
 
     try {
       await Auth.signUp({ email, password })
-      // await Auth.registerAuthListener()
       closeModal()
     } catch (error) {
       console.log('err', error)

@@ -8,7 +8,6 @@ export const text = css`
   background-color: ${Colors.lightBackground};
   padding: 0 12px;
   border-radius: 4px;
-  border: none;
   box-sizing: border-box;
   width: 100%;
   font-family: ${Type.fontFace};
@@ -26,4 +25,12 @@ export const text = css`
   ::placeholder {
     color: ${Colors.lightGray};
   }
+
+  ${props => props.fieldState.error && css`
+    border: 1px solid ${Colors.errorRed};
+
+    &:focus {
+      border: 1px solid ${Colors.errorRed};
+    }
+  `}
 `
