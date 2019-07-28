@@ -23,7 +23,7 @@ export default class Auth extends FirebaseService {
     const data = await firebase.auth().createUserWithEmailAndPassword(email, password)
     await Users.create({
       uid: data.user.uid,
-      username
+      email
     })
   }
 

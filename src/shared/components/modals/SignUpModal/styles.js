@@ -15,7 +15,7 @@ export const Title = styled.div`
   margin-bottom: 30px;
   line-height: 30px;
 `
-export const TextFields = styled.div`
+export const FormElements = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

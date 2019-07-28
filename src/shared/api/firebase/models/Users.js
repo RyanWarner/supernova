@@ -11,8 +11,8 @@ const DB = firebase.firestore()
 const REF = DB.collection(path)
 
 export default class Users extends FirebaseService {
-  static create = async ({ uid, username }) => {
-    await REF.doc(uid).set({ uid, username })
+  static create = async ({ uid }) => {
+    await REF.doc(uid).set({ uid })
   }
 
   static bindCurrentUser = () => {
