@@ -6,9 +6,8 @@
     "node": ">=8.9.0"
   },
   "scripts": {
-    "analyze": "npm run build:with-stats && npm run start:analyzer",
-    "deploy:production": "npm run build:production && firebase use production && firebase deploy --only hosting,functions",
-    "deploy:staging": "npm run build:staging && firebase use staging && firebase deploy --only hosting,functions",
+    "deploy:production": "npm run build:production && cross-env node scripts/deploy.js production",
+    "deploy:staging": "npm run build:staging cross-env node scripts/deploy.js staging",
     "build:production": "cross-env NODE_ENV=production DEPLOY_ENV=production node scripts/build.js",
     "build:staging": "cross-env NODE_ENV=production DEPLOY_ENV=staging node scripts/build.js",
     "bolt": "firebase-bolt src/shared/api/firebase/securityRules/bolt/rules.bolt",

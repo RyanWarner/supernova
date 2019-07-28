@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { BasicText } from 'informed'
 
 import { Colors, Type, Inputs } from 'app/styles'
