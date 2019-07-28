@@ -27,6 +27,11 @@ jobs:
                 printenv >> ~/repo/config/.env.production && npm run build:production
               fi
               if [ $CIRCLE_BRANCH = 'staging' ]; then
+                export FIREBASE_API_KEY=$FIREBASE_API_KEY_STAGING
+                export FIREBASE_AUTH_DOMAIN=$FIREBASE_AUTH_DOMAIN_STAGING
+                export FIREBASE_DATABASE_URL=$FIREBASE_DATABASE_URL_STAGING
+                export FIREBASE_PROJECT_ID=$FIREBASE_PROJECT_ID_STAGING
+                export DEPLOY_ENV=staging
                 printenv >> ~/repo/config/.env.staging && npm run build:staging
               fi
               if [ $CIRCLE_BRANCH = 'develop' ]; then
