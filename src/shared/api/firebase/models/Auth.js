@@ -29,8 +29,8 @@ export default class Auth {
 
   static signUp = async ({ email, password }) => {
     // Unsubscribe from auth listener while we create a new user.
-    Auth.unsubscribe()
-    Users.unsubscribe()
+    this._unsubscribe()
+    if (typeof Users.unsubscribe === 'function') Users.unsubscribe()
 
     // Create a new Firebase auth record, and create a new user in the database.
     const data = await firebase.auth().createUserWithEmailAndPassword(email, password)
