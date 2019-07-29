@@ -7,7 +7,7 @@
   },
   "scripts": {
     "deploy:production": "npm run build:production && cross-env node scripts/deploy.js production",
-    "deploy:staging": "npm run build:staging cross-env node scripts/deploy.js staging",
+    "deploy:staging": "npm run build:staging && cross-env node scripts/deploy.js staging",
     "build:production": "cross-env NODE_ENV=production DEPLOY_ENV=production node scripts/build.js",
     "build:staging": "cross-env NODE_ENV=production DEPLOY_ENV=staging node scripts/build.js",
     "bolt": "firebase-bolt src/shared/api/firebase/securityRules/bolt/rules.bolt",
