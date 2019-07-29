@@ -1,8 +1,9 @@
 import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom'
 
-import { Colors, Shadows, Breakpoints, Sizes } from 'app/styles'
+import { Colors, Shadows, Breakpoints, Sizes, Type } from 'app/styles'
 import { YawnchLogo } from 'app/ui-kit/Icons'
+import { Button } from 'app/ui-kit'
 
 export const NavComponent = styled.div`
   height: ${Sizes.navHeight};
@@ -42,10 +43,12 @@ export const StyledYawnchLogo = styled(YawnchLogo)`
 
 export const NavItems = styled.div`
   display: flex;
+  align-items: center;
 `
 
 const navItemShared = css`
   margin-left: 35px;
+  font-weight: ${Type.fontWeights.medium};
 `
 
 export const NavA = styled.a`
@@ -56,6 +59,6 @@ export const NavLink = styled(Link)`
   ${navItemShared};
 `
 
-export const NavButton = styled.div`
+export const NavButton = styled(Button)`
   ${navItemShared};
 `

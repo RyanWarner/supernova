@@ -65,7 +65,7 @@ const start = async () => {
 
   app.use(webpackHotMiddleware(clientCompiler))
 
-  app.use('/static', express.static(paths.clientBuild))
+  app.use('/static', express.static(paths.clientBuild, { maxage: '356d' }))
 
   app.listen(WEBPACK_PORT)
 
