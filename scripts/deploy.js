@@ -1,12 +1,10 @@
 const paths = require('../config/paths')
-const DEPLOY_ENV = process.argv[2]
-console.log('process.argv', process.argv)
+const DEPLOY_ENV = process.argv[2] || process.env.DEPLOY_ENV
 require('dotenv').config({ path: `${paths.dotenv}.${DEPLOY_ENV}` })
 const util = require('util')
 const exec = util.promisify(require('child_process').exec)
 const chalk = require('chalk')
 
-// const DEPLOY_ENV = process.env.DEPLOY_ENV
 const chalkColor = '#3D87C9'
 
 const firebaseUse = async () => {
