@@ -3,7 +3,7 @@ const { client: clientLoaders } = require('./loaders')
 const resolvers = require('./resolvers')
 const plugins = require('./plugins')
 
-const publicPath = process.env.NODE_ENV === 'production' ? `${paths.cdn}build/` : paths.publicPath
+const publicPath = process.env.NODE_ENV === 'production' ? `${paths.cdn}/build/` : paths.publicPath
 
 module.exports = {
   name: 'client',
