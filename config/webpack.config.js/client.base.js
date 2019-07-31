@@ -1,4 +1,3 @@
-const path = require('path')
 const paths = require('../paths')
 const { client: clientLoaders } = require('./loaders')
 const resolvers = require('./resolvers')

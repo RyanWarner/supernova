@@ -42,12 +42,12 @@ const urlLoaderServer = {
 }
 
 const cssLoaderClient = {
-    test: /\.css$/,
-    use: ['style-loader', 'css-loader']
+  test: /\.css$/,
+  use: ['style-loader', 'css-loader']
 }
 const cssLoaderServer = {
   test: /\.css$/,
-    use: ['css-loader']
+  use: ['css-loader']
 }
 
 const fileLoaderClient = {
