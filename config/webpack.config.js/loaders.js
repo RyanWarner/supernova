@@ -7,6 +7,7 @@ const babelLoader = {
 }
 
 const ASSET_PATH = process.env.NODE_ENV === 'production' ? `${paths.cdn}/build` : paths.publicPath
+console.log('ASSET_PATH', ASSET_PATH)
 
 const urlLoaderFileTypes = /\.(png|jpe?g|gif|svg|ttf|otf|eot|woff|woff2)$/
 
