@@ -50,7 +50,7 @@ jobs:
           paths:
             - .
 
-  deploy-dev:
+  deploy:
     <<: *defaults
     steps:
       - attach_workspace:
