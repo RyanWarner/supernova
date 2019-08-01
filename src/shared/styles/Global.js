@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background: ${Colors.pink};
+    background: ${Colors.brand};
   }
 
   #app {

@@ -2,13 +2,15 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
+defaults: &defaults
+  docker:
+    - image: circleci/node:8.14.1
+  working_directory: ~/repo
+
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/node:8.14.1
-
-    working_directory: ~/repo
+    <<: *defaults
 
     steps:
       - checkout
@@ -49,46 +51,13 @@ jobs:
             - .
 
   deploy-dev:
-    docker:
-      - image: circleci/node:8.14.1
-    working_directory: ~/repo
+    <<: *defaults
     steps:
       - attach_workspace:
           at: ~/repo
       - run:
-          name: Firebase use
-          command: ./node_modules/.bin/firebase use develop --token=$FIREBASE_DEPLOY_TOKEN
-      - run:
           name: Firebase deploy
-          command: ./node_modules/.bin/firebase deploy --only hosting,functions --token=$FIREBASE_DEPLOY_TOKEN
-
-  deploy-staging:
-    docker:
-      - image: circleci/node:8.14.1
-    working_directory: ~/repo
-    steps:
-      - attach_workspace:
-          at: ~/repo
-      - run:
-          name: Firebase use
-          command: ./node_modules/.bin/firebase use staging --token=$FIREBASE_DEPLOY_TOKEN
-      - run:
-          name: Firebase deploy
-          command: ./node_modules/.bin/firebase deploy --only hosting,functions --token=$FIREBASE_DEPLOY_TOKEN
-
-  deploy-production:
-    docker:
-      - image: circleci/node:8.14.1
-    working_directory: ~/repo
-    steps:
-      - attach_workspace:
-          at: ~/repo
-      - run:
-          name: Firebase use
-          command: ./node_modules/.bin/firebase use production --token=$FIREBASE_DEPLOY_TOKEN
-      - run:
-          name: Firebase deploy
-          command: ./node_modules/.bin/firebase deploy --only hosting,functions --token=$FIREBASE_DEPLOY_TOKEN
+          command: node scripts/deploy.js --branch $CIRCLE_BRANCH
 
 workflows:
   version: 2
@@ -102,21 +71,12 @@ workflows:
                 - staging
                 - master
 
-      - deploy-dev:
+      - deploy:
           requires:
             - build
           filters:
             branches:
-              only: develop
-      - deploy-staging:
-          requires:
-            - build
-          filters:
-            branches:
-              only: staging
-      - deploy-production:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
+              only:
+                - develop
+                - staging
+                - master

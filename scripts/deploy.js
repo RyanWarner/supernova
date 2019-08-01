@@ -1,11 +1,21 @@
 const paths = require('../config/paths')
-const DEPLOY_ENV = process.argv[2] || process.env.DEPLOY_ENV
-require('dotenv').config({ path: `${paths.dotenv}.${DEPLOY_ENV}` })
+const argv = require('yargs').argv
+
 const util = require('util')
 const exec = util.promisify(require('child_process').exec)
 const chalk = require('chalk')
-
 const chalkColor = '#3D87C9'
+
+const gitBranchToFirebaseMap = {
+  master: 'production',
+  staging: 'staging',
+  develop: 'develop'
+}
+
+const firebaseProject = gitBranchToFirebaseMap[argv.branch]
+
+const DEPLOY_ENV = firebaseProject || process.argv[2] || process.env.DEPLOY_ENV
+require('dotenv').config({ path: `${paths.dotenv}.${DEPLOY_ENV}` })
 
 const firebaseUse = async () => {
   const message = `Using Firebase project: ${DEPLOY_ENV}`
