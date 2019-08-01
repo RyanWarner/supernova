@@ -1,3 +1,12 @@
+/*
+  This script deploys the project to Firebase.
+  The Firebase project is chosen based on one
+  of two possible arguments, --branch or --env.
+
+  When executing from CI, there must be an
+  env var FIREBASE_DEPLOY_TOKEN
+*/
+
 const paths = require('../config/paths')
 const argv = require('yargs').argv
 
@@ -14,6 +23,8 @@ const gitBranchToFirebaseMap = {
 
 const firebaseProject = gitBranchToFirebaseMap[argv.branch]
 
+const { FIREBASE_DEPLOY_TOKEN } = process.env
+
 const DEPLOY_ENV = firebaseProject || process.argv[2] || process.env.DEPLOY_ENV
 require('dotenv').config({ path: `${paths.dotenv}.${DEPLOY_ENV}` })
 
@@ -21,7 +32,10 @@ const firebaseUse = async () => {
   const message = `Using Firebase project: ${DEPLOY_ENV}`
   console.log(chalk.hex(chalkColor).bold(message))
 
-  const { stdout, stderr } = await exec(`./node_modules/.bin/firebase use ${DEPLOY_ENV}`)
+  let command = `./node_modules/.bin/firebase use ${DEPLOY_ENV}`
+  if (FIREBASE_DEPLOY_TOKEN) command = `${command} --token ${FIREBASE_DEPLOY_TOKEN}`
+
+  const { stdout, stderr } = await exec(command)
   if (stdout) console.log('stdout', stdout)
   if (stderr) console.log('stderr', stderr)
 }
@@ -30,7 +44,13 @@ const firebaseDeploy = async () => {
   const message = `Deploying to Firebase`
   console.log(chalk.hex(chalkColor).bold(message))
 
-  const { stdout, stderr } = await exec(`./node_modules/.bin/firebase deploy --only hosting,functions`)
+  let command = `
+    ./node_modules/.bin/firebase deploy \
+    --only hosting,functions
+  `
+  if (FIREBASE_DEPLOY_TOKEN) command = `${command} --token ${FIREBASE_DEPLOY_TOKEN}`
+
+  const { stdout, stderr } = await exec(command)
   if (stdout) console.log('stdout', stdout)
   if (stderr) console.log('stderr', stderr)
 }
