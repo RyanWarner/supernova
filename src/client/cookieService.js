@@ -16,3 +16,11 @@ export const saveState = (state) => {
     console.log(error)
   }
 }
+
+export const deleteCookie = () => {
+  try {
+    Cookies.remove('__session')
+  } catch (error) {
+    console.log(error)
+  }
+}
