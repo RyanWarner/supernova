@@ -15,7 +15,7 @@ const getActiveRoute = ({ pathname, route }) => {
   return activeRoute
 }
 
-const serverRenderer = () => (req, res) => {
+const serverRenderer = () => async (req, res) => {
   Redux.store = req.store
 
   const activeRoute = getActiveRoute({ pathname: req.url, route: routes[0] })
@@ -25,9 +25,10 @@ const serverRenderer = () => (req, res) => {
     ? activeRoute.component.serverFetch()
     : Promise.resolve()
 
-  dataRequirements.then(() => {
-    const sheet = new ServerStyleSheet()
+  await dataRequirements
 
+  const sheet = new ServerStyleSheet()
+  try {
     const content = renderToString(
       sheet.collectStyles(
         <Provider store={req.store}>
@@ -53,7 +54,11 @@ const serverRenderer = () => (req, res) => {
       `<!doctype html>
       ${renderToString(HtmlComponent)}`
     )
-  })
+  } catch (error) {
+    console.error('Error preparing stylesheet:', error)
+  } finally {
+    sheet.seal()
+  }
 }
 
 export default serverRenderer
