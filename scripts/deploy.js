@@ -32,10 +32,7 @@ const firebaseUse = async () => {
   const message = `Using Firebase project: ${DEPLOY_ENV}`
   console.log(chalk.hex(chalkColor).bold(message))
 
-  let command = `./node_modules/.bin/firebase use ${DEPLOY_ENV}`
-  if (FIREBASE_DEPLOY_TOKEN) command = `${command} --token ${FIREBASE_DEPLOY_TOKEN}`
-
-  const { stdout, stderr } = await exec(command)
+  const { stdout, stderr } = await exec(`./node_modules/.bin/firebase use ${DEPLOY_ENV} --token ${FIREBASE_DEPLOY_TOKEN}`)
   if (stdout) console.log('stdout', stdout)
   if (stderr) console.log('stderr', stderr)
 }
@@ -44,13 +41,7 @@ const firebaseDeploy = async () => {
   const message = `Deploying to Firebase`
   console.log(chalk.hex(chalkColor).bold(message))
 
-  let command = `
-    ./node_modules/.bin/firebase deploy \
-    --only hosting,functions
-  `
-  if (FIREBASE_DEPLOY_TOKEN) command = `${command} --token ${FIREBASE_DEPLOY_TOKEN}`
-
-  const { stdout, stderr } = await exec(command)
+  const { stdout, stderr } = await exec(`./node_modules/.bin/firebase deploy --only hosting,functions --token ${FIREBASE_DEPLOY_TOKEN}`)
   if (stdout) console.log('stdout', stdout)
   if (stderr) console.log('stderr', stderr)
 }
