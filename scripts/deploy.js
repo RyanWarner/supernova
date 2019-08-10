@@ -41,17 +41,26 @@ const firebaseDeploy = async () => {
   const message = `Deploying to Firebase`
   console.log(chalk.hex(chalkColor).bold(message))
 
-  const { stdout, stderr } = await exec(`./node_modules/.bin/firebase deploy --only hosting,functions --token ${FIREBASE_DEPLOY_TOKEN}`)
-  if (stdout) console.log('stdout', stdout)
-  if (stderr) console.log('stderr', stderr)
+  try {
+    const { stdout, stderr } = await exec(`./node_modules/.bin/firebase deploy --only hosting,functions --token ${FIREBASE_DEPLOY_TOKEN}`)
+    if (stdout) console.log('stdout', stdout)
+    if (stderr) console.log('stderr', stderr)
+  } catch (error) {
+    throw new Error('Error deploying Firebase: ', error)
+  }
 }
 
 const deploy = async () => {
   const message = `Deploying to: ${DEPLOY_ENV}`
   console.log(chalk.hex(chalkColor).bold(message))
 
-  await firebaseUse()
-  await firebaseDeploy()
+  try {
+    await firebaseUse()
+    await firebaseDeploy()
+  } catch (error) {
+    console.log(error)
+    process.exit(1)
+  }
 }
 
 deploy()
