@@ -46,6 +46,8 @@ const firebaseDeploy = async () => {
     if (stdout) console.log('stdout', stdout)
     if (stderr) console.log('stderr', stderr)
   } catch (error) {
+    console.log(error.stdout)
+    console.log(error.stderr)
     throw new Error('Error deploying Firebase: ', error)
   }
 }
