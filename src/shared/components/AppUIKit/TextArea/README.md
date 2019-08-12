@@ -6,6 +6,8 @@ Yanwch uses [informed](https://github.com/joepuzzo/informed) to handle forms. `T
 
 <!-- STORY -->
 
+## Usage example
+
 ```js
 import { withInformed } from 'app/components'
 import { TextArea } from 'app/ui-kit'
