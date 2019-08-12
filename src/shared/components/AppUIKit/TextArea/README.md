@@ -1,6 +1,8 @@
 # Text Area
 
-Text area docs
+Yanwch uses [informed](https://github.com/joepuzzo/informed) to handle forms. `TextArea` is a custom `informed` element, using the `asField` decorator. [Read the Custom Input docs](https://joepuzzo.github.io/informed/?path=/story/custominputs--creating-custom-inputs).
+
+`TextArea` must be a child of `informed.Form`. Use the `withInformed` HOC to wrap your component in a `Form`.
 
 <!-- STORY -->
 
