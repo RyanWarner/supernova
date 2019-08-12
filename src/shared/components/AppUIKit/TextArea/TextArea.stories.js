@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import TextArea from './TextArea'
 import withForm from 'app/components/withForm'
-import Readme from './readme.md'
+import Readme from './README.md'
 import { withDocs } from 'storybook-readme'
 
 const fieldConfig = {
