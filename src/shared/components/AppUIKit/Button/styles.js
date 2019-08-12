@@ -16,7 +16,7 @@ export const Button = styled(ButtonCleanProps)`
   align-items: center;
   box-sizing: border-box;
   transition: background 275ms ease;
-  height: 46px;
+  height: 42px;
   display: flex;
   justify-content: center;
   align-items: center;

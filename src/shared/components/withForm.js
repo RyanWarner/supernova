@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import { Form } from 'informed'
 
-export default function withForm (WrappedComponent) {
+export default WrappedComponent => {
   return class HOC extends Component {
     state = {}
 

@@ -11,6 +11,7 @@ export const darkPurpleHover = '#62416C'
 export const black012 = 'rgba(0, 0, 0, 0.12)'
 
 export const darkGray = '#101111'
+export const mediumGray = '#3F4143'
 export const adminNavBorder = 'rgba(255, 255, 255, 0.18)'
 
 // Contextual colors

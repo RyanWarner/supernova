@@ -11,6 +11,7 @@ export default asField(({ fieldState, fieldApi, ...props }) => {
   return <S.TextAreaComponent>
     <S.Label>{props.label}</S.Label>
     <S.TextArea
+      fieldState={fieldState}
       {...rest}
       value={value}
       onChange={e => {
