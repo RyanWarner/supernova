@@ -1,4 +1,4 @@
-const paths =  require('./config/paths')
+const paths = require('./config/paths')
 const fs = require('fs')
 
 module.exports = function (plop) {
@@ -7,7 +7,7 @@ module.exports = function (plop) {
       const exportString = `export ${answers.componentName} from './${answers.componentName}/${answers.componentName}'\n`
 
       fs.appendFile(`${paths.srcShared}/components/index.js`, exportString, err => {
-        if (err) throw reject('Failed to export component from components/index')
+        if (err) throw reject(new Error('Failed to export component from components/index'))
         resolve('Added export to components/index')
       })
     })
@@ -18,7 +18,7 @@ module.exports = function (plop) {
       const exportString = `export ${answers.pageName} from './${answers.pageName}/${answers.pageName}'\n`
 
       fs.appendFile(`${paths.srcShared}/pages/index.js`, exportString, err => {
-        if (err) throw reject('Failed to export component from components/index')
+        if (err) throw reject(new Error('Failed to export page from pages/index'))
         resolve('Added export to pages/index')
       })
     })

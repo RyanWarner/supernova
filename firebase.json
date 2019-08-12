@@ -1,5 +1,9 @@
 {
-  "functions": {
+  "database": {
+    "rules": "./src/shared/api/firebase/securityRules/bolt/rules.json"
+  },
+  "firestore": {
+    "rules": "./src/shared/api/firebase/securityRules/firestore.rules"
   },
   "hosting": {
     "public": "public",
@@ -16,6 +20,12 @@
       "headers": [{
         "key": "Access-Control-Allow-Origin",
         "value": "*"
+      }]
+    }, {
+      "source": "**",
+      "headers": [{
+        "key": "Cache-Control",
+        "value": "max-age=31557600"
       }]
     }]
   }

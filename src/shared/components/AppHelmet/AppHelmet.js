@@ -5,7 +5,7 @@ import { withRouter, matchPath } from 'react-router-dom'
 import { favicon, ogImage } from 'app/assets/images'
 
 const cdn = process.env.CDN || ''
-const twitterSite = process.env.TWITTER_HANDLE
+const twitterSite = '@Yawnch'
 
 @withRouter
 export default class AppHelmet extends Component {
@@ -14,6 +14,7 @@ export default class AppHelmet extends Component {
     if (activeRoute.routes) return this.getActiveRoute({ pathname, route: activeRoute })
     return activeRoute
   }
+
   render () {
     const { location, route } = this.props
     const { pathname } = location
@@ -26,7 +27,7 @@ export default class AppHelmet extends Component {
 
     const basePath = cdn ? cdn.slice(0, -1) : '' // remove trailing slash
     const ogUrl = `${basePath}${location.pathname}`
-    const ogImageUrl = `${basePath}/${ogImage}`
+    const ogImageUrl = `${basePath}${ogImage}`
 
     return <Helmet
       title={activeRoute.meta.title}
@@ -45,9 +46,9 @@ export default class AppHelmet extends Component {
         { name: 'twitter:image', content: ogImageUrl }
       ]}
       link={[
-        { 'rel': 'icon',
-          'type': 'image/png',
-          'href': favicon
+        { rel: 'icon',
+          type: 'image/png',
+          href: favicon
         }
       ]}
     />

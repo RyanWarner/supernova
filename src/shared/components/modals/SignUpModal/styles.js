@@ -1,13 +1,12 @@
 import styled from 'styled-components'
 
 import { Button } from 'app/ui-kit'
-import { Colors, Type } from 'app/styles'
+import { Type } from 'app/styles'
 
-export const Wrap = styled.div`
+export const SignUpModalComponent = styled.div`
   padding: 40px;
-  width: 360px;
+  width: 460px;
   box-sizing: border-box;
-  background-color: ${Colors.offWhite};
   border-radius: 4px;
 `
 export const Title = styled.div`
@@ -16,7 +15,11 @@ export const Title = styled.div`
   margin-bottom: 30px;
   line-height: 30px;
 `
-export const TextFields = styled.div``
+export const FormElements = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 export const SignUpButton = styled(Button)`
   margin-top: 20px;
 `

@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import * as S from './styles'
+import { Auth } from 'app/api/firebase/models'
 
 const mapStateToProps = state => {
   return { state }
@@ -11,8 +12,8 @@ const mapStateToProps = state => {
 @withRouter
 @connect(mapStateToProps)
 export default class AdminUtilities extends Component {
-  signOut = () => {
-
+  signOut = async () => {
+    await Auth.signOut()
   }
 
   logReduxStore = () => {

@@ -1,16 +1,23 @@
+import Redux from '../../redux'
 import { initializeFirebase } from '../initializeFirebase'
 initializeFirebase()
 
 export default class FirebaseService {
-  static set store (value) {
-    this._reduxStore = value
-  }
+  static database = async ({ method, normalizer, verb, prefix, storeKey }) => {
+    const type = `${prefix}_${verb}_REQUEST`
+    Redux.dispatch({ type, storeKey })
 
-  static get state () {
-    return this._reduxStore.getState()
-  }
-
-  static get dispatch () {
-    return this._reduxStore.dispatch
+    try {
+      const callback = (snap) => {
+        const payload = normalizer ? normalizer(snap) : snap
+        const type = `${prefix}_${verb}_SUCCESS`
+        return Redux.dispatch({ type, payload, storeKey })
+      }
+      await method(callback)
+    } catch (error) {
+      const type = `${prefix}_${verb}_FAILURE`
+      Redux.dispatch({ type, payload: error, storeKey })
+      throw error
+    }
   }
 }

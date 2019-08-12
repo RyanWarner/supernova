@@ -7,7 +7,7 @@ import withForm from 'app/components/withForm'
 import { Auth } from 'app/api/firebase/models'
 import { closeAllModals } from 'app/store/app/actions'
 
-@withForm(FIELDS)
+@withForm
 @connect(null, { closeAllModals })
 export default class LoginModal extends Component {
   state = { loading: false }
@@ -32,7 +32,7 @@ export default class LoginModal extends Component {
 
   render () {
     const { loading } = this.state
-    return <S.Wrap>
+    return <S.LoginModalComponent>
       <S.Title>Login</S.Title>
       <S.TextFields>
         { Object.values(FIELDS).map(field => this.props.renderTextField(field)) }
@@ -40,6 +40,6 @@ export default class LoginModal extends Component {
           Login
         </S.SignUpButton>
       </S.TextFields>
-    </S.Wrap>
+    </S.LoginModalComponent>
   }
 }

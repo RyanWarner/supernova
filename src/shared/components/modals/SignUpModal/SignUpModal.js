@@ -1,31 +1,35 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
+import { withFormState } from 'informed'
 
 import * as S from './styles'
-import FIELDS from './fields'
+import { TextField } from 'app/ui-kit'
+import { formFields } from 'app/data'
 import withForm from '../../withForm'
 import { Auth } from 'app/api/firebase/models'
-import { closeAllModals } from '../../../store/app/actions'
 
-@withForm(FIELDS)
-@connect(null, { closeAllModals })
+@withForm
+@withFormState
+@withRouter
 export default class SignUpModal extends Component {
   state = { loading: false }
 
+  componentDidMount = () => {
+    this.props.setOnSubmit(this.submitSignUp)
+  }
+
   submitSignUp = async (event) => {
-    event.preventDefault()
+    const { formState, closeModal } = this.props
     const { loading } = this.state
-    if (loading || !this.props.allFieldsValid()) return
+
+    if (loading) return
     this.setState({ loading: true })
-    const { email, password, username } = this.props
+    const { email, password } = formState.values
 
     try {
-      await Auth.signUp({
-        email: email.value,
-        password: password.value,
-        username: username.value
-      })
-      this.props.closeAllModals()
+      await Auth.signUp({ email, password })
+      this.props.history.push('/dashboard')
+      closeModal()
     } catch (error) {
       console.log('err', error)
     }
@@ -33,14 +37,17 @@ export default class SignUpModal extends Component {
 
   render () {
     const { loading } = this.state
-    return <S.Wrap>
+
+    return <S.SignUpModalComponent>
       <S.Title>Create your account</S.Title>
-      <S.TextFields>
-        { Object.values(FIELDS).map(field => this.props.renderTextField(field)) }
-        <S.SignUpButton onClick={this.submitSignUp} loading={loading}>
+      <S.FormElements>
+        <TextField {...formFields.email} />
+        <TextField {...formFields.password} />
+
+        <S.SignUpButton type='submit' loading={loading}>
           Sign Up
         </S.SignUpButton>
-      </S.TextFields>
-    </S.Wrap>
+      </S.FormElements>
+    </S.SignUpModalComponent>
   }
 }

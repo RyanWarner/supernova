@@ -10,8 +10,8 @@ import createHistory from 'app/store/history'
 import routes from 'app/routes/routes'
 import { ScrollToTop } from 'app/components'
 import { initializeFirebase } from 'app/api/firebase/initializeFirebase'
-import FirebaseService from 'app/api/firebase/models/FirebaseService'
-import Analytics from 'app/Analytics'
+import Redux from 'app/api/redux'
+import Analytics from 'app/analytics'
 import { loadState, saveState } from './cookieService'
 
 Analytics.initialize()
@@ -19,15 +19,20 @@ initializeFirebase()
 
 const browserHistory = createHistory()
 
-Analytics.pageview({ pathname: browserHistory.location.pathname })
+Analytics.pageView({ pathname: browserHistory.location.pathname })
 
 const unlisten = browserHistory.listen((location, action) => { // eslint-disable-line no-unused-vars
   const { pathname } = location
-  Analytics.pageview({ pathname })
+  Analytics.pageView({ pathname })
 })
 
+const defaultMergeOptions = {
+  // Replace arrays instead of concatenating
+  arrayMerge: (destinationArray, sourceArray) => sourceArray
+}
+
 const persistedState = loadState()
-const initialState = merge(window.__PRELOADED_STATE__, persistedState)
+const initialState = merge(window.__PRELOADED_STATE__, persistedState, defaultMergeOptions)
 
 const store = configureStore({
   initialState,
@@ -43,7 +48,7 @@ store.subscribe(() => {
   saveState(state)
 })
 
-FirebaseService.store = store
+Redux.store = store
 
 hydrate(
   <Provider store={store}>

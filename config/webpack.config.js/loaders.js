@@ -6,7 +6,7 @@ const babelLoader = {
   loader: 'babel-loader'
 }
 
-const ASSET_PATH = process.env.NODE_ENV === 'production' ? `${paths.cdn}build` : paths.publicPath
+const ASSET_PATH = process.env.NODE_ENV === 'production' ? `${paths.cdn}/build` : paths.publicPath
 
 const urlLoaderFileTypes = /\.(png|jpe?g|gif|svg|ttf|otf|eot|woff|woff2)$/
 
@@ -42,12 +42,12 @@ const urlLoaderServer = {
 }
 
 const cssLoaderClient = {
-    test: /\.css$/,
-    use: ['style-loader', 'css-loader']
+  test: /\.css$/,
+  use: ['style-loader', 'css-loader']
 }
 const cssLoaderServer = {
   test: /\.css$/,
-    use: ['css-loader']
+  use: ['css-loader']
 }
 
 const fileLoaderClient = {

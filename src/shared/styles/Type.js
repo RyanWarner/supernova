@@ -7,6 +7,8 @@ export const fontFace = `'Manrope', ${sansSerifFallback}`
 
 export const fontWeights = {
   regular: 400,
+  medium: 500,
+  semiBold: 600,
   bold: 'bold'
 }
 
@@ -15,8 +17,8 @@ export const body = css`
 `
 
 export const smallBody = css`
-  font-size: 14px;
-  line-height: 28px;
+  font-size: 12px;
+  line-height: 150%;
 `
 
 export const largeInput = css`

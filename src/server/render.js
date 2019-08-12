@@ -7,7 +7,7 @@ import { ServerStyleSheet } from 'styled-components'
 import { renderRoutes } from 'react-router-config'
 
 import routes from 'app/routes/routes'
-import FirebaseService from 'app/api/firebase/models/FirebaseService'
+import Redux from 'app/api/redux'
 
 const getActiveRoute = ({ pathname, route }) => {
   const activeRoute = route.routes.find(route => matchPath(pathname, route))
@@ -15,8 +15,8 @@ const getActiveRoute = ({ pathname, route }) => {
   return activeRoute
 }
 
-const serverRenderer = () => (req, res) => {
-  FirebaseService.store = req.store
+const serverRenderer = () => async (req, res) => {
+  Redux.store = req.store
 
   const activeRoute = getActiveRoute({ pathname: req.url, route: routes[0] })
   if (!activeRoute) console.warn('No active aroute found: ', activeRoute)
@@ -25,9 +25,10 @@ const serverRenderer = () => (req, res) => {
     ? activeRoute.component.serverFetch()
     : Promise.resolve()
 
-  dataRequirements.then(() => {
-    const sheet = new ServerStyleSheet()
+  await dataRequirements
 
+  const sheet = new ServerStyleSheet()
+  try {
     const content = renderToString(
       sheet.collectStyles(
         <Provider store={req.store}>
@@ -53,7 +54,11 @@ const serverRenderer = () => (req, res) => {
       `<!doctype html>
       ${renderToString(HtmlComponent)}`
     )
-  })
+  } catch (error) {
+    console.error('Error preparing stylesheet:', error)
+  } finally {
+    sheet.seal()
+  }
 }
 
 export default serverRenderer

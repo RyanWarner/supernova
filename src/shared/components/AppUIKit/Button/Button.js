@@ -14,10 +14,8 @@ export default class Button extends Component {
 
     return <S.Button {...this.props}>
       <S.ButtonText>
-        { loading
-          ? <Loading />
-          : children
-        }
+        <Loading visible={loading} />
+        { children }
       </S.ButtonText>
     </S.Button>
   }

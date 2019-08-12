@@ -7,14 +7,14 @@ export default [{
   path: '/admin',
   component: AdminRoot,
   meta: {
-    title: 'Puffin Admin'
+    title: 'Yawnch Admin'
   },
   routes: [{
     path: '/admin',
     exact: true,
     component: AdminUtilities,
     meta: {
-      title: 'Puffin Admin'
+      title: 'Yawnch Admin'
     }
   }, {
     path: '/admin/utilities',
