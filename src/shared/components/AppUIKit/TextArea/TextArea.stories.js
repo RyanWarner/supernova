@@ -1,9 +1,10 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { withDocs } from 'storybook-readme'
+
 import TextArea from './TextArea'
 import withForm from 'app/components/withForm'
 import Readme from './README.md'
-import { withDocs } from 'storybook-readme'
 
 const fieldConfig = {
   message: {

@@ -1,7 +1,10 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { withDocs } from 'storybook-readme'
+
 import TextField from './TextField'
 import withForm from 'app/components/withForm'
+import Readme from './README.md'
 
 const fieldConfig = {
   name: {
@@ -24,6 +27,7 @@ class FormWrap extends React.Component {
 }
 
 storiesOf('TextField', module)
+  .addDecorator(withDocs(Readme))
   .add('default', () => {
     return <FormWrap />
   })
