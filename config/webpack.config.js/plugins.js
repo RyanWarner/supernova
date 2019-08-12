@@ -17,7 +17,7 @@ const client = [
     __SERVER__: 'false',
     __BROWSER__: 'true'
   }),
-  new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+  new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/, /\.stories\./),
   new ManifestPlugin({ fileName: paths.manifest + '/manifest.json' })
 ]
 

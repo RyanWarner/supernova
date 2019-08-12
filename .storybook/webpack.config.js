@@ -8,7 +8,5 @@ module.exports = async ({ config, mode }) => {
     ...resolvers.alias
   }
 
-  console.log('config::', config)
-
   return config
 }
