@@ -4,6 +4,8 @@ Yanwch uses [informed](https://github.com/joepuzzo/informed) to handle forms. `S
 
 `Select` must be a child of `informed.Form`. Use the `withInformed` HOC to wrap your component in a `Form`.
 
+Yawnch uses [react-select](https://github.com/JedWatson/react-select) to power our select component.
+
 <!-- STORY -->
 
 ## Usage example
