@@ -1,13 +1,28 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { asField } from 'informed'
 
 import * as S from './styles'
 
-export default class AppSelect extends Component {
-  render () {
-    return <S.StyledSelect
+export default asField(({ fieldState, fieldApi, ...props }) => {
+  const { value } = fieldState
+  const { setValue, setTouched } = fieldApi
+  const { onChange, onBlur, defaultValue, forwardedRef, ...rest } = props
+
+  return <S.SelectComponent>
+    <S.Label>{props.label}</S.Label>
+    <S.StyledSelect
+      {...rest}
       components={{ DropdownIndicator: S.DropdownIndicator }}
       classNamePrefix='ReactSelect'
-      {...this.props}
+      value={value || defaultValue}
+      onChange={selectedOption => {
+        setValue(selectedOption)
+        if (onChange) { onChange(selectedOption) }
+      }}
+      onBlur={e => {
+        setTouched(true)
+        if (onBlur) { onBlur(e) }
+      }}
     />
-  }
-}
+  </S.SelectComponent>
+})
