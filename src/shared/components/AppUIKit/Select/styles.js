@@ -26,10 +26,19 @@ export const StyledSelect = styled(Select)`
     }
   }
 
+  .ReactSelect__menu {
+    background-color: ${Colors.darkGray};
+  }
+
   .ReactSelect__value-container {
     margin-top: 2px;
     padding: 1px 8px;
     ${Type.body};
+    color: ${Colors.white};
+  }
+
+  .ReactSelect__single-value {
+    color: ${Colors.white};
   }
 
   .ReactSelect__indicator {
