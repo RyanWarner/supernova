@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { withDocs } from 'storybook-readme'
 
 import TextField from './TextField'
-import withForm from 'app/components/withForm'
+import withInformed from 'app/components/withInformed'
 import Readme from './README.md'
 
 const fieldConfig = {
@@ -19,7 +19,7 @@ const fieldConfig = {
   }
 }
 
-@withForm
+@withInformed
 class FormWrap extends React.Component {
   render = () => {
     return <TextField {...fieldConfig.name} />

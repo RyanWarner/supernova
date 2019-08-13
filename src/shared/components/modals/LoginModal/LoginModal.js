@@ -3,11 +3,11 @@ import { connect } from 'react-redux'
 
 import * as S from './styles'
 import FIELDS from './fields'
-import withForm from 'app/components/withForm'
+import withInformed from 'app/components/withInformed'
 import { Auth } from 'app/api/firebase/models'
 import { closeAllModals } from 'app/store/app/actions'
 
-@withForm
+@withInformed
 @connect(null, { closeAllModals })
 export default class LoginModal extends Component {
   state = { loading: false }

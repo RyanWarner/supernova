@@ -5,10 +5,10 @@ import { withFormState } from 'informed'
 import * as S from './styles'
 import { TextField } from 'app/ui-kit'
 import { formFields } from 'app/data'
-import withForm from '../../withForm'
+import withInformed from '../../withInformed'
 import { Auth } from 'app/api/firebase/models'
 
-@withForm
+@withInformed
 @withFormState
 @withRouter
 export default class SignUpModal extends Component {
