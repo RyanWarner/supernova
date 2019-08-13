@@ -8,7 +8,6 @@ import { Button } from 'app/ui-kit'
 export const NavComponent = styled.div`
   height: ${Sizes.navHeight};
   background-color: ${Colors.black};
-  box-shadow: ${Shadows.main};
   width: 100vw;
   display: flex;
   align-items: center;
@@ -29,6 +28,7 @@ export const NavComponent = styled.div`
 export const LogoLink = styled(Link)`
   display: flex;
   align-items: center;
+  color: ${Colors.white};
 `
 
 export const LogoText = styled.div`
@@ -49,6 +49,7 @@ export const NavItems = styled.div`
 const navItemShared = css`
   margin-left: 35px;
   font-weight: ${Type.fontWeights.medium};
+  color: ${Colors.white};
 `
 
 export const NavA = styled.a`
