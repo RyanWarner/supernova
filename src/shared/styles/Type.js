@@ -12,13 +12,17 @@ export const fontWeights = {
   bold: 'bold'
 }
 
+export const smallBody = css`
+  font-size: 12px;
+  line-height: 150%;
+`
+
 export const body = css`
   font-size: 14px;
 `
 
-export const smallBody = css`
-  font-size: 12px;
-  line-height: 150%;
+export const body1 = css`
+  font-size: 16px;
 `
 
 export const largeInput = css`
@@ -59,12 +63,12 @@ export const GlobalStyle = createGlobalStyle`
     ${header3};
   }
   p {
-    ${smallBody};
+    ${body1};
     margin-top: 0;
     margin-bottom: 38px;
   }
   a {
-    color: ${Colors.white};
+    color: ${Colors.linkColor};
     text-decoration: none;
     transition: color 300ms ease;
 

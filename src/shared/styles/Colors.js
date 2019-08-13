@@ -1,12 +1,15 @@
 export const brand = '#E4C6C6'
 
+export const background = '#18171C'
 export const black = '#18171C'
 export const lightBackground = '#2E2C36'
 export const lightBackgroundActive = '#43404F'
 export const white = '#F8F8F8'
+export const fontPrimary = '#F5E2D7'
 export const transparent = 'transparent'
 export const darkPurple = '#654B6C'
 export const darkPurpleHover = '#62416C'
+export const linkColor = '#B980F6'
 
 export const black012 = 'rgba(0, 0, 0, 0.12)'
 

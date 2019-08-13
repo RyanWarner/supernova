@@ -3,6 +3,7 @@ import { configure, addDecorator, addParameters } from '@storybook/react'
 import { addReadme, configureReadme } from 'storybook-readme'
 
 import StoryContainer from './StoryContainer/StoryContainer'
+import theme from './theme'
 
 addDecorator(addReadme)
 addDecorator(StoryContainer)
@@ -10,7 +11,7 @@ addParameters({
   options: { showPanel: false },
   readme: {
     codeTheme: 'atom-dark',
-
+    theme
   }
 })
 
