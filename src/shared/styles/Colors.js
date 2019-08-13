@@ -11,7 +11,7 @@ export const fontPrimary = '#EFE8E3'
 export const transparent = 'transparent'
 export const darkPurple = '#654B6C'
 export const darkPurpleHover = '#62416C'
-export const linkColor = '#B980F6'
+export const linkColor = '#57B2D3'
 
 export const black012 = 'rgba(0, 0, 0, 0.12)'
 

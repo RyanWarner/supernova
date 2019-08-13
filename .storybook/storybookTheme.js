@@ -1,3 +1,4 @@
+// https://storybook.js.org/docs/configurations/theming/
 import { create } from '@storybook/theming'
 
 import { Colors, Type } from 'app/styles'
@@ -6,14 +7,15 @@ import { yawnch } from 'app/assets/images'
 export default create({
   base: Colors.backgroundDark,
 
-  colorPrimary: 'hotpink',
+  colorPrimary: Colors.brand,
   colorSecondary: Colors.darkPurple,
+  sidebarSvgIconColor: Colors.linkColor,
 
   // UI
   appBg: Colors.backgroundDark,
-  appContentBg: 'silver',
+  appContentBg: Colors.background,
   appBorderColor: Colors.backgroundDark,
-  appBorderRadius: 4,
+  appBorderRadius: 6,
 
   // Typography
   fontBase: '"Open Sans", sans-serif',
@@ -31,10 +33,10 @@ export default create({
   // Form colors
   inputBg: 'white',
   inputBorder: 'silver',
-  inputTextColor: 'black',
+  inputTextColor: Colors.white,
   inputBorderRadius: 4,
 
-  brandTitle: 'My custom storybook',
+  brandTitle: 'Yawnch/react-firebase-ssr Storybook',
   brandUrl: 'https://yawnch.com',
   brandImage: yawnch,
 });

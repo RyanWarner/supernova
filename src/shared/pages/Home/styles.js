@@ -11,6 +11,5 @@ export const HomePage = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: ${Colors.black};
   color: ${Colors.white};
 `

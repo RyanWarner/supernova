@@ -10,7 +10,7 @@ export default {
   kbdBorderColor: '#ccc',
   kbdBottomBorderColor: '#bbb',
   kbdBoxShadowColor: '#bbb',
-  preBackgroundColor: 'red',
+  preBackgroundColor: Colors.background1,
   fontFamily: Type.fontFace,
   imgBackgroundColor: '#fff',
 
@@ -19,7 +19,7 @@ export default {
   tableTrBorderTopColor: '#ccc',
   tableTdBorderColor: '#ddd',
 
-  codeBackgroundColor: 'red',
+  codeBackgroundColor: Colors.background1,
   codeFontFamily: 'Consolas, "Liberation Mono", Menlo, Courier, monospace',
   preFontFamily: 'Consolas, "Liberation Mono", Menlo, Courier, monospace',
 
