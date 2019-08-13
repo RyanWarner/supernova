@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     max-width: 100vw;
     width: 100vw;
     overflow-x: hidden;
-    background-color: ${Colors.black};
+    background-color: ${Colors.background};
     color: ${Colors.white};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
