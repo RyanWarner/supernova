@@ -2,6 +2,8 @@
 
 An opinionated starting point for web applications.
 
+[Docs](https://yawnch.github.io/react-firebase-ssr-starter)
+
 ## Getting Started
 
 ### Install project dependencies

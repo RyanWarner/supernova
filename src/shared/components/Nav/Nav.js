@@ -5,6 +5,8 @@ import * as S from './styles'
 import { openModal } from 'app/store/app/actions'
 
 const githubLink = 'https://github.com/yawnch/react-firebase-ssr-starter'
+const docsLink = 'https://yawnch.github.io/react-firebase-ssr-starter'
+const discordLink = 'https://discord.gg/6grKvkn'
 
 @connect(null, { openModal })
 export default class Nav extends Component {
@@ -19,8 +21,9 @@ export default class Nav extends Component {
         <S.LogoText>Yawnch</S.LogoText>
       </S.LogoLink>
       <S.NavItems>
+        <S.NavA href={docsLink} target='_blank'>Docs</S.NavA>
         <S.NavA href={githubLink} target='_blank'>Github</S.NavA>
-        <S.NavA href={githubLink} target='_blank'>Discord</S.NavA>
+        <S.NavA href={discordLink} target='_blank'>Discord</S.NavA>
         <S.NavLink to='/admin'>Admin</S.NavLink>
         <S.NavButton onClick={this.openSignUpModal}>Sign up</S.NavButton>
       </S.NavItems>
