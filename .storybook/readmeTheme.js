@@ -3,7 +3,7 @@ import { Colors, Type } from 'app/styles'
 export default {
   bodyColor: Colors.fontPrimary,
   linkColor: Colors.linkColor,
-  hrColor: Colors.mediumGray,
+  hrColor: Colors.background1,
   checkedRadioLabelColor: '#4078c0',
   kbdColor: '#555',
   kbdBackgroundColor: '#fcfcfc',
@@ -24,6 +24,6 @@ export default {
   preFontFamily: 'Consolas, "Liberation Mono", Menlo, Courier, monospace',
 
   blockquoteBorderLeftColor: '#ddd',
-  h1h2BorderBottomColor: '#ddd',
+  h1h2BorderBottomColor: Colors.background1,
   h6Color: '#777'
 }

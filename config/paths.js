@@ -12,6 +12,7 @@ const paths = {
   manifestLocal: resolveApp('build/client/public'),
   dotenv: resolveApp('config/.env'),
   src: resolveApp('src'),
+  root: appDirectory,
   nodeModules: resolveApp('node_modules'),
   srcClient: resolveApp('src/client'),
   srcServer: resolveApp('src/server'),

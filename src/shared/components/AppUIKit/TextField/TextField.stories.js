@@ -5,6 +5,7 @@ import { withDocs } from 'storybook-readme'
 import TextField from './TextField'
 import withInformed from 'app/components/withInformed'
 import Readme from './README.md'
+import { titles, dirNames } from '@/.storybook/names'
 
 const fieldConfig = {
   name: {
@@ -26,7 +27,7 @@ class FormWrap extends React.Component {
   }
 }
 
-storiesOf('TextField', module)
+storiesOf(`${titles.components}|${dirNames.uiKit}/TextField`, module)
   .addDecorator(withDocs(Readme))
   .add('default', () => {
     return <FormWrap />

@@ -10,7 +10,7 @@ addDecorator(addReadme)
 addDecorator(StoryContainer)
 addParameters({
   options: {
-    showPanel: false,
+    panelPosition: 'right',
     theme: storybookTheme
   },
   readme: {
