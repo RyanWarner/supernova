@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withDocs } from 'storybook-readme'
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
+import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 
 import Button from './Button'
 import Readme from './README.md'
@@ -11,7 +11,10 @@ storiesOf(`${titles.components}|${dirNames.uiKit}/Button`, module)
   .addDecorator(withDocs(Readme))
   .addDecorator(withKnobs)
   .add('default', () => {
-    return <Button loading={boolean('Loading', false)}>
+    return <Button
+      loading={boolean('Loading', false)}
+      disabled={boolean('Disabled', false)}
+    >
       { text('Text', 'Button') }
     </Button>
   })
