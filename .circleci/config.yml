@@ -58,6 +58,9 @@ jobs:
       - run:
           name: Firebase deploy
           command: node scripts/deploy.js --branch $CIRCLE_BRANCH
+      - run:
+          name: Storybook deploy
+          command: npm run deploy:storybook
 
 workflows:
   version: 2
