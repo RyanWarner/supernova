@@ -1,11 +1,13 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import Button from './Button'
+import { withDocs } from 'storybook-readme'
 
-storiesOf('Button', module)
-  .add('with text', () => (
-    <Button>Submit</Button>
-  ))
-  .add('with emoji', () => (
-    <Button><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
-  ))
+import Button from './Button'
+import Readme from './README.md'
+import { dirNames, titles } from '@/.storybook/names'
+
+storiesOf(`${titles.components}|${dirNames.uiKit}/Button`, module)
+  .addDecorator(withDocs(Readme))
+  .add('default', () => {
+    return <Button>Button</Button>
+  })

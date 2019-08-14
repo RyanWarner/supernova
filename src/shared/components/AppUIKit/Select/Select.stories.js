@@ -5,6 +5,7 @@ import { withDocs } from 'storybook-readme'
 import Select from './Select'
 import withInformed from 'app/components/withInformed'
 import Readme from './README.md'
+import { dirNames, titles } from '@/.storybook/names'
 
 const fieldConfig = {
   color: {
@@ -30,7 +31,7 @@ class FormWrap extends React.Component {
   }
 }
 
-storiesOf('Select', module)
+storiesOf(`${titles.components}|${dirNames.uiKit}/Select`, module)
   .addDecorator(withDocs(Readme))
   .add('default', () => {
     return <FormWrap />

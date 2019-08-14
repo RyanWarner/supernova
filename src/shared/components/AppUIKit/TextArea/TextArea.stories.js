@@ -5,6 +5,7 @@ import { withDocs } from 'storybook-readme'
 import TextArea from './TextArea'
 import withInformed from 'app/components/withInformed'
 import Readme from './README.md'
+import { dirNames, titles } from '@/.storybook/names'
 
 const fieldConfig = {
   message: {
@@ -25,7 +26,7 @@ class FormWrap extends React.Component {
   }
 }
 
-storiesOf('TextArea', module)
+storiesOf(`${titles.components}|${dirNames.uiKit}/TextArea`, module)
   .addDecorator(withDocs(Readme))
   .add('default', () => {
     return <FormWrap />
