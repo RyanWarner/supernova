@@ -1,6 +1,6 @@
 # Select
 
-Yanwch uses [informed](https://github.com/joepuzzo/informed) to handle forms. `Select` is a custom `informed` element, using the `asField` decorator. [Read the Custom Input docs](https://joepuzzo.github.io/informed/?path=/story/custominputs--creating-custom-inputs).
+We use [informed](https://github.com/joepuzzo/informed) to handle forms. `Select` is a custom `informed` element, using the `asField` decorator. [Read the Custom Input docs](https://joepuzzo.github.io/informed/?path=/story/custominputs--creating-custom-inputs).
 
 `Select` must be a child of `informed.Form`. Use the `withInformed` HOC to wrap your component in a `Form`.
 

@@ -27,12 +27,12 @@ export default create({
 
   // Toolbar default and active colors
   barTextColor: 'white',
-  barSelectedColor: 'black',
+  barSelectedColor: Colors.brand,
   barBg: Colors.background1,
 
   // Form colors
-  inputBg: 'white',
-  inputBorder: 'silver',
+  inputBg: Colors.backgroundDark,
+  inputBorder: 'transparent',
   inputTextColor: Colors.white,
   inputBorderRadius: 4,
 
