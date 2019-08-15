@@ -53,19 +53,11 @@ jobs:
   deploy:
     <<: *defaults
     steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "23:6a:3d:12:bb:77:c0:b8:18:cc:72:56:8d:c4:91:a5"
       - attach_workspace:
           at: ~/repo
       - run:
           name: Firebase deploy
           command: node scripts/deploy.js --branch $CIRCLE_BRANCH
-      - run:
-          name: Storybook deploy
-          command: |
-            echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
-            npm run deploy:storybook
 
 workflows:
   version: 2
