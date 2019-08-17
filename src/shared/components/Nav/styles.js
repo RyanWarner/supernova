@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom'
 
-import { Colors, Shadows, Breakpoints, Sizes, Type } from 'app/styles'
+import { Colors, Breakpoints, Sizes, Type } from 'app/styles'
 import { YawnchLogo } from 'app/ui-kit/Icons'
 import { Button } from 'app/ui-kit'
 
