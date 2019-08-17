@@ -2,6 +2,13 @@
 
 ### Deploying Storybook
 
+_This is not working_
+
+https://circleci.com/blog/deploying-documentation-to-github-pages-with-continuous-integration/
+
+https://github.com/storybookjs/storybook-deployer/issues/59
+
+
 ```
 ssh-keygen -m PEM -t rsa -b 4096 -C "your@email.com"
 ```

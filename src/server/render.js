@@ -19,7 +19,7 @@ const serverRenderer = () => async (req, res) => {
   Redux.store = req.store
 
   const activeRoute = getActiveRoute({ pathname: req.url, route: routes[0] })
-  if (!activeRoute) console.warn('No active aroute found: ', activeRoute)
+  if (!activeRoute) console.warn('No active route found: ', activeRoute)
 
   const dataRequirements = activeRoute.component.serverFetch
     ? activeRoute.component.serverFetch()
