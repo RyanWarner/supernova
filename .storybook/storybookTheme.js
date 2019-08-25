@@ -5,7 +5,7 @@ import { Colors, Type } from 'app/styles'
 import { yawnch } from 'app/assets/images'
 
 export default create({
-  base: Colors.backgroundDark,
+  base: 'dark',
 
   colorPrimary: Colors.brand,
   colorSecondary: Colors.darkPurple,
