@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@babel/runtime": "7.6.0",
-    "@tippy.js/react": "2.2.2",
+    "@tippy.js/react": "2.2.3",
     "body-parser": "1.19.0",
     "connected-react-router": "6.3.1",
     "cookie-parser": "1.4.4",
