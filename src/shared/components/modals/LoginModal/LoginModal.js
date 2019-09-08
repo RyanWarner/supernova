@@ -12,7 +12,7 @@ import { closeAllModals } from 'app/store/app/actions'
 export default class LoginModal extends Component {
   state = { loading: false }
 
-  submitLogin = async (event) => {
+  handleLogin = async (event) => {
     event.preventDefault()
     const { loading } = this.state
     if (loading || !this.props.allFieldsValid()) return
@@ -32,14 +32,16 @@ export default class LoginModal extends Component {
 
   render () {
     const { loading } = this.state
-    return <S.LoginModalComponent>
-      <S.Title>Login</S.Title>
-      <S.TextFields>
-        {Object.values(FIELDS).map(field => this.props.renderTextField(field))}
-        <S.SignUpButton onClick={this.submitLogin} loading={loading}>
-          Login
-        </S.SignUpButton>
-      </S.TextFields>
-    </S.LoginModalComponent>
+    return (
+      <S.LoginModalComponent>
+        <S.Title>Login</S.Title>
+        <S.TextFields>
+          {Object.values(FIELDS).map(field => this.props.renderTextField(field))}
+          <S.SignUpButton onClick={this.handleLogin} loading={loading}>
+            Login
+          </S.SignUpButton>
+        </S.TextFields>
+      </S.LoginModalComponent>
+    )
   }
 }

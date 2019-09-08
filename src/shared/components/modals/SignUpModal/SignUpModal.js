@@ -38,16 +38,18 @@ export default class SignUpModal extends Component {
   render () {
     const { loading } = this.state
 
-    return <S.SignUpModalComponent>
-      <S.Title>Create your account</S.Title>
-      <S.FormElements>
-        <TextField {...formFields.email} />
-        <TextField {...formFields.password} />
+    return (
+      <S.SignUpModalComponent>
+        <S.Title>Create your account</S.Title>
+        <S.FormElements>
+          <TextField {...formFields.email} />
+          <TextField {...formFields.password} />
 
-        <S.SignUpButton type='submit' loading={loading}>
-          Sign Up
-        </S.SignUpButton>
-      </S.FormElements>
-    </S.SignUpModalComponent>
+          <S.SignUpButton type='submit' loading={loading}>
+            Sign Up
+          </S.SignUpButton>
+        </S.FormElements>
+      </S.SignUpModalComponent>
+    )
   }
 }

@@ -22,11 +22,13 @@ export default class AdminRoot extends Component {
   render () {
     const { location, route } = this.props
 
-    return <S.AdminRootComponent>
-      <S.AdminApp>
-        <AdminNav activeRoute={this.getActiveRoute()} />
-        {renderRoutes(route.routes, null, { location })}
-      </S.AdminApp>
-    </S.AdminRootComponent>
+    return (
+      <S.AdminRootComponent>
+        <S.AdminApp>
+          <AdminNav activeRoute={this.getActiveRoute()} />
+          {renderRoutes(route.routes, null, { location })}
+        </S.AdminApp>
+      </S.AdminRootComponent>
+    )
   }
 }

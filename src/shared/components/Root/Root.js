@@ -15,12 +15,14 @@ export default class Root extends Component {
 
   render () {
     const { route } = this.props
-    return <S.RootComponent>
-      <AppHelmet route={route} />
-      <Global.GlobalStyle />
-      <Type.GlobalStyle />
-      <ModalController />
-      {renderRoutes(route.routes)}
-    </S.RootComponent>
+    return (
+      <S.RootComponent>
+        <AppHelmet route={route} />
+        <Global.GlobalStyle />
+        <Type.GlobalStyle />
+        <ModalController />
+        {renderRoutes(route.routes)}
+      </S.RootComponent>
+    )
   }
 }

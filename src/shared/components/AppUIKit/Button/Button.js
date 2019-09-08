@@ -12,11 +12,13 @@ export default class Button extends Component {
   render () {
     const { loading, children } = this.props
 
-    return <S.Button {...this.props}>
-      <S.ButtonText>
-        <Loading visible={loading} />
-        {children}
-      </S.ButtonText>
-    </S.Button>
+    return (
+      <S.Button {...this.props}>
+        <S.ButtonText>
+          <Loading visible={loading} />
+          {children}
+        </S.ButtonText>
+      </S.Button>
+    )
   }
 }

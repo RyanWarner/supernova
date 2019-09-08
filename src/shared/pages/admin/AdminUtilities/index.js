@@ -12,30 +12,32 @@ const mapStateToProps = state => {
 @withRouter
 @connect(mapStateToProps)
 export default class AdminUtilities extends Component {
-  signOut = async () => {
+  handleSignOut = async () => {
     await Auth.signOut()
   }
 
-  logReduxStore = () => {
+  handleLogReduxStore = () => {
     console.log(this.props.state)
   }
 
   render () {
-    return <S.AdminUtiltiesPage>
-      <S.Title>Utilities</S.Title>
-      <S.ActivityCard>
-        <S.CurrentUserNavItem onClick={this.logReduxStore}>
-          <S.NavItemContent>
-            <S.Text>Log app state to console</S.Text>
-          </S.NavItemContent>
-        </S.CurrentUserNavItem>
-        <S.CurrentUserNavItem onClick={this.signOut}>
-          <S.IconWrap></S.IconWrap>
-          <S.NavItemContent>
-            <S.Text>Sign out</S.Text>
-          </S.NavItemContent>
-        </S.CurrentUserNavItem>
-      </S.ActivityCard>
-    </S.AdminUtiltiesPage>
+    return (
+      <S.AdminUtiltiesPage>
+        <S.Title>Utilities</S.Title>
+        <S.ActivityCard>
+          <S.CurrentUserNavItem onClick={this.handleLogReduxStore}>
+            <S.NavItemContent>
+              <S.Text>Log app state to console</S.Text>
+            </S.NavItemContent>
+          </S.CurrentUserNavItem>
+          <S.CurrentUserNavItem onClick={this.handleSignOut}>
+            <S.IconWrap></S.IconWrap>
+            <S.NavItemContent>
+              <S.Text>Sign out</S.Text>
+            </S.NavItemContent>
+          </S.CurrentUserNavItem>
+        </S.ActivityCard>
+      </S.AdminUtiltiesPage>
+    )
   }
 }

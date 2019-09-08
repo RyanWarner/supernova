@@ -7,10 +7,12 @@ import { Nav, Footer } from 'app/components'
 export default class AppRoot extends Component {
   render () {
     const { route } = this.props
-    return <S.AppRootComponent>
-      <Nav />
-      {renderRoutes(route.routes)}
-      <Footer />
-    </S.AppRootComponent>
+    return (
+      <S.AppRootComponent>
+        <Nav />
+        {renderRoutes(route.routes)}
+        <Footer />
+      </S.AppRootComponent>
+    )
   }
 }

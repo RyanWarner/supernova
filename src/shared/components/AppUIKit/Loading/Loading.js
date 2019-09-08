@@ -5,8 +5,10 @@ import { Spinner } from 'app/ui-kit/Icons'
 
 export default class Loading extends Component {
   render () {
-    return <S.LoadingComponent visible={this.props.visible}>
-      <Spinner />
-    </S.LoadingComponent>
+    return (
+      <S.LoadingComponent visible={this.props.visible}>
+        <Spinner />
+      </S.LoadingComponent>
+    )
   }
 }

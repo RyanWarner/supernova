@@ -25,19 +25,21 @@ export default class Footer extends Component {
   }
 
   render () {
-    return <S.FooterComponent>
-      <S.MaxWidth>
-        <S.Rule />
-        <S.FooterNav>
-          <S.NavItems>
-            {this.renderFooterNavItems()}
-            <S.StyledFooterA href='mailto:hello@yawnch.com'>
-              Contact
-            </S.StyledFooterA>
-          </S.NavItems>
-          <S.Copyright>© 2019 Yawnch</S.Copyright>
-        </S.FooterNav>
-      </S.MaxWidth>
-    </S.FooterComponent>
+    return (
+      <S.FooterComponent>
+        <S.MaxWidth>
+          <S.Rule />
+          <S.FooterNav>
+            <S.NavItems>
+              {this.renderFooterNavItems()}
+              <S.StyledFooterA href='mailto:hello@yawnch.com'>
+                Contact
+              </S.StyledFooterA>
+            </S.NavItems>
+            <S.Copyright>© 2019 Yawnch</S.Copyright>
+          </S.FooterNav>
+        </S.MaxWidth>
+      </S.FooterComponent>
+    )
   }
 }

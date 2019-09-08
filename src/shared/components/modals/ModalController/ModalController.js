@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-handler-names */
 import React, { Component } from 'react'
 import AriaModal from 'react-aria-modal'
 
@@ -18,7 +19,7 @@ export default class ModalController extends Component {
     this.onRequestClose = closeFunc
   }
 
-  onModalExit = (event) => {
+  handleModalExit = (event) => {
     if (event) event.stopPropagation()
     this.setState({
       modalHasEntered: false
@@ -47,7 +48,7 @@ export default class ModalController extends Component {
 
     const modalOptions = {
       mounted: activeModal != null,
-      onExit: this.onModalExit,
+      onExit: this.handleModalExit,
       closeTimeoutMS: 250,
       underlayClass,
       titleText: 'my modal',
@@ -61,15 +62,17 @@ export default class ModalController extends Component {
       return null
     }
 
-    return <S.OverlayWrap>
-      <S.GlobalModalStyle />
-      <AriaModal {...modalOptions} {...modalProps}>
-        {activeModal &&
-          <div className={modalClass}>
-            <S.CloseX onClick={this.onModalExit}><X /></S.CloseX>
-            <Modal closeModal={this.onModalExit} {...modalProps} setCloseFunc={this.setCloseFunc} />
-          </div>}
-      </AriaModal>
-    </S.OverlayWrap>
+    return (
+      <S.OverlayWrap>
+        <S.GlobalModalStyle />
+        <AriaModal {...modalOptions} {...modalProps}>
+          {activeModal &&
+            <div className={modalClass}>
+              <S.CloseX onClick={this.handleModalExit}><X /></S.CloseX>
+              <Modal closeModal={this.handleModalExit} {...modalProps} setCloseFunc={this.setCloseFunc} />
+            </div>}
+        </AriaModal>
+      </S.OverlayWrap>
+    )
   }
 }
