@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "Ryan Warner (https://github.com/RyanWarner)",
   "engines": {
-    "node": ">=8.9.0"
+    "node": ">=10"
   },
   "scripts": {
     "deploy:production": "npm run build:production && cross-env node scripts/deploy.js production",
