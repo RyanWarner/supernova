@@ -8,8 +8,8 @@ import * as Icons from 'app/ui-kit/Icons'
 export default class AdminIcons extends Component {
   renderIconCard = (icon, index) => {
     return <S.IconCard key={index}>
-      { icon() }
-      <S.IconName>{ Object.keys(Icons)[index] }</S.IconName>
+      {icon()}
+      <S.IconName>{Object.keys(Icons)[index]}</S.IconName>
     </S.IconCard>
   }
 
@@ -17,7 +17,7 @@ export default class AdminIcons extends Component {
     return <S.AdminIconsPage>
       <S.Title>Icons</S.Title>
       <S.ActivityCard>
-        { Object.values(Icons).map(this.renderIconCard) }
+        {Object.values(Icons).map(this.renderIconCard)}
       </S.ActivityCard>
     </S.AdminIconsPage>
   }

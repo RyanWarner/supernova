@@ -35,7 +35,7 @@ export default class LoginModal extends Component {
     return <S.LoginModalComponent>
       <S.Title>Login</S.Title>
       <S.TextFields>
-        { Object.values(FIELDS).map(field => this.props.renderTextField(field)) }
+        {Object.values(FIELDS).map(field => this.props.renderTextField(field))}
         <S.SignUpButton onClick={this.submitLogin} loading={loading}>
           Login
         </S.SignUpButton>

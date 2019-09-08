@@ -33,7 +33,7 @@ const serverRenderer = () => async (req, res) => {
       sheet.collectStyles(
         <Provider store={req.store}>
           <Router location={req.url} context={{}}>
-            { renderRoutes(routes) }
+            {renderRoutes(routes)}
           </Router>
         </Provider>
       )

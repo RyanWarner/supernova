@@ -30,7 +30,7 @@ export default class Footer extends Component {
         <S.Rule />
         <S.FooterNav>
           <S.NavItems>
-            { this.renderFooterNavItems() }
+            {this.renderFooterNavItems()}
             <S.StyledFooterA href='mailto:hello@yawnch.com'>
               Contact
             </S.StyledFooterA>

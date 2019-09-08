@@ -20,7 +20,7 @@ export default class AdminColors extends Component {
     return <S.AdminColorsPage>
       <S.Title>Colors</S.Title>
       <S.ActivityCard>
-        { Object.values(Colors).map(this.renderColor) }
+        {Object.values(Colors).map(this.renderColor)}
       </S.ActivityCard>
     </S.AdminColorsPage>
   }

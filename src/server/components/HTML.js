@@ -33,7 +33,7 @@ export default class HTML extends React.Component {
           </head>
           <body>
             <div id='app' dangerouslySetInnerHTML={{ __html: children }} />
-            { scripts.map(src => <script key={src} src={src} />) }
+            {scripts.map(src => <script key={src} src={src} />)}
           </body>
         </html>
       )

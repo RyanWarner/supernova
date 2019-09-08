@@ -72,7 +72,7 @@ const initializeApp = () => {
     app.listen(process.env.PORT || 8080, () => {
       console.log(
         `[${new Date().toISOString()}]`,
-        chalk.hex('#88DEF3')(`🔥 App is running:`),
+        chalk.hex('#88DEF3')('🔥 App is running:'),
         chalk.bold.hex('#A8ED4F')(`http://localhost:${process.env.PORT || 8080}`)
       )
     })

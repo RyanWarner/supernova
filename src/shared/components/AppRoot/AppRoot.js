@@ -9,7 +9,7 @@ export default class AppRoot extends Component {
     const { route } = this.props
     return <S.AppRootComponent>
       <Nav />
-      { renderRoutes(route.routes) }
+      {renderRoutes(route.routes)}
       <Footer />
     </S.AppRootComponent>
   }

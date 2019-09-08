@@ -42,7 +42,7 @@ export default class AdminNav extends Component {
         </S.EnvironmentTag>
       </S.Environment>
       <S.AdminNavItems>
-        { Object.values(adminNavItems).map(this.renderNavItem) }
+        {Object.values(adminNavItems).map(this.renderNavItem)}
       </S.AdminNavItems>
     </S.AdminNavComponent>
   }

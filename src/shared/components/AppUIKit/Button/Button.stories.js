@@ -15,6 +15,6 @@ storiesOf(`${titles.components}|${dirNames.uiKit}/Button`, module)
       loading={boolean('Loading', false)}
       disabled={boolean('Disabled', false)}
     >
-      { text('Text', 'Button') }
+      {text('Text', 'Button')}
     </Button>
   })
