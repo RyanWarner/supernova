@@ -41,7 +41,7 @@
     "dotenv": "8.1.0",
     "express": "4.17.1",
     "express-manifest-helpers": "0.6.0",
-    "firebase": "6.6.1",
+    "firebase": "7.0.0",
     "history": "4.10.1",
     "hoist-non-react-statics": "3.3.0",
     "informed": "2.11.9",
@@ -60,7 +60,7 @@
     "redux": "4.0.4",
     "redux-logger": "3.0.6",
     "redux-thunk": "2.3.0",
-    "styled-components": "4.3.2"
+    "styled-components": "4.4.0"
   },
   "devDependencies": {
     "@babel/core": "7.6.2",
@@ -105,7 +105,7 @@
     "eslint-plugin-security": "1.4.0",
     "eslint-plugin-standard": "4.0.1",
     "file-loader": "4.2.0",
-    "firebase-tools": "7.3.2",
+    "firebase-tools": "7.4.0",
     "image-webpack-loader": "5.0.0",
     "install-deps-postmerge": "1.0.5",
     "jest": "24.9.0",
