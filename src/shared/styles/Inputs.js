@@ -34,3 +34,19 @@ export const text = css`
     }
   `}
 `
+
+export const error = css`
+  ${Type.smallBody}
+  color: ${Colors.errorRed};
+  position: relative;
+  height: 20px;
+  margin: 3px 0 0 2px;
+`
+
+export const label = css`
+  ${Type.body}
+  position: relative;
+  height: 20px;
+  color: ${Colors.lightGray};
+  margin: 0 0 6px 2px;
+`
