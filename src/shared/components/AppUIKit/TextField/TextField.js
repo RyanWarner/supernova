@@ -8,10 +8,10 @@ export default asField((props) => {
   const error = props.fieldState.error
 
   return (
-    <S.InputWrap>
+    <S.TextFieldComponent>
       {label && <S.Label>{label}</S.Label>}
       <S.TextInput {...props} />
       <S.Error>{error}</S.Error>
-    </S.InputWrap>
+    </S.TextFieldComponent>
   )
 })

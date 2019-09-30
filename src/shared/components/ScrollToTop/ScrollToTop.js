@@ -9,7 +9,5 @@ export default class ScrollToTop extends Component {
     }
   }
 
-  render () {
-    return this.props.children
-  }
+  render = () => this.props.children
 }

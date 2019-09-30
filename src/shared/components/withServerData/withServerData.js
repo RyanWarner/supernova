@@ -14,9 +14,7 @@ export default (serverFetch) => (Page) => {
       return serverFetch(context)
     }
 
-    render () {
-      return <Page />
-    }
+    render = () => <Page />
   }
 
   return HOC

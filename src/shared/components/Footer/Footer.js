@@ -36,7 +36,7 @@ export default class Footer extends Component {
                 Contact
               </S.StyledFooterA>
             </S.NavItems>
-            <S.Copyright>© 2019 Yawnch</S.Copyright>
+            <S.Copyright>© {new Date().getFullYear()} Yawnch</S.Copyright>
           </S.FooterNav>
         </S.MaxWidth>
       </S.FooterComponent>
