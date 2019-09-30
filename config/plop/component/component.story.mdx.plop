@@ -1,0 +1,14 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import {{pascalCase componentName}} from './{{pascalCase componentName}}'
+
+<Meta title='Components|{{pascalCase componentName}}' component={{curlyWrap (pascalCase componentName)}} />
+
+# {{pascalCase componentName}}
+
+<Preview>
+  <Story name='Default'>
+    <{{pascalCase componentName}} />
+  </Story>
+</Preview>
+
+<Props of={{curlyWrap (pascalCase componentName)}} />

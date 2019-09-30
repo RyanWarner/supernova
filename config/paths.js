@@ -17,6 +17,8 @@ const paths = {
   srcClient: resolveApp('src/client'),
   srcServer: resolveApp('src/server'),
   srcShared: resolveApp('src/shared'),
+  components: resolveApp('src/shared/components'),
+  pages: resolveApp('src/shared/pages'),
   publicPath: '/public/',
   cdn
 }
