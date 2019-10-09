@@ -44,8 +44,10 @@ npm run deploy:production
 
 You can use [Plop](https://plopjs.com/) to scaffold new components automatically.
 
-`npx plop Component`
-`npx plop Page`
+```
+npx plop Component
+npx plop Page
+```
 
 ## Notable Features
 - [React](https://reactjs.org/)
@@ -63,4 +65,4 @@ You can use [Plop](https://plopjs.com/) to scaffold new components automatically
 
 [Standard](https://standardjs.com/)
 
-Coding style is enforced using eslint. Eslint is run with the `--fix` option on each commit (via Husky pre-commit hooks). You can also manually run the linter using `npm run lint:fix`.
+Coding style is enforced using ESLint. You can also manually run the linter using `npm run lint:fix`.
