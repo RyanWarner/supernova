@@ -33,7 +33,7 @@ const imageLoaderConfig = {
 
 const urlLoaderClient = {
   test: urlLoaderFileTypes,
-  use: [urlLoaderConfig(true), imageLoaderConfig]
+  use: [urlLoaderConfig(true)]
 }
 
 const urlLoaderServer = {
@@ -57,7 +57,7 @@ const fileLoaderClient = {
     options: {
       name: 'assets/[name].[hash:8].[ext]'
     }
-  }]
+  }, imageLoaderConfig]
 }
 
 const fileLoaderServer = {
