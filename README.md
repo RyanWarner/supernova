@@ -18,7 +18,7 @@ An opinionated starting point for web applications.
 
 All important tasks are executed using NPM scripts. Checkout `package.json` for a complete list. The most important scripts are detailed here.
 
-#### `npm run start`
+#### `npm start`
 
 Builds the app in development mode (using [Webpack](https://webpack.js.org/)) and starts a local dev server. Keeps Webpack running in watchmode and updates the app automatically using HMR.
 
