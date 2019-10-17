@@ -14,12 +14,14 @@ import Redux from 'app/api/redux'
 import Analytics from 'app/analytics'
 import { loadState, saveState } from './cookieService'
 
-Analytics.initialize()
 initializeFirebase()
 
 const browserHistory = createHistory()
 
-Analytics.pageView({ pathname: browserHistory.location.pathname })
+Analytics.initialize().then(() => {
+  const { pathname } = browserHistory.location
+  Analytics.pageView({ pathname })
+})
 
 const unlisten = browserHistory.listen((location, action) => { // eslint-disable-line no-unused-vars
   const { pathname } = location
