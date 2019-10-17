@@ -1,4 +1,4 @@
-import amplitudeAnalytics from './amplitudeAnalytics'
+import amplitude from './amplitude'
 import googleAnalytics from './googleAnalytics'
 
 export const analyticsEventTypes = {
@@ -9,17 +9,17 @@ export const analyticsEventTypes = {
 
 export default class Analytics {
   static initialize = () => {
-    amplitudeAnalytics.initialize()
     googleAnalytics.initialize()
+    return amplitude.initialize()
   }
 
   static pageView = ({ pathname }) => {
-    amplitudeAnalytics.pageView({ pathname })
+    amplitude.pageView({ pathname })
     googleAnalytics.pageView({ pathname })
   }
 
   static event = (event) => {
-    amplitudeAnalytics.event(event)
+    amplitude.event(event)
     googleAnalytics.event(event)
   }
 
