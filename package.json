@@ -40,7 +40,7 @@
     "dotenv": "8.2.0",
     "express": "4.17.1",
     "express-manifest-helpers": "0.6.0",
-    "firebase": "7.1.0",
+    "firebase": "7.2.1",
     "history": "4.10.1",
     "hoist-non-react-statics": "3.3.0",
     "informed": "2.11.9",
