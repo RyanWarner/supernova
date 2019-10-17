@@ -1,13 +1,14 @@
-import { analyticsEventTypes } from './analytics'
+import { analyticsEventTypes as types } from './analytics'
 
 const amplitudeApiKey = process.env.AMPLITUDE_API_KEY
 
 export default class AmplitudeAnalytics {
-  static initialize = () => {
+  static initialize = async () => {
     if (typeof window !== 'undefined') {
-      const amplitude = require('amplitude-js')
-      this.Amplitude = amplitude.getInstance()
-      this.Amplitude.init(amplitudeApiKey, null, { includeReferrer: true, includeUtm: true })
+      const amplitude = await require('amplitude-js')
+      this.Amplitude = amplitude.default.getInstance()
+      const options = { includeReferrer: true, includeUtm: true }
+      this.Amplitude.init(amplitudeApiKey, null, options)
     }
   }
 
@@ -19,7 +20,7 @@ export default class AmplitudeAnalytics {
       ...props
     }
 
-    this.Amplitude.logEventWithTimestamp(analyticsEventTypes.pageView, eventProps, timestamp)
+    this.Amplitude.logEventWithTimestamp(types.pageView, eventProps, timestamp)
   }
 
   static event = ({ eventType, pathname, props }) => {

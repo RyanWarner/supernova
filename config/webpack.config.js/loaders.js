@@ -33,12 +33,12 @@ const imageLoaderConfig = {
 
 const urlLoaderClient = {
   test: urlLoaderFileTypes,
-  use: [urlLoaderConfig(true), imageLoaderConfig]
+  use: [urlLoaderConfig(true)]
 }
 
 const urlLoaderServer = {
   test: urlLoaderFileTypes,
-  use: [urlLoaderConfig(false), imageLoaderConfig]
+  use: [urlLoaderConfig(false)]
 }
 
 const cssLoaderClient = {
@@ -52,12 +52,15 @@ const cssLoaderServer = {
 
 const fileLoaderClient = {
   exclude: [/\.(js|css|mjs|html|json)$/],
-  use: [{
-    loader: require.resolve('file-loader'),
-    options: {
-      name: 'assets/[name].[hash:8].[ext]'
-    }
-  }]
+  use: [
+    {
+      loader: require.resolve('file-loader'),
+      options: {
+        name: 'assets/[name].[hash:8].[ext]'
+      }
+    },
+    imageLoaderConfig
+  ]
 }
 
 const fileLoaderServer = {
@@ -69,7 +72,8 @@ const fileLoaderServer = {
         name: 'assets/[name].[hash:8].[ext]',
         emitFile: false
       }
-    }
+    },
+    imageLoaderConfig
   ]
 }
 
