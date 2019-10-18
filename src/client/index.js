@@ -34,7 +34,12 @@ const defaultMergeOptions = {
 }
 
 const persistedState = loadState()
-const initialState = merge(window.__PRELOADED_STATE__, persistedState, defaultMergeOptions)
+
+const initialState = merge(
+  window.__PRELOADED_STATE__,
+  persistedState,
+  defaultMergeOptions
+)
 
 const store = configureStore({
   initialState,
