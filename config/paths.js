@@ -20,6 +20,7 @@ const paths = {
   components: resolveApp('src/shared/components'),
   pages: resolveApp('src/shared/pages'),
   publicPath: '/public/',
+  bolt: resolveApp('src/shared/api/firebase/securityRules/bolt/rules.bolt'),
   cdn
 }
 
