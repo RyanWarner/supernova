@@ -2,19 +2,19 @@
 import { create } from '@storybook/theming'
 
 import { Colors, Type } from 'app/styles'
-import { yawnch } from 'app/assets/images'
+import { favicon } from 'app/assets/images'
 
 export default create({
-  base: 'dark',
+  base: Colors.background,
 
   colorPrimary: Colors.brand,
-  colorSecondary: Colors.darkPurple,
-  sidebarSvgIconColor: Colors.linkColor,
+  colorSecondary: Colors.brandSecondary,
+  sidebarSvgIconColor: Colors.brand,
 
   // UI
-  appBg: Colors.backgroundDark,
-  appContentBg: Colors.background,
-  appBorderColor: Colors.backgroundDark,
+  appBg: Colors.gray1,
+  appContentBg: Colors.gray3,
+  appBorderColor: Colors.gray1,
   appBorderRadius: 6,
 
   // Typography
@@ -22,21 +22,21 @@ export default create({
   fontCode: 'monospace',
 
   // Text colors
-  textColor: Colors.fontPrimary,
+  textColor: Colors.font,
   textInverseColor: 'rgba(255,255,255,0.9)',
 
   // Toolbar default and active colors
-  barTextColor: 'white',
+  barTextColor: Colors.font,
   barSelectedColor: Colors.brand,
-  barBg: Colors.background1,
+  barBg: Colors.gray3,
 
   // Form colors
-  inputBg: Colors.backgroundDark,
+  inputBg: Colors.gray3,
   inputBorder: 'transparent',
-  inputTextColor: Colors.white,
+  inputTextColor: Colors.font,
   inputBorderRadius: 4,
 
-  brandTitle: 'Yawnch/react-firebase-ssr Storybook',
-  brandUrl: 'https://yawnch.com',
-  brandImage: yawnch,
+  brandTitle: 'Stockstreamtv',
+  brandUrl: 'https://stockstream.tv',
+  brandImage: favicon,
 });

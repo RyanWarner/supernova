@@ -1,31 +1,21 @@
 import React from 'react'
 import { configure, addDecorator, addParameters } from '@storybook/react'
-import { addReadme, configureReadme } from 'storybook-readme'
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks'
 
 import StoryContainer from './StoryContainer/StoryContainer'
-import readmeTheme from './readmeTheme'
 import storybookTheme from './storybookTheme'
 
-addDecorator(addReadme)
 addDecorator(StoryContainer)
 addParameters({
   options: {
     panelPosition: 'right',
     theme: storybookTheme
   },
-  readme: {
-    codeTheme: 'atom-dark',
-    theme: readmeTheme
-  }
+  docsContainer: DocsContainer,
+  docs: DocsPage,
 })
 
-configureReadme({
-  StoryPreview: ({ children }) => <div style={{margin: '30px 0'}}>{children}</div>,
-})
-
-function loadStories() {
-  const req = require.context('../src', true, /\.stories\.js$/)
-  req.keys().forEach(filename => req(filename))
-}
-
-configure(loadStories, module)
+configure([
+  require.context('../src', true, /\.stories\.(js|mdx)$/),
+  require.context('../functions/api', true, /\.stories\.(js|mdx)$/)
+], module)
