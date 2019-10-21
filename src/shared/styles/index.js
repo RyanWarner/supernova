@@ -1,5 +1,5 @@
 export * as Breakpoints from './Breakpoints'
-export * as Colors from './Colors'
+export * as Colors from './Colors/Colors'
 export * as Animations from './Animations'
 export * as Type from './Type'
 export * as Shadows from './Shadows'
