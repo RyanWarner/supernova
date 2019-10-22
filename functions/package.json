@@ -1,5 +1,5 @@
 {
-  "name": "react-ssr-firebase",
+  "name": "@yawnch/supernova",
   "version": "1.0.0",
   "author": "Ryan Warner (https://github.com/RyanWarner)",
   "engines": {
@@ -19,7 +19,7 @@
     "firebase-admin": "8.6.1",
     "firebase-functions": "3.3.0",
     "history": "4.10.1",
-    "informed": "2.11.9",
+    "informed": "2.11.10",
     "js-cookie": "2.2.1",
     "lodash": "4.17.15",
     "prop-types": "15.7.2",

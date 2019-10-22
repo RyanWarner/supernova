@@ -6,7 +6,7 @@ export default class Home extends Component {
   render () {
     return (
       <S.HomePage>
-        <h1>react-firebase-ssr</h1>
+        <h1>Supernova</h1>
       </S.HomePage>
     )
   }

@@ -1,0 +1,22 @@
+import { Meta, Preview, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks'
+import * as Colors from './Colors'
+
+<Meta title='Styles|Colors' />
+
+# Colors
+
+```js
+import { Colors } from 'app/styles'
+
+console.log(Colors.brand)
+```
+
+<ColorPalette>
+  { Object.keys(Colors).map(key =>
+    <ColorItem
+      key={key}
+      title={key}
+      colors={[Colors[key]]}
+    />
+  )}
+</ColorPalette>
