@@ -80,6 +80,7 @@
     "@storybook/addon-knobs": "5.2.4",
     "@storybook/react": "5.2.4",
     "@storybook/storybook-deployer": "2.8.1",
+    "@storybook/theming": "^5.2.5",
     "babel-eslint": "10.0.3",
     "babel-jest": "24.9.0",
     "babel-loader": "8.0.6",
