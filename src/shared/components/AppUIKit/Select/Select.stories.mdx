@@ -1,0 +1,64 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import Select from './Select'
+
+<Meta title='Components|UI Kit/Select' component={Select} />
+
+# Select
+
+- Form state is handled by [informed](https://github.com/joepuzzo/informed).
+- This component is a custom `informed` element, using the `asField` decorator. Read the [Informed Custom Input docs](https://joepuzzo.github.io/informed/?path=/story/custominputs--creating-custom-inputs).
+- As such, this component must be a child of `informed.Form`. Use the `withInformed` HOC to wrap your component in a `Form`.
+
+<Preview>
+  <Story name='Default'>
+    <Select
+      label='Pick a Color'
+      field='color'
+      defaultValue={{value: 'red', label: 'Cyan' }}
+      options={
+        [{
+          value: 'red', label: 'Cyan'
+        }, {
+          value: 'magenta', label: 'Magenta'
+        }, {
+          value: 'yellow', label: 'Yellow'
+        }, {
+          value: 'black', label: 'Black'
+        }]
+      }
+    />
+  </Story>
+</Preview>
+
+<Props of={Select} />
+
+## Usage example
+
+```jsx
+import { withInformed } from 'app/components'
+import { Select } from 'app/ui-kit'
+
+const fieldConfig = {
+  color: {
+    label: 'Pick a Color',
+    field: 'color',
+    defaultValue: { value: 'red', label: 'Cyan' },
+    options: [{
+      value: 'red', label: 'Cyan'
+    }, {
+      value: 'magenta', label: 'Magenta'
+    }, {
+      value: 'yellow', label: 'Yellow'
+    }, {
+      value: 'black', label: 'Black'
+    }]
+  }
+}
+
+@withInformed
+class FormWrap extends React.Component {
+  render = () => {
+    return <Select {...fieldConfig.color} />
+  }
+}
+```

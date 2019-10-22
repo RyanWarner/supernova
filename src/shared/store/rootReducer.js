@@ -13,7 +13,7 @@ const appReducer = combineReducers({
   router: connectRouter(history)
 })
 
-const rootReducer = (state, action) => {
+const rootReducer = (state = {}, action) => {
   const stateCopy = JSON.parse(JSON.stringify(state))
 
   if (action.type === 'LOGOUT') {
