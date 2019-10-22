@@ -18,6 +18,17 @@ An opinionated starting point for web applications.
 
 All important tasks are executed using NPM scripts. Checkout `package.json` for a complete list. The most important scripts are detailed here.
 
+### Configuration
+
+Copy `.env.example` found in 'config' for each required environment:
+
+```
+cp .env.example .env.development
+cp .env.example .env.staging
+cp .env.example .env.production
+```
+If you don't have a Firebase project, get started by creating one [here](https://console.firebase.google.com). The config values can be found in your project settings: https://console.firebase.google.com/project/your-project
+
 #### `npm start`
 
 Builds the app in development mode (using [Webpack](https://webpack.js.org/)) and starts a local dev server. Keeps Webpack running in watchmode and updates the app automatically using HMR.
