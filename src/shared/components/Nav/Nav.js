@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import * as S from './styles'
 import { openModal } from 'app/store/app/actions'
 
-const githubLink = 'https://github.com/yawnch/react-firebase-ssr-starter'
-const docsLink = 'https://yawnch.github.io/react-firebase-ssr-starter'
+const githubLink = 'https://github.com/yawnch/supernova'
+const docsLink = 'https://yawnch.github.io/supernova'
 const discordLink = 'https://discord.gg/6grKvkn'
 
 @connect(null, { openModal })

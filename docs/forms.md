@@ -78,7 +78,7 @@ The boilerplate comes with some patterns and usage examples to make working with
 
   For example:
 
-  - `label` is used by [`TextField.js`](https://github.com/yawnch/react-firebase-ssr-starter/blob/master/src/shared/components/AppUIKit/TextField/TextField.js)
+  - `label` is used by [`TextField.js`](https://github.com/yawnch/supernova/blob/master/src/shared/components/AppUIKit/TextField/TextField.js)
   - `validateOnBlur` is used by `informed`
   - `placeholder` is written to the DOM on the `input` element.
 
@@ -107,7 +107,7 @@ The boilerplate comes with some patterns and usage examples to make working with
 
   ```
 
-  [`TextField.js`](https://github.com/yawnch/react-firebase-ssr-starter/blob/master/src/shared/components/AppUIKit/TextField/TextField.js) is a boilerplate component that demonstrates a custom `informed` field that shows a form label and error message as well as visual indicators of form state.
+  [`TextField.js`](https://github.com/yawnch/supernova/blob/master/src/shared/components/AppUIKit/TextField/TextField.js) is a boilerplate component that demonstrates a custom `informed` field that shows a form label and error message as well as visual indicators of form state.
 
 1. ### Submission & loading behavior
 

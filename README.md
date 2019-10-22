@@ -1,17 +1,24 @@
-# React, Firebase, SSR Starter
+# Supernova
 
 An opinionated starting point for web applications.
 
-[Live Demo](http://react-firebase-ssr-starter.yawnch.com)
+- React, Redux, React Router
+- Firebase
+  - Real-time and Firestore databases
+  - Serverless hosting using Cloud Functions
+- SSR (Node, Express)
 
-[Docs](https://yawnch.github.io/react-firebase-ssr-starter)
+
+[Live Demo](http://supernova.yawnch.com)
+
+[Docs](https://yawnch.github.io/supernova)
 
 ## Getting Started
 
 ### Install project dependencies
 - Requires [NodeJS](https://nodejs.org/en/) `>= 10`. [NVM](https://github.com/nvm-sh/nvm) is recommended.
 - `npm install -g firebase-tools`
-- `git clone git@github.com:yawnch/react-firebase-ssr-starter.git`
+- `git clone git@github.com:yawnch/supernova.git`
 - `npm install`
 
 ### Usage
