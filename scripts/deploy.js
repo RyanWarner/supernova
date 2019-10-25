@@ -26,13 +26,18 @@ const firebaseProject = gitBranchToFirebaseMap[argv.branch]
 const { FIREBASE_DEPLOY_TOKEN } = process.env
 
 const DEPLOY_ENV = firebaseProject || process.argv[2] || process.env.DEPLOY_ENV
-require('dotenv').config({ path: `${paths.dotenv}.${DEPLOY_ENV}` })
+require('dotenv').config({
+  path: `${paths.dotenv}.${DEPLOY_ENV}`,
+  systemvars: true
+})
 
 const firebaseUse = async () => {
   const message = `Using Firebase project: ${DEPLOY_ENV}`
   console.log(chalk.hex(chalkColor).bold(message))
 
-  const { stdout, stderr } = await exec(`./node_modules/.bin/firebase use ${DEPLOY_ENV} --token ${FIREBASE_DEPLOY_TOKEN}`)
+  const { stdout, stderr } = await exec(
+    `./node_modules/.bin/firebase use ${DEPLOY_ENV} --token ${FIREBASE_DEPLOY_TOKEN}`
+  )
   if (stdout) console.log('stdout', stdout)
   if (stderr) console.log('stderr', stderr)
 }
@@ -42,7 +47,9 @@ const firebaseDeploy = async () => {
   console.log(chalk.hex(chalkColor).bold(message))
 
   try {
-    const { stdout, stderr } = await exec(`./node_modules/.bin/firebase deploy --only hosting,functions --token ${FIREBASE_DEPLOY_TOKEN}`)
+    const { stdout, stderr } = await exec(
+      `./node_modules/.bin/firebase deploy --only hosting,functions --token ${FIREBASE_DEPLOY_TOKEN}`
+    )
     if (stdout) console.log('stdout', stdout)
     if (stderr) console.log('stderr', stderr)
   } catch (error) {
