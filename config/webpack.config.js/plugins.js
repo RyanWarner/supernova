@@ -11,7 +11,8 @@ const shared = []
 const client = [
   new CaseSensitivePathsPlugin(),
   new Dotenv({
-    path: `${paths.dotenv}.${deployEnv}`
+    path: `${paths.dotenv}.${deployEnv}`,
+    systemvars: true
   }),
   new webpack.DefinePlugin({
     __SERVER__: 'false',
@@ -23,7 +24,8 @@ const client = [
 
 const server = [
   new Dotenv({
-    path: `${paths.dotenv}.${deployEnv}`
+    path: `${paths.dotenv}.${deployEnv}`,
+    systemvars: true
   }),
   new webpack.DefinePlugin({
     __SERVER__: 'true',
