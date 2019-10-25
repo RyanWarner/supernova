@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { Breakpoints, Colors, Sizes, Type } from 'app/styles'
 
-export const FooterComponent = styled.div`
+export const FooterComponent = styled.footer`
   margin-top: auto;
   padding-top: 100px;
   margin-bottom: 46px;
@@ -39,7 +39,7 @@ export const FooterNav = styled.div`
   }
 `
 
-export const NavItems = styled.div``
+export const NavItems = styled.nav``
 
 const footerNavItemShared = css`
   margin-right: 24px;
