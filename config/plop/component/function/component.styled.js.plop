@@ -1,13 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import * as S from './styles'
 
 const {{pascalCase componentName}} = () => {
-   return (
-      <S.{{pascalCase componentName}}Component>
-        🚀 {{componentName}}
-      </S.{{pascalCase componentName}}Component>
-    )
+   return <S.{{pascalCase componentName}}Component> 🚀 {{componentName}} </S.{{pascalCase componentName}}Component>
 }
 
 export default {{pascalCase componentName}}
