@@ -2,7 +2,6 @@
 import React, { Component } from 'react'
 import AriaModal from 'react-aria-modal'
 
-import { getIn } from 'app/utilities'
 import * as S from './styles'
 import { X } from 'app/ui-kit/Icons'
 import Modals from './ModalList'
@@ -37,7 +36,7 @@ export default class ModalController extends Component {
   render () {
     const { activeModal, modalProps } = this.props
     const { modalHasEntered } = this.state
-    const modalName = getIn(activeModal, ['name'])
+    const modalName = activeModal?.name
 
     let modalClass = 'Aria-modal'
     let underlayClass = 'Aria-underlay'
