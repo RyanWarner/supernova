@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Colors } from 'app/styles'
+import { Colors, Sizes } from 'app/styles'
 
 export const HomePage = styled.main`
   min-height: 100%;
@@ -8,5 +8,8 @@ export const HomePage = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: ${Colors.white};
+  background: ${Colors.beige10};
+  color: ${Colors.gray10};
+  padding-top: ${Sizes.navHeight};
+  flex-shrink: 0;
 `
