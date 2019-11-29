@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 
+import { Spinner } from 'app/ui-kit/Icons'
+
 export const LoadingComponent = styled.div`
   height: 28px;
   width: 0;
@@ -14,3 +16,5 @@ export const LoadingComponent = styled.div`
     margin-right: 8px;
   `}
 `
+
+export const StyledSpinner = styled(Spinner)``

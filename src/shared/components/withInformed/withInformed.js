@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Form } from 'informed'
+import * as S from './styles'
 
 export default WrappedComponent => {
   return class HOC extends Component {
@@ -11,13 +11,19 @@ export default WrappedComponent => {
     }
 
     render () {
+      const { initialValues } = this.props
+
       return (
-        <Form onSubmit={this.state.handleSubmit}>
+        <S.StyledForm
+          initialValues={initialValues}
+          onSubmit={this.state.handleSubmit}
+          allowEmptyStrings
+        >
           <WrappedComponent
             setOnSubmit={this.setOnSubmit}
             {...this.props}
           />
-        </Form>
+        </S.StyledForm>
       )
     }
   }

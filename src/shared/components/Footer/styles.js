@@ -1,20 +1,19 @@
-import styled, { css } from 'styled-components'
-import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
-import { Breakpoints, Colors, Sizes, Type } from 'app/styles'
+import { Breakpoints, Colors, Sizes } from 'app/styles'
+import NavLinks from '../NavLinks/NavLinks'
 
 export const FooterComponent = styled.footer`
   margin-top: auto;
-  padding-top: 100px;
-  margin-bottom: 46px;
   width: 100vw;
   display: flex;
   justify-content: center;
-  padding: 100px ${Sizes.xAppPadding} 0 ${Sizes.xAppPadding};
+  padding: 36px ${Sizes.xAppPadding};
   box-sizing: border-box;
 
   @media(max-width: ${Breakpoints.main}) {
-    padding: 100px ${Sizes.xAppPaddingMobile} 0 ${Sizes.xAppPaddingMobile};
+    justify-content: flex-start;
+    padding: 46px ${Sizes.xAppPaddingMobile};
   }
 `
 
@@ -22,67 +21,33 @@ export const MaxWidth = styled.div`
   max-width: ${Sizes.maxWidth};
   width: 100%;
   display: flex;
-  flex-direction: column;
-
-  @media(max-width: ${Breakpoints.main}) {
-    align-items: center;
-  }
-`
-
-export const FooterNav = styled.div`
-  display: flex;
-  text-align: center;
+  position: relative;
+  justify-content: space-between;
 
   @media(max-width: ${Breakpoints.main}) {
     flex-direction: column;
-    align-items: center;
+    justify-content: flex-start;
   }
 `
 
-export const NavItems = styled.nav``
-
-const footerNavItemShared = css`
-  margin-right: 24px;
+export const Copyright = styled.a`
+  color: ${Colors.gray20};
   font-size: 14px;
-  font-weight: ${Type.fontWeights.medium};
-  color: ${Colors.white};
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  @media(max-width: ${Breakpoints.main}) {
-    font-size: 14px;
-  }
-`
-
-export const FooterNavItem = styled(Link)`
-  ${footerNavItemShared};
-`
-
-export const StyledFooterA = styled.a`
-  ${footerNavItemShared};
-`
-
-export const Copyright = styled.div`
-  margin-left: auto;
-  color: ${Colors.white};
-  font-size: 14px;
+  width: 200px;
+  text-align: right;
 
   @media(max-width: ${Breakpoints.main}) {
     margin-left: 0;
+    margin-top: 28px;
     text-align: center;
     font-size: 14px;
+    text-align: left;
+    opacity: 0.7;
   }
 `
 
-export const Rule = styled.div`
-  width: 100%;
-  height: 1px;
-  background-color: ${Colors.darkBlueGray};
-  margin: 21px 0 24px 0;
-
+export const StyledNavLinks = styled(NavLinks)`
   @media(max-width: ${Breakpoints.main}) {
-    display: none;
+    margin-top: 28px;
   }
 `

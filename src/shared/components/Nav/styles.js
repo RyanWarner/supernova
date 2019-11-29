@@ -1,13 +1,12 @@
 import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom'
 
-import { Colors, Breakpoints, Sizes, Type } from 'app/styles'
-import { YawnchLogo } from 'app/ui-kit/Icons'
+import { Breakpoints, Colors, Sizes } from 'app/styles'
 import { Button } from 'app/ui-kit'
 
 export const NavComponent = styled.header`
   height: ${Sizes.navHeight};
-  background-color: ${Colors.black};
+  background-color: ${Colors.white080};
   width: 100vw;
   display: flex;
   align-items: center;
@@ -17,39 +16,37 @@ export const NavComponent = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
+  backdrop-filter: blur(5px);
 
   @media(max-width: ${Breakpoints.main}) {
-    padding: 0 20px;
-    height: 60px;
+    display: none;
   }
 `
 
 export const LogoLink = styled(Link)`
   display: flex;
   align-items: center;
-  color: ${Colors.white};
+  width: 205px;
 `
 
-export const LogoText = styled.div`
-  margin-left: 10px;
-  font-weight: bold;
+export const AuthButtons = styled.div`
+  display: flex;
+  width: 205px;
 `
 
-export const StyledYawnchLogo = styled(YawnchLogo)`
-  height: 36px;
-  width: 20px;
+export const LogIn = styled(Button)`
+  margin-right: 10px;
 `
+
+export const SignUp = styled(Button)``
 
 export const NavItems = styled.nav`
   display: flex;
-  align-items: center;
 `
 
 const navItemShared = css`
-  margin-left: 35px;
-  font-weight: ${Type.fontWeights.medium};
-  color: ${Colors.white};
+  margin-left: 26px;
 `
 
 export const NavA = styled.a`
@@ -57,9 +54,5 @@ export const NavA = styled.a`
 `
 
 export const NavLink = styled(Link)`
-  ${navItemShared};
-`
-
-export const NavButton = styled(Button)`
   ${navItemShared};
 `

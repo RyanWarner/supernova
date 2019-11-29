@@ -1,52 +1,39 @@
 import { css } from 'styled-components'
 
-import { Colors, Shadows, Type } from 'app/styles'
+import { Colors, Type } from 'app/styles'
 
-export const text = css`
-  ${Type.body};
-  color: ${Colors.white};
-  background-color: ${Colors.lightBackground};
-  padding: 0 12px;
-  border-radius: 4px;
-  box-sizing: border-box;
-  width: 100%;
+export const base = css`
   font-family: ${Type.fontFace};
-  height: 40px;
-  box-shadow: ${Shadows.main};
-  -webkit-appearance: none;
-  transition: all 250ms ease;
+  font-size: 14px;
+  border-radius: 4px;
+  box-shadow: none;
+  border: 0;
+  height: 37px;
+  padding: 0 10px;
+  width: 100%;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.07);
   border: 1px solid transparent;
+  transition: border 200ms ease;
 
   &:focus {
-    outline: none;
-    background-color: ${Colors.lightBackgroundActive};
+    border: 1px solid ${Colors.brand20};
+    box-shadow: 0;
+    outline: 0;
   }
+`
 
-  ::placeholder {
-    color: ${Colors.lightGray};
-  }
-
-  ${props => props.fieldState.error && css`
-    border: 1px solid ${Colors.errorRed};
-
-    &:focus {
-      border: 1px solid ${Colors.errorRed};
-    }
-  `}
+export const label = css`
+  ${Type.smallBody}
+  position: relative;
+  color: ${Colors.font10};
+  display: block;
+  margin-bottom: 2px;
 `
 
 export const error = css`
   ${Type.smallBody}
-  color: ${Colors.errorRed};
+  color: ${Colors.error};
   position: relative;
   height: 20px;
-  margin: 3px 0 0 2px;
-`
-
-export const label = css`
-  ${Type.body}
-  position: relative;
-  height: 20px;
-  color: ${Colors.lightGray};
-  margin: 0 0 6px 2px;
+  margin: 5px 0 0 3px;
 `

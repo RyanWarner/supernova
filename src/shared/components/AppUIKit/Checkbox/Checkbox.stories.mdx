@@ -1,0 +1,22 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import Checkbox from './Checkbox'
+import { Form } from 'informed'
+
+<Meta title='Components|UI Kit/Checkbox' component={Checkbox} />
+
+# Checkbox
+
+Custom [informed](https://joepuzzo.github.io/informed/?path=/story/inputs--intro) input.
+
+<Preview>
+  <Story name='Default'>
+    <Form>
+      <Checkbox
+        field='fieldId'
+        label='Checkbox label'
+      />
+    </Form>
+  </Story>
+</Preview>
+
+<Props of={Checkbox} />

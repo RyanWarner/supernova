@@ -8,3 +8,9 @@ export const FadeIn = keyframes`
     opacity: 1;
   }
 `
+
+export const spin = keyframes`
+  100% {
+    transform: rotate(360deg)
+  }
+`

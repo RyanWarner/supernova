@@ -10,7 +10,11 @@ export default asField(({ fieldState, fieldApi, ...props }) => {
 
   return (
     <S.SelectComponent>
-      <S.Label>{props.label}</S.Label>
+      {props.label && (
+        <S.Label htmlFor={props.field}>
+          {props.label}
+        </S.Label>
+      )}
       <S.StyledSelect
         {...rest}
         components={{ DropdownIndicator: S.DropdownIndicator }}

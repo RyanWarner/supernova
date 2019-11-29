@@ -1,7 +1,7 @@
 import SignUpModal from '../SignUpModal/SignUpModal'
-import LoginModal from '../LoginModal/LoginModal'
+import LogInModal from '../LogInModal/LogInModal'
 
 export default {
   SignUpModal,
-  LoginModal
+  LogInModal
 }
