@@ -1,57 +1,94 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import 'focus-visible'
 
-import { Colors, Type } from 'app/styles'
+import { Breakpoints, Colors, Type } from 'app/styles'
 
-const ButtonCleanProps = ({ loading, disabled, ...props }) => (
-  <button {...props} />
+const ButtonCleanProps = ({ loading, disabled, buttonName, options, ...rest }) => (
+  <button {...rest} />
 )
 
 export const Button = styled(ButtonCleanProps)`
-  font-family: ${Type.fontFamily};
-  font-size: 14px;
+  font-family: ${Type.fontFace};
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
   transition: background 275ms ease;
-  height: 42px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: ${Colors.white};
-  border-radius: 4px;
-  background: ${Colors.darkPurple};
-  appearance: none;
+  height: 46px;
+  color: ${Colors.beige20};
+  background: ${Colors.brand10};
+  border-radius: 6px;
   border: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   &:hover {
-    background: ${Colors.darkPurpleHover};
+    background: ${Colors.brand20};
   }
 
   &:active {
-    color: ${Colors.white};
-    background: ${Colors.darkPurple};
+    background: ${Colors.brand30};
   }
 
   &:focus {
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
     outline: none;
-    border: 0;
-    background: ${Colors.darkPurpleHover};
+    box-shadow: 0 0 0 3px rgba(212, 175, 255, .95);
   }
 
-  ${props => (props.disabled || props.loading) && css`
-    background: ${Colors.disabled};
-    pointer-events: none;
+  &:focus:not(.focus-visible) {
+    outline: none;
+    box-shadow: none;
+  }
 
-    &:hover,
-    &:active,
+  ${props => props.disabled && css`
+    opacity: .1;
+    pointer-events: none;
+  `}
+
+  ${props => props.options?.theme === 'orange' && css`
+    background: ${Colors.orange10};
+
+    &:hover {
+      background: ${Colors.orange20};
+    }
+
+    &:active {
+      background: ${Colors.orange30};
+    }
+
     &:focus {
-      background: ${Colors.disabled};
+      outline: none;
+      box-shadow: 0 0 0 3px ${Colors.orange40};
     }
   `}
+
+  ${props => props.options?.theme === 'text' && css`
+    background: transparent;
+
+    &:hover {
+      background: ${Colors.orange20};
+    }
+
+    &:active {
+      background: ${Colors.orange30};
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px ${Colors.orange40};
+    }
+  `}
+
+  ${props => props.options?.size === 'small' && css`
+    height: 37px;
+    min-width: auto;
+  `}
+
+  @media(max-width: ${Breakpoints.main}) {
+    height: 45px;
+    min-width: auto;
+  }
 `
 
 export const ButtonText = styled.div`
@@ -59,7 +96,17 @@ export const ButtonText = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
-  font-weight: bold;
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: ${Type.fontWeights.semiBold};
   width: 100%;
+
+  ${props => props.options?.size === 'small' && css`
+    font-size: 14px;
+    padding: 0 18px;
+  `}
+
+  ${props => props.options?.theme === 'text' && css`
+    color: ${Colors.gray10};
+  `}
 `

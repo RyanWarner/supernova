@@ -8,7 +8,7 @@ export default () =>
     <S.Text>
       <S.Title>Launch web apps faster</S.Title>
       <S.Description>
-        Nova is an open source, feature rich React boilerplate used to kickstart production ready web apps.
+        Supernova is an open source, feature rich React + SSR boilerplate used to kickstart production ready web apps.
       </S.Description>
       <Link to='/docs/getting-started/installation'>
         <S.StyledButton>Explore</S.StyledButton>
