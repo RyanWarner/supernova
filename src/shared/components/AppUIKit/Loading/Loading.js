@@ -1,14 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import * as S from './styles'
-import { Spinner } from 'app/ui-kit/Icons'
 
-export default class Loading extends Component {
-  render () {
-    return (
-      <S.LoadingComponent visible={this.props.visible}>
-        <Spinner />
-      </S.LoadingComponent>
-    )
-  }
-}
+export default ({ visible }) =>
+  <S.LoadingComponent visible={visible}>
+    <S.StyledSpinner />
+  </S.LoadingComponent>

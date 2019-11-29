@@ -11,22 +11,24 @@ import Select from './Select'
 
 <Preview>
   <Story name='Default'>
-    <Select
-      label='Pick a Color'
-      field='color'
-      defaultValue={{value: 'red', label: 'Cyan' }}
-      options={
-        [{
-          value: 'red', label: 'Cyan'
-        }, {
-          value: 'magenta', label: 'Magenta'
-        }, {
-          value: 'yellow', label: 'Yellow'
-        }, {
-          value: 'black', label: 'Black'
-        }]
-      }
-    />
+    <div style={{ width: '300px', height: '200px' }}>
+      <Select
+        label='Pick a Color'
+        field='color'
+        defaultValue={{value: 'red', label: 'Cyan' }}
+        options={
+          [{
+            value: 'red', label: 'Cyan'
+          }, {
+            value: 'magenta', label: 'Magenta'
+          }, {
+            value: 'yellow', label: 'Yellow'
+          }, {
+            value: 'black', label: 'Black'
+          }]
+        }
+      />
+    </div>
   </Story>
 </Preview>
 
