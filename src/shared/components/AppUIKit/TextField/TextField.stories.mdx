@@ -1,51 +1,40 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
 import TextField from './TextField'
+import { Form } from 'informed'
 
 <Meta title='Components|UI Kit/TextField' component={TextField} />
 
 # TextField
 
-- Form state is handled by [informed](https://github.com/joepuzzo/informed).
-- This component is a custom `informed` element, using the `asField` decorator. Read the [Informed Custom Input docs](https://joepuzzo.github.io/informed/?path=/story/custominputs--creating-custom-inputs).
-- As such, this component must be a child of `informed.Form`. Use the `withInformed` HOC to wrap your component in a `Form`.
+Custom [informed](https://joepuzzo.github.io/informed/?path=/story/inputs--intro) input.
+
+#### Default
 
 <Preview>
   <Story name='Default'>
-    <TextField
-      label='Message'
-      field='message'
-      placeholder='Type your message'
-      validate={value => {
-        if (!value || value.length < 1) return 'Required'
-      }}
-    />
+    <Form>
+      <TextField
+        field='name'
+        label='Name'
+        placeholder='Your name here'
+      />
+    </Form>
+  </Story>
+</Preview>
+
+#### With error
+
+<Preview>
+  <Story name='With error'>
+    <Form>
+      <TextField
+        field='name'
+        label='Name'
+        placeholder='Your name here'
+        fieldState={{ error: 'Invalid '}}
+      />
+    </Form>
   </Story>
 </Preview>
 
 <Props of={TextField} />
-
-## Usage example
-
-```jsx
-import { withInformed } from 'app/components'
-import { TextField } from 'app/ui-kit'
-
-const fieldConfig = {
-  message: {
-    label: 'Message',
-    field: 'message',
-    placeholder: 'Type your message',
-    validate: (value) => {
-      if (!value || value.length < 1) return 'Required'
-      return null
-    }
-  }
-}
-
-@withInformed
-class FormWrap extends React.Component {
-  render = () => {
-    return <TextField {...fieldConfig.message} />
-  }
-}
-```

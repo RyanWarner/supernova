@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import { BasicText } from 'informed'
 
@@ -5,19 +6,22 @@ import { Inputs } from 'app/styles'
 
 export const TextFieldComponent = styled.div`
   flex-grow: 1;
-  height: 100%;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 `
 
-export const TextInput = styled(BasicText)`
-  ${Inputs.text};
-`
+const BasicTextCleanProps = ({ noError, ...rest }) => (
+  <BasicText {...rest} />
+)
 
-export const Label = styled.div`
-  ${Inputs.label};
+export const TextInput = styled(BasicTextCleanProps)`
+  ${Inputs.base};
 `
 
 export const Error = styled.div`
   ${Inputs.error};
+`
+
+export const Label = styled.label`
+  ${Inputs.label};
 `
