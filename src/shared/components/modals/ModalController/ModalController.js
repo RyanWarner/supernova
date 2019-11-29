@@ -62,8 +62,7 @@ export default class ModalController extends Component {
       underlayClass,
       titleText: modalName,
       focusModal: true,
-      onEnter: this.onModalEnter,
-      underlayStyle: animation === 'sideNav' ? S.sideNavUnderlayStyle : null
+      onEnter: this.onModalEnter
     }
 
     const Modal = Modals[modalName]
