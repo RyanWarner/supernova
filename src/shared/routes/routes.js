@@ -10,7 +10,7 @@ export default [{
       path: '/',
       component: AppRoot,
       meta: {
-        title: 'Yawnch - React, Firebase, SSR',
+        title: 'Supernova',
         description: 'An opinionated starting point for web applications.'
       },
       routes: [{
@@ -18,7 +18,7 @@ export default [{
         exact: true,
         component: Home,
         meta: {
-          title: 'Yawnch - React, Firebase, SSR',
+          title: 'Supernova - React, Firebase, SSR boilerplate',
           description: 'An opinionated starting point for web applications.'
         }
       }, {
@@ -26,7 +26,7 @@ export default [{
         exact: true,
         component: Dashboard,
         meta: {
-          title: 'Yawnch - Dashboard',
+          title: 'Supernova - Dashboard',
           description: 'An opinionated starting point for web applications.'
         }
       }, {
@@ -34,7 +34,7 @@ export default [{
         exact: true,
         component: Privacy,
         meta: {
-          title: 'Yawnch - Privacy Policy',
+          title: 'Supernova - Privacy Policy',
           description: 'Privacy policy'
         }
       }, {
@@ -42,15 +42,15 @@ export default [{
         exact: true,
         component: Terms,
         meta: {
-          title: 'Yawnch - Terms',
+          title: 'Supernova - Terms',
           description: 'Terms of service'
         }
       }, {
         path: '*',
         component: NotFound,
         meta: {
-          title: 'Yawnch - Not found',
-          description: 'An opinionated starting point for web applications.'
+          title: 'Supernova - Not found',
+          description: '404'
         }
       }]
     }]
