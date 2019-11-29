@@ -1,22 +1,32 @@
 import styled from 'styled-components'
 
-import { Button } from 'app/ui-kit'
-import { Colors, Type } from 'app/styles'
+import { Colors, Breakpoints } from 'app/styles'
 
-export const LoginModalComponent = styled.div`
-  padding: 40px;
-  width: 360px;
+export const LogInModalComponent = styled.div`
+  padding: 50px 96px;
+  width: 520px;
   box-sizing: border-box;
-  background-color: ${Colors.offWhite};
-  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: ${Colors.beige20};
+
+  @media(max-width: ${Breakpoints.main}) {
+    width: 100vw;
+  }
 `
-export const Title = styled.div`
-  ${Type.largeInput};
+
+export const Title = styled.h3`
   font-weight: bold;
-  margin-bottom: 30px;
-  line-height: 30px;
+  text-align: center;
+  color: ${Colors.gray10};
+  margin-top: 0;
+  margin-bottom: 10px;
 `
-export const TextFields = styled.div``
-export const SignUpButton = styled(Button)`
-  margin-top: 20px;
+
+export const Description = styled.p`
+  text-align: center;
+  color: ${Colors.gray20};
+  margin-bottom: 30px;
 `

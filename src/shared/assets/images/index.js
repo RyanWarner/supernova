@@ -1,4 +1,5 @@
 export favicon from './favicon.png'
 export ogImage from './ogImage.png'
 export yawnch from './yawnch.png'
-export novaSmall from './novaSmall.png'
+export supernovaSmall from './supernovaSmall.png'
+export logo from './logo.png'
