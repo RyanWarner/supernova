@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { Button } from 'app/ui-kit'
 import { Breakpoints, Colors, Mixins, Type } from 'app/styles'
-// import Nova from '../Nova/Nova'
+import Nova from '../Nova/Nova'
 
 export const HeroComponent = styled.div`
   display: flex;
@@ -54,4 +54,4 @@ export const Description = styled.p`
 
 export const StyledButton = styled(Button)``
 
-export const StyledNova = styled.div``
+export const StyledNova = styled(Nova)``
