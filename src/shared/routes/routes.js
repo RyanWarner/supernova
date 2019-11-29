@@ -1,5 +1,5 @@
 import { Root, AppRoot } from 'app/components'
-import { Home, Dashboard, Faq, Privacy, Terms, NotFound } from 'app/pages'
+import { Home, Dashboard, Privacy, Terms, NotFound } from 'app/pages'
 import adminRoutes from './adminRoutes'
 
 export default [{
@@ -28,14 +28,6 @@ export default [{
         meta: {
           title: 'Yawnch - Dashboard',
           description: 'An opinionated starting point for web applications.'
-        }
-      }, {
-        path: '/faq',
-        exact: true,
-        component: Faq,
-        meta: {
-          title: 'Yawnch - FAQ',
-          description: 'Frequently asked questions'
         }
       }, {
         path: '/privacy',
