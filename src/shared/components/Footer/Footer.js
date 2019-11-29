@@ -1,45 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import * as S from './styles'
+import MadeByYawnch from '../MadeByYawnch/MadeByYawnch'
 
-const footerNavItems = {
-  faq: {
-    display: 'FAQ',
-    path: '/faq'
-  },
-  privacy: {
-    display: 'Privacy',
-    path: '/privacy'
-  },
-  termsOfUse: {
-    display: 'Terms',
-    path: '/terms'
-  }
-}
-
-export default class Footer extends Component {
-  renderFooterNavItems = () => {
-    return Object.values(footerNavItems).map(item => (
-      <S.FooterNavItem key={item.path} to={item.path}>{item.display}</S.FooterNavItem>
-    ))
-  }
-
-  render () {
-    return (
-      <S.FooterComponent>
-        <S.MaxWidth>
-          <S.Rule />
-          <S.FooterNav>
-            <S.NavItems>
-              {this.renderFooterNavItems()}
-              <S.StyledFooterA href='mailto:hello@yawnch.com'>
-                Contact
-              </S.StyledFooterA>
-            </S.NavItems>
-            <S.Copyright>© {new Date().getFullYear()} Yawnch</S.Copyright>
-          </S.FooterNav>
-        </S.MaxWidth>
-      </S.FooterComponent>
-    )
-  }
-}
+export default () =>
+  <S.FooterComponent>
+    <S.MaxWidth>
+      <MadeByYawnch />
+      <S.StyledNavLinks />
+      <S.Copyright
+        href='https://opensource.org/licenses/MIT'
+        target='_blank'
+        rel='noreferrer noopener'
+      >
+        MIT License
+      </S.Copyright>
+    </S.MaxWidth>
+  </S.FooterComponent>
