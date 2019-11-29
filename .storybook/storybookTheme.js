@@ -2,19 +2,19 @@
 import { create } from '@storybook/theming'
 
 import { Colors, Type } from 'app/styles'
-import { favicon } from 'app/assets/images'
+import { logo } from 'app/assets/images'
 
 export default create({
-  base: Colors.background,
+  base: Colors.beige10,
 
-  colorPrimary: Colors.brand,
-  colorSecondary: Colors.brandSecondary,
-  sidebarSvgIconColor: Colors.brand,
+  colorPrimary: Colors.brand10,
+  colorSecondary: Colors.orange10,
+  sidebarSvgIconColor: Colors.brand10,
 
   // UI
-  appBg: Colors.gray1,
-  appContentBg: Colors.gray3,
-  appBorderColor: Colors.gray1,
+  appBg: Colors.beige10,
+  appContentBg: Colors.beige20,
+  appBorderColor: Colors.black012,
   appBorderRadius: 6,
 
   // Typography
@@ -22,21 +22,21 @@ export default create({
   fontCode: 'monospace',
 
   // Text colors
-  textColor: Colors.font,
+  textColor: 'black',
   textInverseColor: 'rgba(255,255,255,0.9)',
 
   // Toolbar default and active colors
-  barTextColor: Colors.font,
-  barSelectedColor: Colors.brand,
-  barBg: Colors.gray3,
+  barTextColor: 'black',
+  barSelectedColor: Colors.brand10,
+  barBg: Colors.beige20,
 
   // Form colors
-  inputBg: Colors.gray3,
+  inputBg: Colors.brand20,
   inputBorder: 'transparent',
-  inputTextColor: Colors.font,
-  inputBorderRadius: 4,
+  inputTextColor: Colors.gray10,
+  inputBorderRadius: 6,
 
-  brandTitle: 'Stockstreamtv',
-  brandUrl: 'https://stockstream.tv',
-  brandImage: favicon,
-});
+  brandTitle: 'Yawnch - Nova',
+  brandUrl: 'https://nova.yawnch.com',
+  brandImage: logo
+})
