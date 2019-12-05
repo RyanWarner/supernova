@@ -35,6 +35,10 @@ export const header1 = css`
   line-height: 152%;
   font-weight: ${fontWeights.bold};
 
+  @media(max-width: ${Breakpoints.tablet}) {
+    font-size: 32px;
+  }
+
   @media(max-width: ${Breakpoints.main}) {
     font-size: 26px;
   }
@@ -79,12 +83,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${Colors.brand10};
+    color: ${Colors.gray20};
     text-decoration: none;
     transition: color 300ms ease;
 
     &:hover {
-      color: ${Colors.brand20};
+      color: ${Colors.gray20};
     }
   }
 `

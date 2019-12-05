@@ -10,7 +10,7 @@ export const NavLinksComponent = styled.div`
 
 const navItemShared = css`
   margin-right: 26px;
-  color: ${Colors.gray20};
+  color: ${Colors.gray10};
   ${props => props.styled};
 `
 

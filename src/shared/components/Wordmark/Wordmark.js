@@ -5,5 +5,5 @@ import * as S from './styles'
 export default props =>
   <S.WordmarkComponent {...props}>
     <S.StyledNovaSmall />
-    <S.Text>Supernova</S.Text>
+    <S.Text>Supernova: Gravity</S.Text>
   </S.WordmarkComponent>

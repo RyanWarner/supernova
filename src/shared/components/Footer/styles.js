@@ -4,7 +4,6 @@ import { Breakpoints, Colors, Sizes } from 'app/styles'
 import NavLinks from '../NavLinks/NavLinks'
 
 export const FooterComponent = styled.footer`
-  margin-top: auto;
   width: 100vw;
   display: flex;
   justify-content: center;

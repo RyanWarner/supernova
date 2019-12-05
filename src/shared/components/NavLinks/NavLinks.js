@@ -4,12 +4,12 @@ import * as S from './styles'
 import { navItems } from 'app/data'
 
 const Link = ({ item, style }) =>
-  <S.NavLink to={item.url} key={item.display} styled={style}>
+  <S.NavLink to={item.url} key={item.display} styled={style} target='_blank'>
     {item.display}
   </S.NavLink>
 
 const A = ({ item, style }) =>
-  <S.A href={item.url} key={item.display} styled={style}>
+  <S.A href={item.url} key={item.display} styled={style} target='_blank'>
     {item.display}
   </S.A>
 

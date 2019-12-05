@@ -3,11 +3,9 @@ import { EMAIL } from 'app/utilities/regex'
 export default {
   email: {
     field: 'email',
-    label: 'Email',
     placeholder: 'you@email.com',
     type: 'email',
     required: true,
-    validateOnBlur: true,
     validate: (value) => {
       if (!EMAIL.test(value)) return 'Invalid email'
     }

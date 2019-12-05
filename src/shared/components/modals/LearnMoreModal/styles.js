@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-import { Colors, Breakpoints } from 'app/styles'
+import { Colors, Breakpoints, Type } from 'app/styles'
 
-export const SignUpModalComponent = styled.div`
+export const LearnMoreModalComponent = styled.div`
   padding: 50px 96px;
   width: 520px;
   box-sizing: border-box;
@@ -10,7 +10,11 @@ export const SignUpModalComponent = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: ${Colors.beige20};
+  background-color: ${Colors.backgroundDark};
+
+  a {
+    font-weight: ${Type.fontWeights.bold}
+  }
 
   @media(max-width: ${Breakpoints.main}) {
     width: 100vw;

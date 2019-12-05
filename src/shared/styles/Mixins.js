@@ -3,7 +3,6 @@ import { css } from 'styled-components'
 import { Breakpoints, Sizes } from 'app/styles'
 
 export const widthContainer = css`
-  width: 1200px;
   padding: 0 ${Sizes.xAppPadding};
   box-sizing: border-box;
 

@@ -8,11 +8,7 @@ import { Wordmark, NavLinks } from '../'
 @connect(null, { openModal })
 export default class Nav extends Component {
   handleSignUp = () => {
-    this.props.openModal({ name: 'SignUpModal' })
-  }
-
-  handleLogIn = () => {
-    this.props.openModal({ name: 'LogInModal' })
+    this.props.openModal({ name: 'LearnMoreModal' })
   }
 
   render () {
@@ -23,23 +19,13 @@ export default class Nav extends Component {
         </S.LogoLink>
         <NavLinks />
         <S.AuthButtons>
-          <S.LogIn
-            options={{
-              theme: 'text',
-              size: 'small'
-            }}
-            onClick={this.handleLogIn}
-          >
-            Log in
-          </S.LogIn>
           <S.SignUp
             options={{
-              theme: 'orange',
               size: 'small'
             }}
             onClick={this.handleSignUp}
           >
-            Sign up
+            Learn More
           </S.SignUp>
         </S.AuthButtons>
       </S.NavComponent>

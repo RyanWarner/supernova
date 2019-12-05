@@ -15,7 +15,7 @@ export const Button = styled(ButtonCleanProps)`
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  transition: background 275ms ease;
+  transition: all 200ms ease;
   height: 46px;
   color: ${Colors.beige20};
   background: ${Colors.brand10};
@@ -44,23 +44,6 @@ export const Button = styled(ButtonCleanProps)`
   ${props => props.disabled && css`
     opacity: .1;
     pointer-events: none;
-  `}
-
-  ${props => props.options?.theme === 'orange' && css`
-    background: ${Colors.orange10};
-
-    &:hover {
-      background: ${Colors.orange20};
-    }
-
-    &:active {
-      background: ${Colors.orange30};
-    }
-
-    &:focus {
-      outline: none;
-      box-shadow: 0 0 0 3px ${Colors.orange40};
-    }
   `}
 
   ${props => props.options?.theme === 'text' && css`

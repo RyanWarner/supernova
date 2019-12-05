@@ -1,6 +1,7 @@
 export Instagram from './Instagram'
 export Facebook from './Facebook'
 export Twitter from './Twitter'
+export Youtube from './Youtube'
 export Medium from './Medium'
 export Check from './Check'
 export ChevronDown from './ChevronDown'

@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     a {
-      color: ${Colors.brand};
+      color: ${Colors.gray10};
     }
 
     .sbdocs-h1 {

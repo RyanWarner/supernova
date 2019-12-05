@@ -10,7 +10,7 @@ export default [{
       path: '/',
       component: AppRoot,
       meta: {
-        title: 'Supernova',
+        title: 'Supernova: Gravity - Validate Your Business',
         description: 'An opinionated starting point for web applications.'
       },
       routes: [{
@@ -18,15 +18,7 @@ export default [{
         exact: true,
         component: Home,
         meta: {
-          title: 'Supernova - React, Firebase, SSR boilerplate',
-          description: 'An opinionated starting point for web applications.'
-        }
-      }, {
-        path: '/dashboard',
-        exact: true,
-        component: Dashboard,
-        meta: {
-          title: 'Supernova - Dashboard',
+          title: 'Supernova: Gravity - Validate Your Business',
           description: 'An opinionated starting point for web applications.'
         }
       }, {

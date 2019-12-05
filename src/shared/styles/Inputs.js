@@ -10,6 +10,7 @@ export const base = css`
   border: 0;
   height: 37px;
   padding: 0 10px;
+  box-sizing: border-box;
   width: 100%;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.07);
   border: 1px solid transparent;

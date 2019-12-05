@@ -1,18 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import * as S from './styles'
+import { EmailCapture } from 'app/components'
+import { Youtube } from 'app/ui-kit/Icons'
 
 export default () =>
   <S.HeroComponent>
     <S.Text>
-      <S.Title>Launch web apps faster</S.Title>
+      <S.Title>Validate Your Business</S.Title>
       <S.Description>
-        Supernova is an open source, feature rich React + SSR boilerplate used to kickstart production ready web apps.
+        Quickly capture interest enabling you to develop your product's market fit in a non destructive environment.
       </S.Description>
-      <Link to='/docs/getting-started/installation'>
-        <S.StyledButton>Explore</S.StyledButton>
-      </Link>
+      <EmailCapture />
+      <small>** We'll send you everything you'll need to get your own instance of Gravity up and running.</small>
+      <S.StyledLink href='https://www.youtube.com/channel/UCLGFA1R50bYXbp8hyAY4mlA' target='_blank'>
+        <Youtube />
+        Learn about launching your own SaaS product.
+      </S.StyledLink>
     </S.Text>
     <S.StyledNova />
   </S.HeroComponent>
