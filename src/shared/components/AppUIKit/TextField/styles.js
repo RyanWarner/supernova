@@ -7,7 +7,6 @@ import { Inputs } from 'app/styles'
 export const TextFieldComponent = styled.div`
   flex-grow: 1;
   width: 100%;
-  margin-bottom: 16px;
 `
 
 const BasicTextCleanProps = ({ noError, ...rest }) => (

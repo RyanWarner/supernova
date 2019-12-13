@@ -9,7 +9,7 @@ export const monospace = "Menlo, Monaco, 'Courier New', monospace"
 export const fontWeights = {
   regular: 400,
   semiBold: 600,
-  bold: 'bold'
+  bold: 900
 }
 
 export const body = css`
@@ -31,8 +31,8 @@ export const body30 = css`
 `
 
 export const header1 = css`
-  font-size: 43px;
-  line-height: 152%;
+  font-size: 60px;
+  line-height: 65px;
   font-weight: ${fontWeights.bold};
 
   @media(max-width: ${Breakpoints.tablet}) {
@@ -45,17 +45,25 @@ export const header1 = css`
 `
 
 export const header2 = css`
-  font-size: 34px;
-  line-height: 152%;
-  font-weight: ${fontWeights.semiBold};
-  margin: 0;
-
-  @media(max-width: ${Breakpoints.main}) {
-    font-size: 26px;
-  }
 `
 
 export const header3 = css`
+`
+
+export const header4 = css`
+  font-weight: ${fontWeights.semiBold};
+  font-size: 34px;
+
+  @media(max-width: ${Breakpoints.tablet}) {
+    font-size: 20px;
+  }
+
+  @media(max-width: ${Breakpoints.main}) {
+    font-size: 16px;
+  }
+`
+
+export const header5 = css`
   font-size: 26px;
   line-height: 152%;
   font-weight: ${fontWeights.semiBold};
@@ -76,6 +84,14 @@ export const GlobalStyle = createGlobalStyle`
 
   h3 {
     ${header3};
+  }
+
+  h4 {
+    ${header4};
+  }
+
+  h5 {
+    ${header5};
   }
 
   p {

@@ -7,7 +7,7 @@ export const EmailCaptureComponent = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  max-width: 500px;
+  max-width: 390px;
   margin: 0 auto;
 
   @media (min-width: ${Breakpoints.tablet}) {

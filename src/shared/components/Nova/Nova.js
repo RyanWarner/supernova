@@ -1,10 +1,10 @@
 import React from 'react'
 
 import * as S from './styles'
-import { gravity } from 'app/assets/images'
+import { space } from 'app/assets/images'
 
 export default props => (
   <S.NovaComponent {...props}>
-    <S.StyledSpace src={gravity} />
+    <S.StyledSpace src={space} />
   </S.NovaComponent>
 )

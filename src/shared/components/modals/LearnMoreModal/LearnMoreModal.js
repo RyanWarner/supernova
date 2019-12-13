@@ -8,12 +8,14 @@ export default class LearnMoreModal extends Component {
   render () {
     return (
       <S.LearnMoreModalComponent>
-        <S.Title>Get Validating</S.Title>
+        <S.Title>Getting Started</S.Title>
         <S.Description>
-          We'll send you an email with everything you'll need to get your own instance of <strong>Gravity</strong> up and running.
+          We've developed systems and tools to rapidly test and validate business ideas. Sign up and we’ll send our complete business validation toolkit.
         </S.Description>
         <EmailCapture />
-        <a href='https://github.com/yawnch/supernova' target='_blank'>Gravity Repo</a>
+        <a href='https://github.com/yawnch/supernova' target='_blank'>
+            Read the Docs
+        </a>
       </S.LearnMoreModalComponent>
     )
   }

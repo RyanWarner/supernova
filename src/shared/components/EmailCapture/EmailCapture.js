@@ -30,12 +30,10 @@ export default class EmailCapture extends Component {
   }
 
   render () {
-    const isEmailValid = this.isEmailValid()
-
     return (
       <S.EmailCaptureComponent>
         <TextField {...fields.email} />
-        <S.StyledButton disabled={!isEmailValid}><Check /></S.StyledButton>
+        <S.StyledButton><Check /></S.StyledButton>
       </S.EmailCaptureComponent>
     )
   }

@@ -16,7 +16,7 @@ export const StyledSpace = styled.img`
   margin: 0 auto;
 
   @media (min-width: ${Breakpoints.tablet}) {
-    width: 600px;
+    width: 100%;
     max-width: 600px;
   }
 `

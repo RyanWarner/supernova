@@ -4,8 +4,9 @@ import * as S from './styles'
 
 export default () =>
   <S.MadeByYawnchComponent
-    href='https://yawnch.com'
+    href='https://www.youtube.com/channel/UCLGFA1R50bYXbp8hyAY4mlA'
     target='_blank'
   >
-    🚀 Made by Yawnch
+    <strong>Yawnch</strong>
+    <S.StyledYoutube />
   </S.MadeByYawnchComponent>

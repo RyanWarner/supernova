@@ -1,5 +1,5 @@
 import { Root, AppRoot } from 'app/components'
-import { Home, Dashboard, Privacy, Terms, NotFound } from 'app/pages'
+import { Home, Privacy, Terms, NotFound } from 'app/pages'
 import adminRoutes from './adminRoutes'
 
 export default [{
@@ -10,7 +10,7 @@ export default [{
       path: '/',
       component: AppRoot,
       meta: {
-        title: 'Supernova: Gravity - Validate Your Business',
+        title: 'Supernova Landing - Validate Your Business',
         description: 'An opinionated starting point for web applications.'
       },
       routes: [{
@@ -18,7 +18,7 @@ export default [{
         exact: true,
         component: Home,
         meta: {
-          title: 'Supernova: Gravity - Validate Your Business',
+          title: 'Supernova Landing - Validate Your Business',
           description: 'An opinionated starting point for web applications.'
         }
       }, {
@@ -26,7 +26,7 @@ export default [{
         exact: true,
         component: Privacy,
         meta: {
-          title: 'Supernova - Privacy Policy',
+          title: 'Supernova Landing - Privacy Policy',
           description: 'Privacy policy'
         }
       }, {
@@ -34,14 +34,14 @@ export default [{
         exact: true,
         component: Terms,
         meta: {
-          title: 'Supernova - Terms',
+          title: 'Supernova Landing - Terms',
           description: 'Terms of service'
         }
       }, {
         path: '*',
         component: NotFound,
         meta: {
-          title: 'Supernova - Not found',
+          title: 'Supernova Landing - Not found',
           description: '404'
         }
       }]

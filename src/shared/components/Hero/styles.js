@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Breakpoints, Colors, Mixins, Type } from 'app/styles'
+import { Breakpoints, Colors, Mixins, Type, Sizes } from 'app/styles'
 import Nova from '../Nova/Nova'
 
 export const StyledNova = styled(Nova)`
@@ -44,21 +44,19 @@ export const Text = styled.div`
 `
 
 export const Title = styled.h1`
-  white-space: nowrap;
-  margin-bottom: 13px;
-  margin-top: 0;
+  margin-bottom: 0;
+  text-align: left;
 
-  @media(max-width: ${Breakpoints.tablet}) {
-    width: auto;
-    text-align: center;
+  @media (min-width: ${Breakpoints.tablet}) {
+    margin-bottom: ${Sizes.paddingSmall};
   }
 `
 
-export const Description = styled.div`
+export const Description = styled.h4`
   display: flex;
   flex-direction: column;
-  ${Type.body30};
   margin-bottom: 30px;
+  margin-top: 0;
   color: ${Colors.white080};
 
   a {
@@ -70,26 +68,5 @@ export const Description = styled.div`
     max-width: 500px;
     text-align: center;
     margin-bottom: 30px;
-  }
-`
-
-export const StyledLink = styled.a`
-  display: flex;
-  align-items: center;
-  margin-top: 15px;
-
-  svg {
-    fill: transparent;
-    stroke: ${Colors.white090};
-    margin-right: 10px;
-    transition: stroke 175ms ease;
-  }
-
-  &:hover {
-    color: ${Colors.brand50};
-
-    svg {
-      stroke: ${Colors.brand40};
-    }
   }
 `
