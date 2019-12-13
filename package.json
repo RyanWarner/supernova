@@ -79,7 +79,7 @@
     "@babel/preset-env": "7.7.4",
     "@babel/preset-react": "7.7.4",
     "@babel/register": "7.7.4",
-    "@mdx-js/loader": "^1.5.1",
+    "@mdx-js/loader": "1.5.1",
     "@storybook/addon-docs": "5.2.8",
     "@storybook/addon-knobs": "5.2.8",
     "@storybook/react": "5.2.8",

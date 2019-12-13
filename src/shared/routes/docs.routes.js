@@ -9,14 +9,14 @@ export default [{
     exact: true,
     component: Docs,
     meta: {
-      title: 'Nova - Docs',
+      title: 'Supernova - Docs',
       description: 'Documentation'
     }
   }, {
     path: '/docs/:section/:doc?',
     component: Docs,
     meta: {
-      title: 'Nova - Docs',
+      title: 'Supernova - Docs',
       description: 'Documentation'
     }
   }]

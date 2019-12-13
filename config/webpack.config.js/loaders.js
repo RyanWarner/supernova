@@ -93,9 +93,20 @@ const eslintLoader = {
   ]
 }
 
+const mdxLoader = {
+  test: /\.mdx?$/,
+  include: paths.src,
+  exclude: [/\.stories\./],
+  use: [
+    'babel-loader',
+    '@mdx-js/loader'
+  ]
+}
+
 const client = [{
   oneOf: [
     eslintLoader,
+    mdxLoader,
     babelLoader,
     urlLoaderClient,
     cssLoaderClient,
@@ -105,8 +116,9 @@ const client = [{
 
 const server = [{
   oneOf: [
-    babelLoader,
+    mdxLoader,
     eslintLoader,
+    babelLoader,
     urlLoaderServer,
     cssLoaderServer,
     fileLoaderServer
