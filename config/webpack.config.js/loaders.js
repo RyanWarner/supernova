@@ -51,7 +51,7 @@ const cssLoaderServer = {
 }
 
 const fileLoaderClient = {
-  exclude: [/\.(js|css|mjs|html|json)$/],
+  exclude: [/\.(js|jsx|ts|tsx|css|mjs|html|ejs|json)$/],
   use: [
     {
       loader: require.resolve('file-loader'),
@@ -64,7 +64,7 @@ const fileLoaderClient = {
 }
 
 const fileLoaderServer = {
-  exclude: [/\.(js|css|mjs|html|json)$/],
+  exclude: [/\.(js|jsx|ts|tsx|css|mjs|html|ejs|json)$/],
   use: [
     {
       loader: require.resolve('file-loader'),

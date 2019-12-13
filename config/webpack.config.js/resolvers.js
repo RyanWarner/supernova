@@ -1,7 +1,7 @@
 const paths = require('../paths')
 
 module.exports = {
-  extensions: ['.js', '.mjs', '.json', '.jsx', '.css'],
+  extensions: ['.mjs', '.js', '.json', '.jsx', '.css'],
   modules: paths.resolveModules,
   alias: {
     'app/ui-kit': `${paths.srcShared}/components/AppUIKit`,
