@@ -1,0 +1,50 @@
+export const meta = {
+  title: 'API Patterns'
+}
+
+# API Patterns
+
+Nova is built for [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) APIs. It can be modified to accommodate any data fetching technique, but there is tooling and helpers to make getting started with REST quick and easy.
+
+###
+
+API requests are initiated by an API model. An example can be found at `src/api/nova/Auth.js`
+
+```
+import Redux from '../redux'
+import createApiAction from '../createApiAction'
+
+const baseUrl = process.env.API_URL
+const apiPath = '/auth'
+const prefix = 'AUTH'
+const storeKey = 'auth'
+
+export default class Auth {
+  static signUp = async ({ email, password }) => {
+    const url = `${baseUrl}${apiPath}`
+    const options = {
+      method: 'POST',
+      url,
+      prefix,
+      storeKey,
+      payload: {
+        email,
+        password
+      }
+    }
+
+    const action = await createApiAction(options)
+    return Redux.dispatch(action)
+  }
+}
+```
+
+Here we can see the `signUp` method is constructing an `options` object. This object is then used to generate a special Redux action called an API action. This pattern was adapted from blog posts like [this one](https://engineering.thetrainline.com/handling-api-calls-in-redux-with-redux-api-middleware-c95c38816e13).
+
+<br />
+
+We then dispatch this action (following this naming convention `{PREFIX}_{METHOD}_REQUEST`) which will get picked up by our Redux middleware, `apiMiddleware.js`. This middleware only cares about actions that contain the `CALL_API` [symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol). Based on the options provided, a `fetch` request is fired. Upon completion, a second action is dispatched, either `_SUCCESS` or `_FAILURE`.
+
+<br />
+
+Using the `apiStatusSelector`, our components can render appropriately.

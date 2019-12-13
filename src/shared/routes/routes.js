@@ -1,12 +1,11 @@
 import { Root, AppRoot } from 'app/components'
 import { Home, Dashboard, Privacy, Terms, NotFound } from 'app/pages'
-import adminRoutes from './adminRoutes'
 
 export default [{
   component: Root,
   path: '/',
   routes: [
-    ...adminRoutes, {
+    {
       path: '/',
       component: AppRoot,
       meta: {
