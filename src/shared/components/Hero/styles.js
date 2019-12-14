@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Breakpoints, Colors, Mixins, Type, Sizes } from 'app/styles'
+import { Breakpoints, Colors, Mixins, Sizes } from 'app/styles'
 import Nova from '../Nova/Nova'
 
 export const StyledNova = styled(Nova)`

@@ -42,13 +42,15 @@ const serverRenderer = () => async (req, res) => {
     const styles = sheet.getStyleElement()
     const state = JSON.stringify(req.store.getState())
 
-    const HtmlComponent = <Html
-      styles={styles}
-      scripts={[res.locals.assetPath('bundle.js'), res.locals.assetPath('vendor.js')]}
-      state={state}
-    >
-      {content}
-    </Html>
+    const HtmlComponent = (
+      <Html
+        styles={styles}
+        scripts={[res.locals.assetPath('bundle.js'), res.locals.assetPath('vendor.js')]}
+        state={state}
+      >
+        {content}
+      </Html>
+    )
 
     return res.send(
       `<!doctype html>
