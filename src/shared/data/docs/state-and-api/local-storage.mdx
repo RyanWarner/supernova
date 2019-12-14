@@ -1,0 +1,24 @@
+export const meta = {
+  title: 'Local Storage'
+}
+
+# Local storage
+
+The app's Redux state may be synced with local storage.
+
+There is a helper for getting and setting local storage data, `localStorage.js`
+
+To sync state, add the slices of state you'd like saved to local storage to the store subscription in `src/index.js`
+
+```
+store.subscribe(() => {
+  const currentState = store.getState()
+
+  const state = {
+    api: {
+      currentUser: currentState.api?.currentUser
+    }
+  }
+  saveState(state)
+})
+```

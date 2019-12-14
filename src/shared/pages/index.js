@@ -1,3 +1,4 @@
+export Docs from './Docs/Docs'
 export Home from './Home/Home'
 export Terms from './Terms/Terms'
 export Privacy from './Privacy/Privacy'

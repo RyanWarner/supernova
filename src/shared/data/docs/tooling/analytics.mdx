@@ -1,0 +1,41 @@
+export const meta = {
+  title: 'Analytics'
+}
+
+# Analytics
+
+The Analytics class provides a single API for triggering analytics events to one or more 3rd party analytics services. [Amplitude](https://amplitude.com/) and [Google Analytics](https://analytics.google.com/analytics/web) are configured out of the box, but can be easily removed or added to.
+
+Analytics are initialized in `src/index.js` and configured to capture all route changes by default.
+
+```js
+// src/index.js
+
+analytics.initialize().then(() => {
+  const { pathname } = browserHistory.location
+  analytics.pageView({ pathname })
+})
+
+const unlisten = browserHistory.listen((location, action) => {
+  const { pathname } = location
+  analytics.pageView({ pathname })
+})
+```
+
+<br />
+
+You can use the analytics class to capture custom events like clicks. See `src/analytics/analytics.js`
+
+### Amplitude
+
+[Amplitude](https://amplitude.com/) provides product analytics for both web and mobile. With no upfront costs, you're only a few minutes away from collecting user data for your app.
+
+#### Setup
+
+1. Create an [Amplitude](https://amplitude.com/) account
+1. Create multiple projects, one for each environment.
+1. Add your Amplitude API keys to the appropriate `.env` file.
+
+### Google Analytics
+
+[Google Analytics](https://analytics.google.com/analytics/web)
