@@ -1,0 +1,39 @@
+export const meta = {
+  title: 'Circle CI'
+}
+
+# Circle CI
+
+[CircleCI](https://circleci.com) is a CI/CD pipeline. It offers a great free plan allowing you to deploy your app today with no up front costs or credit cards.
+
+<br />
+
+This template comes with scripts and config to make deploying with Circle quick and easy.
+
+<br />
+
+See `.circleci/config.yml`
+
+### Setup
+
+1. Create a CircleCI account.
+1. Click "Add projects"
+
+### Environment variables
+
+There are 4 required env variables for any particular deployment.
+
+```txt
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+AWS_S3_REGION
+S3_BUCKET_<env>
+```
+
+<br />
+
+| Variable | Description |
+|:---|:---|
+| `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` | AWS IAM credentials for your CircleCI machine user. Click here for instructions on creating an IAM user for CircleCI. |
+| `AWS_S3_REGION` | The region you specified for your AWS S3 buckets. We assume you use the same region for all buckets. |
+| `S3_BUCKET_<env>` | The bucket name for the particular environment. |

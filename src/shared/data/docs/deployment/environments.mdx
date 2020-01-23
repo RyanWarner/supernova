@@ -1,0 +1,47 @@
+export const meta = {
+  title: 'Environments'
+}
+
+# Environments
+
+For small teams, we recommend 3-4 environments. 1 local, and 2-3 deployment environments: `develop` (optional), `staging`, and `production`. Depending on team size, it can be beneficial to have a deployed environment for QA (staging) that has some guaruntee of being functional, while also having a deployed environment (develop) for developers to deploy to and break without consequence.
+
+<br />
+
+Each environment has its own `.env` config file located in the top level `config` directory. [View on GitHub](https://github.com/yawnch/nova/tree/master/config).
+
+
+### Example .env file
+
+**.env.production**
+```
+DEPLOY_ENV='production'
+URL='nova.yawnch.com'
+
+S3_BUCKET='my-production-bucket'
+AWS_PROFILE='profile_name'
+
+AMPLITUDE_API_KEY=''
+SENTRY_DSN=''
+```
+
+| Variable | Description |
+|:---|:---|
+| `DEPLOY_ENV` | Used to determine which .env file should be used. |
+| `URL` | Used for the meta tag `og:url`. See `index.ejs`. |
+| `S3_BUCKET` | The name of the S3 bucket. Used only for deploys from your local machine. |
+| `AWS_PROFILE` | The name of your machine's local AWS profile. Used only for deploys from your local machine. |
+| `AMPLITUDE_API_KEY` | See the [Analytics docs](/docs/tooling/analytics) for setup instructions. |
+| `SENTRY_DSN` | See the [Sentry docs](/docs/tooling/sentry) for setup instructions. |
+
+### Naming
+
+We recommend the following naming convention:
+
+<br />
+
+| Environment | Bucket |
+|:-------------|:--------|
+| Develop | dev.yawnch.com |
+| Staging | stage.yawnch.com |
+| Production | yawnch.com |

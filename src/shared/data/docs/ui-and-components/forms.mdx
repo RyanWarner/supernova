@@ -1,0 +1,22 @@
+export const meta = {
+  title: 'Forms'
+}
+
+# Forms
+
+Form state is powered by [Informed](https://github.com/joepuzzo/informed). Informed is well maintained and straightforward way to abstract form state and allow us to focus on other things.
+
+#### Usage
+
+This template comes with a HOC for wrapping components in an Informed `form` called `withInformed`.
+
+```js
+import React, { Component } from 'react'
+
+import { withInformed } from 'app/components'
+
+@withInformed
+export default class MyForm extends Component {
+  // Form elements here
+}
+```

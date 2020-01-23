@@ -1,0 +1,43 @@
+export const meta = {
+  title: 'Modals'
+}
+
+# Modals
+
+- Modals are powered by [React Aria Modal](https://github.com/davidtheclark/react-aria-modal).
+- Modal state is managed using Redux and a custom component, `ModalController`.
+
+#### Adding a new modal
+
+_TODO: Automate this using a script_
+
+1. Create a new modal component in `src/components/modals`
+1. Add your modal to the list of available modals in `src/components/modals/ModalController/ModalList`
+
+#### Opening a modal
+
+1. Import the Redux action `openModal` into your component.
+1. Connect your component to Redux and map `openModal` to dispatch props.
+1. Call the `openModal` function.
+
+```js
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+import { openModal } from 'app/store/app/actions'
+
+@connect(null, { openModal })
+export default class MyComponent extends Component {
+  openLoginModal = () => {
+    this.props.openModal({ modalName: 'LoginModal' })
+  }
+
+  render () {
+    return (
+      <button onClick={this.openLoginModal}>
+        Log in
+      </button>
+    )
+  }
+}
+```

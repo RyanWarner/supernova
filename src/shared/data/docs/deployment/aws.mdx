@@ -1,0 +1,69 @@
+export const meta = {
+  title: 'AWS'
+}
+
+# Amazon Web Services
+
+By default, the template is setup to deploy to AWS S3. You'll need an AWS account to continue.
+
+### Configuring the app for deployment
+
+#### Custom Domain
+
+1. Purchase a domain name
+
+#### Provision an SSL certificate
+
+1. Navigate to the [AWS Certificate Manager](https://console.aws.amazon.com/acm/home?region=us-east-1). Make sure your location is set to N. Virginia or `us-east-1` - this is the only region allowed to have wildcard subdomains.
+1. Click "Request a certificate" and select "Request a public certificate"
+1. Add two domain names:
+    - `*.mydomain.com`
+    - `mydomain.com`
+1. Choose "DNS validation"
+1. Click "Confirm and request"
+1. Download the CNAME records CSV file.
+
+#### Create an S3 bucket
+
+1. Navigate to [AWS S3](https://s3.console.aws.amazon.com/s3)
+1. Click "Create bucket"
+1. Name your bucket after your domain, for example `mydomain.com`
+1. Select your nearest region and click "next."
+1. Click "next" again, leaving the default values for the "Properties" step.
+1. **Uncheck** "Block all public access" and click "Next"
+1. Click "Create Bucket"
+
+#### Configure your S3 bucket
+
+1. Click on the name of your newly created bucket.
+1. Click the properties tab, and click "Static website hosting."
+1. Select "Use this bucket to host a website" and type in `index.html` for both the index and error documents. Click "save."
+1. Select the "Permissions" tab. Click "Bucket Policy."
+1. Past this bucket policy in the editor and be sure to replace `<bucket-name>` with your bucket's name:
+    ```json
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Principal": "*",
+                "Action": "s3:ListBucket",
+                "Resource": "arn:aws:s3:::<bucket-name>"
+            },
+            {
+                "Effect": "Allow",
+                "Principal": "*",
+                "Action": "s3:GetObject",
+                "Resource": "arn:aws:s3:::<bucket-name>/*"
+            }
+        ]
+    }
+    ```
+
+#### Create and configure a CloudFront Distribution
+
+1. Navigate to AWS [CloudFront]()
+
+#### Configure DNS records
+
+1. Navigate to AWS [Route53]()

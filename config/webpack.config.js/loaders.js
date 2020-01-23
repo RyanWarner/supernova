@@ -51,7 +51,7 @@ const cssLoaderServer = {
 }
 
 const fileLoaderClient = {
-  exclude: [/\.(js|css|mjs|html|json)$/],
+  exclude: [/\.(js|jsx|ts|tsx|css|mjs|html|ejs|json)$/],
   use: [
     {
       loader: require.resolve('file-loader'),
@@ -64,7 +64,7 @@ const fileLoaderClient = {
 }
 
 const fileLoaderServer = {
-  exclude: [/\.(js|css|mjs|html|json)$/],
+  exclude: [/\.(js|jsx|ts|tsx|css|mjs|html|ejs|json)$/],
   use: [
     {
       loader: require.resolve('file-loader'),
@@ -93,9 +93,20 @@ const eslintLoader = {
   ]
 }
 
+const mdxLoader = {
+  test: /\.mdx?$/,
+  include: paths.src,
+  exclude: [/\.stories\./],
+  use: [
+    'babel-loader',
+    '@mdx-js/loader'
+  ]
+}
+
 const client = [{
   oneOf: [
     eslintLoader,
+    mdxLoader,
     babelLoader,
     urlLoaderClient,
     cssLoaderClient,
@@ -105,8 +116,9 @@ const client = [{
 
 const server = [{
   oneOf: [
-    babelLoader,
+    mdxLoader,
     eslintLoader,
+    babelLoader,
     urlLoaderServer,
     cssLoaderServer,
     fileLoaderServer
