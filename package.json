@@ -94,7 +94,7 @@
     "babel-plugin-styled-components": "1.10.7",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
     "chalk": "3.0.0",
-    "core-js": "3.4.5",
+    "core-js": "3.6.4",
     "cross-env": "7.0.0",
     "css-loader": "3.4.2",
     "dotenv-webpack": "1.7.0",
