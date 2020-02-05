@@ -7,7 +7,7 @@ export default {
   1: {
     display: 'GitHub',
     type: 'a',
-    url: 'https://github.com/yawnch/nova'
+    url: 'https://github.com/yawnch/supernova'
   },
   3: {
     display: 'Boilerplates',
