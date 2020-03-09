@@ -14,10 +14,10 @@ export const TextArea = styled.textarea`
   resize: none;
 `
 
-export const Label = styled.p`
+export const Label = styled.label`
   ${Inputs.label};
 `
 
-export const Error = styled.div`
+export const Error = styled.p`
   ${Inputs.error};
 `
