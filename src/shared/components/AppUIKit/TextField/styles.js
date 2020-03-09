@@ -18,7 +18,7 @@ export const TextInput = styled(BasicTextCleanProps)`
   ${Inputs.base};
 `
 
-export const Error = styled.div`
+export const Error = styled.p`
   ${Inputs.error};
 `
 
