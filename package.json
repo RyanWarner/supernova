@@ -28,7 +28,7 @@
   ],
   "dependencies": {
     "@babel/runtime": "7.8.3",
-    "@mdx-js/react": "1.5.5",
+    "@mdx-js/react": "1.5.7",
     "@tippy.js/react": "3.1.1",
     "amplitude-js": "5.5.0",
     "body-parser": "1.19.0",
@@ -78,7 +78,7 @@
     "@babel/preset-env": "7.8.3",
     "@babel/preset-react": "7.8.3",
     "@babel/register": "7.8.3",
-    "@mdx-js/loader": "1.5.5",
+    "@mdx-js/loader": "1.5.7",
     "@storybook/addon-docs": "5.3.17",
     "@storybook/addon-knobs": "5.3.17",
     "@storybook/react": "5.3.17",
